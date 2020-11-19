@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/gemimnhr/accounts.gemifx.com/
+    - /bin/cp -R * $DEPLOYPATH
