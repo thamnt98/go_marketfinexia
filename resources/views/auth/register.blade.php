@@ -119,7 +119,7 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group row mb-0">
+                        <div class="form-group row">
                             <div class="col-md-2"></div>
                             <div class="col-md-10">
                                 <button type="submit" class="btn btn-primary">

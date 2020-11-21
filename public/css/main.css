@@ -11,3 +11,57 @@
     margin-bottom: 40px!important;
     color:grey;
 }
+form .fa {
+    margin-top: -28px;
+    margin-right: 10px;
+    margin-right: 0.5 rem;
+    float: right;
+  }
+
+  .hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+  }
+  .hr-text::before {
+      content: '';
+      background: rgb(202, 200, 200);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+    }
+    .hr-text::after {
+      content: attr(data-content);
+      position: relative;
+      display: inline-block;
+      color: black;
+      padding: 0 .5em;
+      line-height: 1.5em;
+      background-color: #fcfcfa;
+    }
+    .fb {
+        background-color: #3B5998;
+        color: white;
+      }
+      
+      .twitter {
+        background-color: #55ACEE;
+        color: white;
+      }
+    .login-method .fa{
+        float: left;
+        margin: 4px;
+    }
+
+    .login-method {
+        text-align:  center;
+        margin-top: 16px;
+    }
+
