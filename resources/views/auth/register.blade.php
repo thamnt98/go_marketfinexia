@@ -6,7 +6,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                 <h2 class="card-header">Create Account</h2>
-                <div class="card-body" style="margin-right:30px">
+                <div class="card-body" style="padding-right:50px">
                     <div class="logo" style="text-align: center !important;">
                         <a href="#">
                             <img src="{{ asset('image/logo.png')}}" class="img-fluid" style="width:120px; margin:40px">
@@ -75,7 +75,7 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone number</label>
-                                    <input id="phone_number" type="text" class="col-md-8    form-control" name="password_confirmation" required autocomplete="new-password">
+                                    <input id="phone_number" type="text" class="col-md-8 form-control" name="phone_number" required autocomplete="new-password">
                                 </div>
                             </div>
                         </div>
@@ -83,18 +83,18 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <label for="country" class="col-md-4 col-form-label text-md-right">Country</label>
-                                    <select name="" id="country"  class="col-md-8 form-control" >
-                                        <option>Viet Nam</option>
-                                        <option>Nhat Ban</option>
+                                    <select name="" id="country"  class="col-md-8 form-control" name="country" >
+                                        <option value="vn">Viet Nam</option>
+                                        <option value="nb">Nhat Ban</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="row">
                                     <label for="application_type" class="col-md-4 col-form-label text-md-right">Application Type</label>
-                                    <select name="" id="application_type"  class="col-md-8 form-control" >
-                                        <option>Individual</option>
-                                        <option>Join</option>
+                                    <select name="" id="application_type"  class="col-md-8 form-control" name="application_type">
+                                        <option value="1">Individual</option>
+                                        <option value="2">Join</option>
                                     </select>
                                 </div>
                             </div>

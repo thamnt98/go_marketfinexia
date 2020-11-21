@@ -4976,7 +4976,7 @@ input[type=button].btn-block {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
-  background-color: darkgray;
+  background-color: #dadada;
 }
 
 .card-title {
@@ -7044,7 +7044,7 @@ button.bg-dark:focus {
 }
 
 .bg-grey {
-  background-color: rgb(202 193 193) !important;
+  background-color: rgb(219 218 218) !important;
 }
 
 .bg-transparent {
