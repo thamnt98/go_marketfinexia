@@ -1,0 +1,13 @@
+.background {
+    background-image: url('../image/background.jpg');
+}
+#app{
+    height: 100%;
+}
+#app .row{
+    height: 100%;
+}
+.text-header{
+    margin-bottom: 40px!important;
+    color:grey;
+}
