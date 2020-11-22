@@ -27,7 +27,7 @@
                                 <div class="row">
                                     <label for="first_name" class="col-md-4 col-form-label text-md-right">First Name</label>
                                     <input id="first_name" type="text" class="col-md-8 form-control @error('name') is-invalid @enderror" name="first_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    @error('name')
+                                    @error('first_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -38,7 +38,7 @@
                                 <div class="row">
                                     <label for="last_name" class="col-md-4 col-form-label text-md-right">Last Name</label>
                                     <input id="last_name" type="text" class="col-md-8 form-control @error('name') is-invalid @enderror" name="last_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    @error('name')
+                                    @error('last_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -51,7 +51,7 @@
                                 <div class="row">
                                     <label for="family_name" class="col-md-4 col-form-label text-md-right">Family name</label>
                                     <input id="family_name" type="text" class="col-md-8 form-control @error('name') is-invalid @enderror" name="family_name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    @error('name')
+                                    @error('family_name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
                                     <input id="email" type="email" class="col-md-8 form-control @error('name') is-invalid @enderror" name="email" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    @error('name')
+                                    @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -84,6 +84,11 @@
                                 <div class="row">
                                     <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone number</label>
                                     <input id="phone_number" type="text" class="col-md-8 form-control" name="phone_number" required autocomplete="new-password">
+                                    @error('phone_number')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -91,16 +96,21 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <label for="country" class="col-md-4 col-form-label text-md-right">Country</label>
-                                    <select name="" id="country"  class="col-md-8 form-control" name="country" >
+                                    <select name="country" id="country"  class="col-md-8 form-control" name="country" >
                                         <option value="vn">Viet Nam</option>
                                         <option value="nb">Nhat Ban</option>
                                     </select>
+                                    @error('country')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="row">
                                     <label for="application_type" class="col-md-4 col-form-label text-md-right">Application Type</label>
-                                    <select name="" id="application_type"  class="col-md-8 form-control" name="application_type">
+                                    <select name="application_type" id="application_type"  class="col-md-8 form-control" name="application_type">
                                         <option value="1">Individual</option>
                                         <option value="2">Join</option>
                                     </select>
@@ -111,7 +121,6 @@
                             <div class="col-lg-2"></div>
                             <div class="col-lg-10 form-check">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
                                 <label class="form-check-label" for="remember">
                                     I have read and consent to my data being used in accordance with the Privacy Policy.
                                 </label>

@@ -53,11 +53,10 @@ class RegisterController extends Controller
     {
         $data = $request->all();
         $validate = $this->validator($data);
-        dd($validate->fails());
+        dd(User::all());
         if($validate->fails()){
             return redirect()->back()->withErrors($validate)->withInput();
         }
-        dd('a');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -73,7 +72,6 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        dd($data);
         return Validator::make($data, [
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
