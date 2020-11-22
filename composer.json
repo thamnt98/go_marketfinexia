@@ -15,7 +15,8 @@
         "laravel/framework": "^7.29",
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.4",
-        "prettus/l5-repository": "^2.7"
+        "prettus/l5-repository": "^2.7",
+        "webklex/laravel-imap": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
