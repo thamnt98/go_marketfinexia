@@ -1,11 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container register-form">
     <div class="row justify-content-center">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
-                <h2 class="card-header">Create Account</h2>
+                <div class="row card-header">
+                    <div class="col-lg-3">
+                        <h2>Create Account</h2>
+                    </div>
+                    <div class="col-lg-7"></div>
+                    <div class="col-lg-2">
+                        <a href="{{ route('login') }}" class="btn btn-primary" style="float: right;">Login</a>
+                    </div>
+                </div>
                 <div class="card-body" style="padding-right:50px">
                     <div class="logo" style="text-align: center !important;">
                         <a href="#">
