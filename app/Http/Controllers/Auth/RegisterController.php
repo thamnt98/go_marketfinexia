@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Rules\PhoneNumberRule;
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -53,15 +54,17 @@ class RegisterController extends Controller
     {
         $data = $request->all();
         $validate = $this->validator($data);
-        dd(User::all());
         if($validate->fails()){
             return redirect()->back()->withErrors($validate)->withInput();
         }
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $data['password'] = Hash::make(Str::random(8));
+        $user = User::create($data);
+        if($user){
+            return back()->with('success', "We have sent you an email to setting password. Please check your inbox");
+        }
+        else{
+            return back()->with('error', "Something went wrong");
+        }
     }
 
     /**
