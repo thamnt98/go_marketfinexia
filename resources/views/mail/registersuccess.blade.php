@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <p>Xin chào {{ $fistName + $lastname}} !</p>
+        <p>Xin chào {{ $firstName .' ' . $lastName}} !</p>
         <br>
         <p>Cảm ơn bạn đã đăng ký tài khoản của Gemifx</p>
         <p>Chỉ cần nhấp chuột vào liên kết bên dưới để tiếp tục sử dụng dịch vụ :</p>

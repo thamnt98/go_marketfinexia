@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('layout.page');
+})->middleware('auth')->name('home');
+Route::get('logout', function() {
+    Auth::logout();
+    return redirect('/login');
 });
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/register', 'Auth\RegisterController@main')->name('register');
+Route::get('/password/reset', 'ResetPasswordController@main')->name('password.reset');
+Route::post('/password/reset', 'UpdatePasswordController@main')->name('password.update');

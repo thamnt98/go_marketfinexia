@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\UserRegisteredSuccess;
 use App\Providers\RouteServiceProvider;
 use App\Rules\PhoneNumberRule;
 use App\Models\User;
@@ -11,38 +12,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Carbon;
+use App\Models\PasswordReset;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
     use RegistersUsers;
-
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
 
     /**
      * Create a new user instance after a valid registration.
@@ -54,15 +30,17 @@ class RegisterController extends Controller
     {
         $data = $request->all();
         $validate = $this->validator($data);
-        if($validate->fails()){
+        if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput();
         }
         $data['password'] = Hash::make(Str::random(8));
         $user = User::create($data);
-        if($user){
+        if ($user) {
+            $email = $user->email;
+            $token = $this->createToken($email);
+            Mail::to($email)->send(new UserRegisteredSuccess($user, $token));
             return back()->with('success', "We have sent you an email to setting password. Please check your inbox");
-        }
-        else{
+        } else {
             return back()->with('error', "Something went wrong");
         }
     }
@@ -79,8 +57,26 @@ class RegisterController extends Controller
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
             'family_name' => 'string|max:255',
-            'phone_number' => ['required', new PhoneNumberRule()],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'phone_number' => 'required|regex:/[0-9]{10}/',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
         ]);
+    }
+
+    private function createToken($email)
+    {
+        $key = config('app.key');
+        if (Str::startsWith($key, 'base64:')) {
+            $key = base64_decode(substr($key, 7));
+        }
+        $token = hash_hmac('sha256', Str::random(40), $key);
+        PasswordReset::updateOrCreate(
+            ['email' => $email],
+            [
+                'token' => $token,
+                'email' =>  $email,
+                'created_at' => Carbon::now()
+            ]
+        );
+        return $token;
     }
 }

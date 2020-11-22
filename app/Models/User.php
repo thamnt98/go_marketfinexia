@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
-
-class User extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class User extends Authenticatable
 {
     protected $fillable = [
         'email',
@@ -14,5 +12,9 @@ class User extends Model
         'phone_number',
         'application_type',
         'family_name'
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 }

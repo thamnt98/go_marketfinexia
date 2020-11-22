@@ -138,7 +138,7 @@
                         <div class="form-group row">
                             <div class="col-lg-2"></div>
                             <div class="col-lg-10 form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} required>
                                 <label class="form-check-label" for="remember">
                                     I have read and consent to my data being used in accordance with the Privacy Policy.
                                 </label>
@@ -147,7 +147,7 @@
                         <div class="form-group row">
                             <div class="col-lg-2"></div>
                             <div class="col-lg-10 form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} required>
 
                                 <label class="form-check-label" for="remember">
                                     I would also like to receive free Daily Market Analysis from GemiFX

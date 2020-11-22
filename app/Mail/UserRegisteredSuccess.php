@@ -11,16 +11,27 @@ class UserRegisteredSuccess extends Mailable
 {
     use Queueable, SerializesModels;
 
+     /**
+     * @var array
+     */
+    protected $user;
+
+    /**
+     * @var $token
+     */
+    protected $token;
+
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user, $token)
     {
-        
+        $this->user = $user;
+        $this->token = $token;
     }
-
     /**
      * Build the message.
      *
@@ -28,6 +39,13 @@ class UserRegisteredSuccess extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mail.registersuccess')
+        ->subject('Hoàn tất đăng ký tài khoản Gemifx')
+        ->with([
+            'firstName' => $this->user['first_name'],
+            'lastName' => $this->user['last_name'],
+            'url' => url('/password/reset') . '?token=' . $this->token .
+                '&email=' . urlencode($this->user['email'])
+        ]);
     }
 }
