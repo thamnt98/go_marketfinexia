@@ -18,10 +18,10 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Username">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Username">
                             <i class="fa fa-user fa-lg"></i>
                             @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
@@ -30,10 +30,10 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <input id="password" type="password" placeholder="Password" class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input id="password" type="password" placeholder="Password" class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="password">
                             <i class="fa fa-lock fa-lg"></i>
                             @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
