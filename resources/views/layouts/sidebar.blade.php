@@ -27,7 +27,7 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ route('account.live') }}">
                                         Live Account
                                     </a>
                                 </li>

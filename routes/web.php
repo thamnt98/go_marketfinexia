@@ -25,3 +25,14 @@ Auth::routes();
 Route::post('/register', 'Auth\RegisterController@main')->name('register');
 Route::get('/password/reset', 'ResetPasswordController@main')->name('password.reset');
 Route::post('/password/reset', 'UpdatePasswordController@main')->name('password.update');
+Route::group([
+    'namespace' => 'User',
+    'middleware' => 'auth',
+    'prefix' => 'trader'
+], function () {
+    Route::group([
+        'namespace' => 'Account'
+    ], function () {
+        Route::get('/', 'LiveAccountController@main')->name('account.live');
+    });
+});

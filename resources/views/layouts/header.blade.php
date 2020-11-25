@@ -1,5 +1,3 @@
-<!doctype html>
-<html class="fixed">
 	<head>
 
 		<!-- Basic -->
@@ -29,6 +27,7 @@
 		<link rel="stylesheet" href="{{ asset('css/theme-custom.css')}}">
 
 		<!-- Head Libs -->
-    	<script src="{{ asset('js/modernizr.js')}}"></script>
+		<script src="{{ asset('js/modernizr.js')}}"></script>
+		@yield('css')
   </head>
   

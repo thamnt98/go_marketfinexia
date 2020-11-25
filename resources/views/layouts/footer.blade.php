@@ -12,3 +12,4 @@
 		<script src="{{ asset('js/theme.custom.js')}}"></script>
 		<!-- Theme Initialization Files -->
 		<script src="{{ asset('js/theme.init.js')}}"></script>
+@yield('js')
