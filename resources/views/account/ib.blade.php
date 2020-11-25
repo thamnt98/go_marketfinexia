@@ -1,21 +1,21 @@
 @extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
 @section('css')
 @endsection
-    <header class="page-header">
-        <h2>Live Account</h2>
-        <div class="right-wrapper pull-right">
-            <ol class="breadcrumbs">
-                <li>
-                    <a href="index.html">
-                        <i class="fa fa-home"></i>
-                    </a>
-                </li>
-                <li><span>Account</span></li>
-                <li><span>Live</span></li>
-            </ol>
-            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-        </div>
-    </header>
+<header class="page-header">
+    <h2>Live Account</h2>
+    <div class="right-wrapper pull-right">
+        <ol class="breadcrumbs">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                </a>
+            </li>
+            <li><span>Account</span></li>
+            <li><span>Live</span></li>
+        </ol>
+        <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+    </div>
+</header>
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -29,45 +29,91 @@
             </header>
             <div class="panel-body">
                 <form class="form-horizontal form-bordered" method="get">
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputSuccess"><b>Type</b></label>
-                        <div class="col-md-6">
-                            <select class="form-control">
-                                <option>Select...</option>
-                                <option>Standard</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputSuccess"><b>Leverage</b></label>
-                        <div class="col-md-6">
-                            <select class="form-control">
-                                <option>Select...</option>
-                                <option>1:1</option>
-                                <option>1:50</option>
-                                <option>1:100</option>
-                                <option>1:200</option>
-                                <option>1:300</option>
-                                <option>1:500</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    I agree to the <a href="#"><b>Terms & Conditions</b></a>
-                                </label>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <label>Type</label>
+                                <select class="form-control">
+                                    <option>Select...</option>
+                                    <option>IB</option>
+                                </select>
                             </div>
+                            <div class="form-group col-md-5">
+                                <label>Company Website</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-1"></div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Open account</button>
-                            
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <label>Full Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label>Sky ID</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <label>Company Name</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label>Describe your experience with FOREX or any related experience</label>
+                                <textarea class="form-control" rows="2" placeholder="Type your describe"></textarea>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <label>Company Phone</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <label>Describe your services/Include any comments</label>
+                                <textarea class="form-control" rows="2" placeholder="Type your describe"></textarea>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5">
+                                <label>Email</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <div class="checkbox" style="margin-top:30px">
+                                    <label>
+                                        <input type="checkbox" clavalue="">
+                                        I agree to the <a href="#"><b>Terms & Conditions</b></a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                    </div>
+                    <div class="form-group-inner">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5"></div>
+                            <div class="form-group col-md-5">
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Open account</button>
+                            </div>
+                            <div class="col-md-1"></div>
                         </div>
                     </div>
                 </form>
@@ -75,8 +121,8 @@
         </section>
     </div>
 </div>
-<input type="hidden" class="level1-toggle" value="account"/>
-<input type="hidden" class="level2-toggle" value="ib"/>
+<input type="hidden" class="level1-toggle" value="account" />
+<input type="hidden" class="level2-toggle" value="ib" />
 </section>
 @endsection
 @section('js')
