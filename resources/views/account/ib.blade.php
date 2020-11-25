@@ -25,7 +25,7 @@
                     <a href="#" class="fa fa-caret-down"></a>
                 </div>
 
-                <h2 class="panel-title">Open Trading Account</h2>
+                <h2 class="panel-title">Open IB Account</h2>
             </header>
             <div class="panel-body">
                 <form class="form-horizontal form-bordered" method="get">
@@ -76,7 +76,7 @@
     </div>
 </div>
 <input type="hidden" class="level1-toggle" value="account"/>
-<input type="hidden" class="level2-toggle" value="live"/>
+<input type="hidden" class="level2-toggle" value="ib"/>
 </section>
 @endsection
 @section('js')

@@ -6,6 +6,17 @@ window.theme = {};
 
 	'use strict';
 
+	$(document).ready(function () {
+		let level1Toggle = $(".level1-toggle").val();
+		console.log(level1Toggle)
+	  
+		let level2Toggle = $(".level2-toggle").val();
+		$(".nav-main .level-1").removeClass("nav-active nav-expanded");
+		$(".nav-main .level-2").removeClass("nav-active");
+		$(".nav-main .level-1[data-toggle='"+level1Toggle+"']").addClass("nav-active nav-expanded");
+		$(".nav-main .level-2[data-toggle='"+level2Toggle+"']").addClass("nav-active");
+	  });
+
 	var $items = $( '.nav-main li.nav-parent' );
 
 	function expand( li ) {

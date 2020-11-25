@@ -2,7 +2,7 @@
 @section('css')
 @endsection
     <header class="page-header">
-        <h2>Live Account</h2>
+        <h2>Demo Account</h2>
         <div class="right-wrapper pull-right">
             <ol class="breadcrumbs">
                 <li>
@@ -11,7 +11,7 @@
                     </a>
                 </li>
                 <li><span>Account</span></li>
-                <li><span>Live</span></li>
+                <li><span>Demo</span></li>
             </ol>
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
         </div>
@@ -25,7 +25,7 @@
                     <a href="#" class="fa fa-caret-down"></a>
                 </div>
 
-                <h2 class="panel-title">Open Trading Account</h2>
+                <h2 class="panel-title">Open Demo Account</h2>
             </header>
             <div class="panel-body">
                 <form class="form-horizontal form-bordered" method="get">
@@ -34,7 +34,7 @@
                         <div class="col-md-6">
                             <select class="form-control">
                                 <option>Select...</option>
-                                <option>Standard</option>
+                                <option>Demo USD</option>
                             </select>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
     </div>
 </div>
 <input type="hidden" class="level1-toggle" value="account"/>
-<input type="hidden" class="level2-toggle" value="live"/>
+<input type="hidden" class="level2-toggle" value="demo"/>
 </section>
 @endsection
 @section('js')

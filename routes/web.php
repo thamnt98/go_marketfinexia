@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/trader', function () {
     return view('layouts.simplepage');
 })->middleware('auth')->name('home');
 Route::get('logout', function() {
@@ -33,6 +33,8 @@ Route::group([
     Route::group([
         'namespace' => 'Account'
     ], function () {
-        Route::get('/', 'LiveAccountController@main')->name('account.live');
+        Route::get('/open-trading-account', 'LiveAccountController@main')->name('account.live');
+        Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
+        Route::get('/open-ib-account', 'IBAccountController@main')->name('account.ib');
     });
 });
