@@ -1,7 +1,21 @@
 @extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
 @section('css')
-
 @endsection
+    <header class="page-header">
+        <h2>Live Account</h2>
+        <div class="right-wrapper pull-right">
+            <ol class="breadcrumbs">
+                <li>
+                    <a href="index.html">
+                        <i class="fa fa-home"></i>
+                    </a>
+                </li>
+                <li><span>Account</span></li>
+                <li><span>Live</span></li>
+            </ol>
+            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+        </div>
+    </header>
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -62,6 +76,7 @@
         </section>
     </div>
 </div>
+</section>
 @endsection
 @section('js')
 @endsection
