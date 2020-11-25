@@ -1,6 +1,6 @@
 <header class="header">
     <div class="logo-container">
-        <a href="../" class="logo">
+        <a href="{{ route('home') }}" class="logo">
         <img src="{{ asset('image/logo.png') }}" height="35" alt="Porto Admin" />
         </a>
         <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">

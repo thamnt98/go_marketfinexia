@@ -33,14 +33,14 @@
                         <div class="row">
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
-                                <label>Type</label>
+                                <label><b>Type</b></label>
                                 <select class="form-control">
                                     <option>Select...</option>
                                     <option>IB</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-5">
-                                <label>Company Website</label>
+                                <label><b>Company Website</b></label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="col-md-1"></div>
@@ -50,11 +50,11 @@
                         <div class="row">
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
-                                <label>Full Name</label>
+                                <label><b>Full Name</b></label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="form-group col-md-5">
-                                <label>Sky ID</label>
+                                <label><b>Sky ID</b></label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="col-md-1"></div>
@@ -64,11 +64,11 @@
                         <div class="row">
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
-                                <label>Company Name</label>
+                                <label><b>Company Name</b></label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="form-group col-md-5">
-                                <label>Describe your experience with FOREX or any related experience</label>
+                                <label><b>Describe your experience with FOREX or any related experience</b></label>
                                 <textarea class="form-control" rows="2" placeholder="Type your describe"></textarea>
                             </div>
                             <div class="col-md-1"></div>
@@ -78,11 +78,11 @@
                         <div class="row">
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
-                                <label>Company Phone</label>
+                                <label><b>Company Phone</b></label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="form-group col-md-5">
-                                <label>Describe your services/Include any comments</label>
+                                <label><b>Describe your services/Include any comments</b></label>
                                 <textarea class="form-control" rows="2" placeholder="Type your describe"></textarea>
                             </div>
                             <div class="col-md-1"></div>
@@ -92,14 +92,14 @@
                         <div class="row">
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
-                                <label>Email</label>
+                                <label><b>Email</b></label>
                                 <input type="text" class="form-control">
                             </div>
                             <div class="form-group col-md-5">
                                 <div class="checkbox" style="margin-top:30px">
                                     <label>
                                         <input type="checkbox" clavalue="">
-                                        I agree to the <a href="#"><b>Terms & Conditions</b></a>
+                                        <b>I agree to the </b><a href="#"><b>Terms & Conditions</b></a>
                                     </label>
                                 </div>
                             </div>

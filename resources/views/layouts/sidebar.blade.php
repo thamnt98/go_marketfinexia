@@ -15,7 +15,7 @@
                 <nav id="menu" class="nav-main" role="navigation">
                     <ul class="nav nav-main">
                         <li>
-                            <a href="#">
+                            <a href="{{ route('home') }}">
                                 <i class="fa fa-home" aria-hidden="true"></i>
                                 <span>Dashboard</span>
                             </a>
