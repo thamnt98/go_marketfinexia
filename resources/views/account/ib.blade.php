@@ -121,7 +121,7 @@
         </section>
     </div>
 </div>
-<input type="hidden" class="level1-toggle" value="account" />
+<input type="hidden" class="level1-toggle" value="{{ $sideBar == 1 ? 'account' : 'partnership' }}" />
 <input type="hidden" class="level2-toggle" value="ib" />
 </section>
 @endsection

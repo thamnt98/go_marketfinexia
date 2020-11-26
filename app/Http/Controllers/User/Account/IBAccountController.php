@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class IBAccountController extends Controller
 {
-    public function main()
+    public function main(Request $request)
     {
-        return view('account.ib');
+        $sideBar = $request->type;
+        return view('account.ib', compact('sideBar'));
     }
 }

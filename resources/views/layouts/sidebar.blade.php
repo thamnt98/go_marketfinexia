@@ -37,7 +37,7 @@
                                     </a>
                                 </li> --}}
                                 <li class="level-2" data-toggle="ib">
-                                    <a href="{{ route('account.ib') }}">
+                                    <a href="{{ route('account.ib', 1)}}">
                                          IB Account
                                     </a>
                                 </li>
@@ -79,14 +79,14 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-parent level-1">
+                        <li class="nav-parent level-1" data-toggle="partnership">
                             <a>
                                 <i class="fa fa-users" aria-hidden="true"></i>
-                                <span>IB Partnershipp</span>
+                                <span>IB Partnership</span>
                             </a>
-                            <ul class="nav nav-children level-2">
+                            <ul class="nav nav-children level-2" data-toggle="ib">
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ route('account.ib', 2) }}">
                                          IB Account
                                     </a>
                                 </li>

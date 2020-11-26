@@ -1,6 +1,6 @@
 @extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
+{{-- <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"> --}}
 @endsection
     <header class="page-header">
         <h2>Deposits</h2>
@@ -33,8 +33,18 @@
                                             </div>
                                         </div>
                                     </a>
+								</div>
+								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
+                                    <a href="#">
+                                        <div class="thumbnail">
+                                            <div class="thumb-preview">
+                                                <img src="{{ asset('image/neteller.jpg') }}" class="img-responsive" alt="Project" style="padding-top:6.05px; padding-bottom: 6.05px">
+                                                <div class="mg-thumb-options"></div>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
+                                {{-- <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
                                     <a href="#openTetherForm" class="modal-with-form">
                                         <div class="thumbnail">
                                             <div class="thumb-preview">
@@ -193,8 +203,8 @@
 											</footer>
 										</section>
 									</div>
-                                </div>
-                                <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
+                                </div> --}}
+                                {{-- <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
                                     <a href="#openBitCoinForm" class="modal-with-form">
                                         <div class="thumbnail">
                                             <div class="thumb-preview">
@@ -266,7 +276,7 @@
 											</footer>
 										</section>
 									</div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -280,6 +290,6 @@
 </section>
 @endsection
 @section('js')
-    <script src="{{ asset('js/magnific-popup.js') }}"></script>
-    <script src="{{ asset('js/examples.modals.js') }}"></script>
+    {{-- <script src="{{ asset('js/magnific-popup.js') }}"></script>
+    <script src="{{ asset('js/examples.modals.js') }}"></script> --}}
 @endsection
