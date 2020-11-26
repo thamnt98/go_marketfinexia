@@ -2,7 +2,7 @@
 @section('css')
 @endsection
     <header class="page-header">
-        <h2>Withdraw Funds</h2>
+        <h2>Withdrawal Funds</h2>
         <div class="right-wrapper pull-right">
             <ol class="breadcrumbs">
                 <li>
@@ -11,7 +11,7 @@
                     </a>
                 </li>
                 <li><span>Deposit & Withdrawal</span></li>
-                <li><span>Withdraw Funds</span></li>
+                <li><span>Withdrawal Funds</span></li>
             </ol>
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
         </div>
@@ -25,7 +25,7 @@
                     <a href="#" class="fa fa-caret-down"></a>
                 </div>
 
-                <h2 class="panel-title">Withdraw Funds</h2>
+                <h2 class="panel-title">Withdrawal Funds</h2>
             </header>
             <div class="panel-body">
                 <form class="form-horizontal form-bordered" method="get">
@@ -169,7 +169,7 @@
                                     <div class="col-md-1"></div>
                                     <div class="col-md-5"></div>
                                     <div class="form-group col-md-5">
-                                        <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">WithDraw</button>
+                                        <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">WithDrawal</button>
                                     </div>
                                     <div class="col-md-1"></div>
                                 </div>
