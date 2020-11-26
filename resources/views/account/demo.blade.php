@@ -1,4 +1,4 @@
-@extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
+@extends('layouts.simplepage')
 @section('css')
 @endsection
     <header class="page-header">
