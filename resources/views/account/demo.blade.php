@@ -67,7 +67,6 @@
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
                             <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Open account</button>
-                            
                         </div>
                     </div>
                 </form>

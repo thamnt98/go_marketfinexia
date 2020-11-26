@@ -34,7 +34,9 @@ Route::group([
         'namespace' => 'Account'
     ], function () {
         Route::get('/open-trading-account', 'LiveAccountController@main')->name('account.live');
-        Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
+        // Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
         Route::get('/open-ib-account', 'IBAccountController@main')->name('account.ib');
+        Route::get('/deposit-funds', 'DepositFundsController@main')->name('deposit.funds');
+        Route::get('/withdraw-funds', 'WithDrawFundsController@main')->name('withdraw.funds');
     });
 });

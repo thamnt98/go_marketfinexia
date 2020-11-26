@@ -662,7 +662,7 @@ a:active {
 	}
 
 	html.fixed .inner-body {
-		margin-left: 300px;
+		/* margin-left: 300px; */
 		border-top: 113px solid transparent;
 		margin-top: -110px;
 		min-height: 100vh;
@@ -8637,7 +8637,7 @@ html.dark .toggle > label {
 	background: transparent;
 	padding: 0;
 	text-align: left;
-	max-width: 600px;
+	max-width: 800px;
 	margin: 40px auto;
 	position: relative;
 }

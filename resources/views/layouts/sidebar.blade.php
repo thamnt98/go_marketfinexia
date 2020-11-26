@@ -31,11 +31,11 @@
                                         Live Account
                                     </a>
                                 </li>
-                                <li class="level-2" data-toggle="demo">
+                                {{-- <li class="level-2" data-toggle="demo">
                                     <a href="{{ route('account.demo') }}">
                                         Demo Account
                                     </a>
-                                </li>
+                                </li> --}}
                                 <li class="level-2" data-toggle="ib">
                                     <a href="{{ route('account.ib') }}">
                                          IB Account
@@ -50,12 +50,12 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li class="level-2" data-toggle="deposit">
-                                    <a href="#">
+                                    <a href="{{ route('deposit.funds') }}">
                                          Deposit Funds
                                     </a>
                                 </li>
                                 <li class="level-2" data-toggle="withdraw">
-                                    <a href="#">
+                                    <a href="{{ route('withdraw.funds') }}">
                                          Withdraw Funds
                                     </a>
                                 </li>
