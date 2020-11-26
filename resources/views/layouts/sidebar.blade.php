@@ -92,8 +92,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a>
+                        <li class="nav-parent level-1" data-toggle="password">
+                            <a href="{{ route('account.changepassword') }}">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span>Change MT Passworrd</span>
                             </a>
@@ -101,8 +101,6 @@
                     </ul>
                 </nav>
             </div>
-    
         </div>
-    
     </aside>
     <!-- end: sidebar -->
