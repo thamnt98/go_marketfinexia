@@ -94,7 +94,7 @@
                 <ul class="list-unstyled">
                     <li class="divider"></li>
                     <li>
-                        <a role="menuitem" tabindex="-1" href="#"><i class="fa fa-user"></i> My Profile</a>
+                    <a role="menuitem" tabindex="-1" href="{{ route('account.detail') }}"><i class="fa fa-user"></i> My Profile</a>
                     </li>
                     <li>
                     <a role="menuitem" tabindex="-1" href="{{ route('logout') }}"><i class="fa fa-power-off"></i> Logout</a>

@@ -35,6 +35,7 @@ Route::group([
         // Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
         Route::get('/open-ib-account/{type}', 'IBAccountController@main')->name('account.ib');
         Route::get('/change-mt-password', 'MTPasswordController@main')->name('account.changepassword');
+        Route::get('/my-profile', 'DetailController@main')->name('account.detail');
     });
     Route::group([
         'namespace' => 'DepositAndWithDraw'

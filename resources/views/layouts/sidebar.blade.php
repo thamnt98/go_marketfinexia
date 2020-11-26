@@ -56,7 +56,7 @@
                                 </li>
                                 <li class="level-2" data-toggle="withdraw">
                                     <a href="{{ route('withdraw.funds') }}">
-                                         Withdraw Funds
+                                         Withdrawal Funds
                                     </a>
                                 </li>
                                 <li class="level-2" data-toggle="transfer">
