@@ -57,7 +57,7 @@
                             <button type="submit" class="btn btn-primary btn-block"><b>LOGIN</b></button>
                         </div>
                     </div>
-                    <div class="login-method row">
+                    {{-- <div class="login-method row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <hr class="hr-text" data-content="Or login with">
@@ -74,7 +74,7 @@
                             </a>
                         </div>
                         <div class="col-md-2"></div>
-                    </div>
+                    </div> --}}
                     <div class="form-group row" style="text-align: center">
                         <div class="col-md-2"></div>
                         <div class="col-md-8" style="margin-top:16px">
