@@ -2,7 +2,7 @@
 @section('css')
 @endsection
     <header class="page-header">
-        <h2>Change MT Password</h2>
+        @include('layouts.menutop')  
         <div class="right-wrapper pull-right">
             <ol class="breadcrumbs">
                 <li>

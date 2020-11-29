@@ -10,8 +10,7 @@
                     <i class="fa fa-home"></i>
                 </a>
             </li>
-            <li><span>Account</span></li>
-            <li><span>Live</span></li>
+            <li><span>Support</span></li>
         </ol>
         <a class="sidebar-right-toggle" data-open="sidebar-right"></a>
     </div>
@@ -25,48 +24,31 @@
                     <a href="#" class="fa fa-caret-down"></a>
                 </div>
 
-                <h2 class="panel-title">Open Trading Account</h2>
+                <h2 class="panel-title">Support</h2>
             </header>
             <div class="panel-body">
                 <form class="form-horizontal form-bordered" method="get">
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputSuccess"><b>Type</b></label>
+                        <label class="col-md-3 control-label" for="inputSuccess"><b>I have a question</b></label>
                         <div class="col-md-6">
                             <select class="form-control">
                                 <option>Select...</option>
-                                <option>Standard</option>
+                                <option>I have a technical question about this website</option>
+                                <option>I have a technical question about MT4</option>
+                                <option>I have a financial question</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="inputSuccess"><b>Leverage</b></label>
+                        <label class="col-md-3 control-label" for="inputSuccess"><b>Question</b></label>
                         <div class="col-md-6">
-                            <select class="form-control">
-                                <option>Select...</option>
-                                <option>1:1</option>
-                                <option>1:50</option>
-                                <option>1:100</option>
-                                <option>1:200</option>
-                                <option>1:300</option>
-                                <option>1:500</option>
-                            </select>
+                            <textarea class="form-control" rows="2" placeholder="Type your describe"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    <b>I agree to the </b><a href="#"><b>Terms & Conditions</b></a>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6">
-                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Open account</button>
+                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>

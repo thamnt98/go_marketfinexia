@@ -14,7 +14,7 @@
             <div class="nano-content">
                 <nav id="menu" class="nav-main" role="navigation">
                     <ul class="nav nav-main">
-                        <li>
+                        <li class="level-1" data-toggle="dashboard">
                             <a href="{{ route('home') }}">
                                 <i class="fa fa-home" aria-hidden="true"></i>
                                 <span>Dashboard</span>
@@ -92,7 +92,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-parent level-1" data-toggle="password">
+                        <li class="level-1" data-toggle="password">
                             <a href="{{ route('account.changepassword') }}">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span>Change MT Passworrd</span>

@@ -1,8 +1,8 @@
 @extends('layouts.simplepage')
 @section('css')
 @endsection
+@inlude('layouts.menutop')
     <header class="page-header">
-        <h2>Demo Account</h2>
         <div class="right-wrapper pull-right">
             <ol class="breadcrumbs">
                 <li>

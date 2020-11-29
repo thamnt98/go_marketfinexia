@@ -2,9 +2,9 @@
 @section('css')
 {{-- <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"> --}}
 @endsection
-    <header class="page-header">
-        <h2>Deposits</h2>
-    </header>
+<header class="page-header">
+    @include('layouts.menutop')
+</header>
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -28,7 +28,7 @@
                                     <a href="https://apivnd.vifaotc.com/testpay?price=10000" target="_blank">
                                         <div class="thumbnail">
                                             <div class="thumb-preview">
-                                                <img src="{{ asset('image/vifapay.jpg') }}" class="img-responsive" alt="Project" style="padding-top:27.98px; padding-bottom: 27.98px">
+                                                <img src="{{ asset('image/vifapay.jpg') }}" class="img-responsive" alt="Project" style="padding-top:23.13px; padding-bottom: 23.13px">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>

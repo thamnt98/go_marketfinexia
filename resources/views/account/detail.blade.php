@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
 <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
 @endsection
+@include('layouts.menutop')  
 <header class="page-header">
-    <h2><b>Edit your info</b></h2>
     <div class="right-wrapper pull-right">
         <ol class="breadcrumbs">
             <li>

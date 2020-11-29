@@ -2,6 +2,9 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
 @endsection
+<header class="page-header">
+    @include('layouts.menutop')
+</header>
 @section('content')
 <div class="row">
     <div class="col-lg-12">
@@ -53,7 +56,7 @@
         © 2020 Copyright GemiFx Inc. 2010-2020 All rights reserved. Various trademarks held by their respective owners. One Financial Center, Suite 1000, Boston, MA, 02111, United States
         <input type="hidden" class="level1-toggle" value="account"/></p>
 </div>
-<input type="hidden" class="level2-toggle" value="demo"/>
+<input type="hidden" class="level1-toggle" value="dashboard"/>
 </section>
 @endsection
 @section('js')

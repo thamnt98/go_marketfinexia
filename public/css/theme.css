@@ -2497,6 +2497,7 @@ ul.nav-main li .nav-children .nav-children .nav-children li a {
 	font-size: 1.4rem;
 	margin: 0 10px;
 	vertical-align: middle;
+	color:#0088cc;
 }
 
 .page-header .breadcrumbs li:last-child:after {
@@ -2514,7 +2515,7 @@ ul.nav-main li .nav-children .nav-children .nav-children li a {
 
 .page-header .breadcrumbs a,
 .page-header .breadcrumbs span {
-	color: #c3c3c3;
+	color:#0088cc;
 	display: inline-block;
 	font-size: 14px;
 	font-size: 1.4rem;

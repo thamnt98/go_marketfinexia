@@ -910,3 +910,14 @@ html.dark .wizard-progress .wizard-steps li.active a span {
 .liquid-meter-wrapper .liquid-meter-selector a.active {
 	color: #0088cc;
 }
+.document .box-item {
+	width: 220px;
+	border: 2px solid #b0b5c3;  
+	height: 100px;
+	text-align: center;
+	padding:13px;
+	margin:30px;
+  }
+  .document a{
+	  text-decoration: none;
+  }
