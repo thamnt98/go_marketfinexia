@@ -13,7 +13,7 @@ class UploadFileController extends Controller
 {
     public function main(Request $request)
     {
-        $files = $request->file();
+        $files = $request->except(['_token']);
         $validate = $this->validateData($files);
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate->errors())->withInput();
@@ -27,6 +27,7 @@ class UploadFileController extends Controller
         if (isset($files['addtional_file'])) {
             $files['addtional_file'] = $this->uploadFile($files['addtional_file']);
         }
+        unset($files['copy_of_id_value']);
         $uploaded = User::where('id', Auth::user()->id)->update($files);
         if ($uploaded) {
             return redirect()->back()->with('success', 'You updated your image successfully');
@@ -40,7 +41,8 @@ class UploadFileController extends Controller
         return Validator::make(
             $data,
             [
-                'copy_of_id' => 'bail|required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'copy_of_id_value' => 'required',
+                'copy_of_id' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'addtional_file' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'proof_of_address' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]

@@ -138,9 +138,10 @@
                                     <td><b>Copy Of Id</b></td>
                                     <td></td>
                                     <td>-</td>
-                                    <td><img src="{{$user->copy_of_id}}" style="height:100px"></td>
+                                    <td>@if($user->copy_of_id)<img src="{{$user->copy_of_id}}" style="height:100px">@endif</td>
                                     <td>
                                         <input  type="file" name="copy_of_id">
+                                        <input type="hidden" name="copy_of_id_value" value="{{old('copy_of_id', $user->copy_of_id)}}">
                                         @if($errors->has('copy_of_id'))
                                             <span class="text-danger text-md-left" >{{ $errors->first('copy_of_id') }}</span>
                                         @endif
@@ -150,7 +151,7 @@
                                     <td><b>Proof Of Address</b></td>
                                     <td></td>
                                     <td>-</td>
-                                    <td><img src="{{$user->proof_of_address}}" style="height:100px"></td>
+                                    <td>@if($user->proof_of_address)<img src="{{$user->proof_of_address}}" style="height:100px">@endif</td>
                                     <td>
                                         <input type="file" name="proof_of_address">
                                         @if($errors->has('proof_of_address'))
@@ -162,7 +163,7 @@
                                     <td><b>New Additional File</b></td>
                                     <td></td>
                                     <td>-</td>
-                                    <td><img src="{{$user->addtional_file}}" style="height:100px"></td>
+                                    <td>@if($user->addtional_file)<img src="{{$user->addtional_file}}" style="height:100px">@endif</td>
                                     <td>
                                         <input  type="file" name="addtional_file">
                                         @if($errors->has('addtional_file'))
