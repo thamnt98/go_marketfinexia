@@ -140,8 +140,8 @@
                                     <td>-</td>
                                     <td>@if($user->copy_of_id)<img src="{{$user->copy_of_id}}" style="height:100px">@endif</td>
                                     <td>
-                                        <input  type="file" name="copy_of_id">
-                                        <input type="hidden" name="copy_of_id_value" value="{{old('copy_of_id', $user->copy_of_id)}}">
+                                        <input  type="file" name="copy_of_id" id="copy-of-id">
+                                        <input type="hidden" name="copy_of_id_value" value="{{old('copy_of_id', $user->copy_of_id)}}" id="copy-of-id-value">
                                         @if($errors->has('copy_of_id'))
                                             <span class="text-danger text-md-left" >{{ $errors->first('copy_of_id') }}</span>
                                         @endif
@@ -231,6 +231,9 @@
 <script>
     var input = document.querySelector("#phone");
     window.intlTelInput(input, {
+    })
+    $('#copy-of-id').on('change', function(){
+        $('#copy-of-id-value').val($(this).val());
     })
 </script>
 @endsection
