@@ -232,7 +232,7 @@
     var input = document.querySelector("#phone");
     window.intlTelInput(input, {
     })
-    $('#copy-of-id').on('change', function(){
+    $(document).on('change','#copy-of-id', function(){
         $('#copy-of-id-value').val($(this).val());
     })
 </script>
