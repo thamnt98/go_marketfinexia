@@ -6,7 +6,7 @@
             </a>
         </li>
         <li style="float: left;">
-            <a href="{{ route('download') }}">
+            <a href="{{ asset('file/cawadainvestment4setup.exe.zip') }}">
                 <span>Download</span>
             </a>
         </li>

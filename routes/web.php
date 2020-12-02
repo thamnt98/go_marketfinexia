@@ -28,7 +28,6 @@ Route::group([
     'prefix' => 'trader'
 ], function () {
     Route::get('', 'HomeController@main')->name('home');
-    Route::get('/download', 'DownloadController@main')->name('download');
     Route::get('/support', 'SupportController@main')->name('support');
     Route::group([
         'namespace' => 'Account'

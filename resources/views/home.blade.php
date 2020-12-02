@@ -1,9 +1,9 @@
-@extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
+@extends('layouts.simplepage')
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
 @endsection
 <header class="page-header">
-    @include('layouts.menutop')
+    @include('layouts.menutop')  
 </header>
 @section('content')
 <div class="row">
