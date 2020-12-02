@@ -73,13 +73,14 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-3">
-                            <select name="country" id="country"  class="form-control" name="country" >
-                                <option value="vn">Viet Nam</option>
-                                <option value="uk">United Kingdom</option>
-                                <option value="us">United States</option>
-                                <option value="th">Thailand</option>  
-                                <option value="ch">China</option>
-                                <option value="va">Vanuatu</option>
+                            <select name="country" id="country" class="form-control">
+                                @foreach(config('country') as $key=> $country)
+                                    @if(old('country') == $key)
+                                        <option value="{{$key}}" selected>{{$country}}</option>
+                                    @else
+                                        <option value="{{$key}}">{{$country}}</option>
+                                    @endif
+                                @endforeach
                             </select>
                             @if($errors->has('country'))
                                 <span class="text-danger text-md-left" >{{ $errors->first('country') }}</span>
