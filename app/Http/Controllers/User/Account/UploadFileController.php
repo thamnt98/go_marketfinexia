@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User\Account;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -13,26 +14,30 @@ class UploadFileController extends Controller
 {
     public function main(Request $request)
     {
-        $files = $request->except(['_token']);
-        $validate = $this->validateData($files);
-        if ($validate->fails()) {
-            return redirect()->back()->withErrors($validate->errors())->withInput();
-        }
-        if (isset($files['copy_of_id'])) {
-            $files['copy_of_id'] = $this->uploadFile($files['copy_of_id']);
-        }
-        if (isset($files['proof_of_address'])) {
-            $files['proof_of_address'] = $this->uploadFile($files['proof_of_address']);
-        }
-        if (isset($files['addtional_file'])) {
-            $files['addtional_file'] = $this->uploadFile($files['addtional_file']);
-        }
-        unset($files['copy_of_id_value']);
-        $uploaded = User::where('id', Auth::user()->id)->update($files);
-        if ($uploaded) {
-            return redirect()->back()->with('success', 'You updated your image successfully');
-        } else {
-            return redirect()->back()->with('error', 'You updated your image fail');
+        try {
+            $files = $request->except(['_token']);
+            $validate = $this->validateData($files);
+            if ($validate->fails()) {
+                return redirect()->back()->withErrors($validate->errors())->withInput();
+            }
+            if (isset($files['copy_of_id'])) {
+                $files['copy_of_id'] = $this->uploadFile($files['copy_of_id']);
+            }
+            if (isset($files['proof_of_address'])) {
+                $files['proof_of_address'] = $this->uploadFile($files['proof_of_address']);
+            }
+            if (isset($files['addtional_file'])) {
+                $files['addtional_file'] = $this->uploadFile($files['addtional_file']);
+            }
+            unset($files['copy_of_id_value']);
+            $uploaded = User::where('id', Auth::user()->id)->update($files);
+            if ($uploaded) {
+                return redirect()->back()->with('success', 'You updated your image successfully');
+            } else {
+                return redirect()->back()->with('error', 'You updated your image fail');
+            }
+        } catch (Exception $e) {
+            dd($e->getMessage());
         }
     }
 
