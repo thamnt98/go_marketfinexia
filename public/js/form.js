@@ -37,7 +37,7 @@ $('.ajax-form').on('submit', function (e) {
                     form.find('.errors .text-danger').remove();
                     form.find('.errors').removeClass('has-error');
                 } else {
-                    window.location = result.url;
+                    window.open(result.url);
                 }
             }
         },
