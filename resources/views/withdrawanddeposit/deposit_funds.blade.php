@@ -1,6 +1,6 @@
 @extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
 @section('css')
-{{-- <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}"> --}}
+<link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
 @endsection
 <header class="page-header">
     @include('layouts.menutop')
@@ -25,14 +25,38 @@
                                     </a>
 								</div>
 								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
-                                    <a href="https://apivnd.vifaotc.com/testpay?price=10000" target="_blank">
+                                    <a href="#openForm" class="modal-with-form">
                                         <div class="thumbnail">
                                             <div class="thumb-preview">
                                                 <img src="{{ asset('image/vifapay.jpg') }}" class="img-responsive" alt="Project" style="padding-top:23.13px; padding-bottom: 23.13px">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>
-                                    </a>
+									</a>
+									<div id="openForm" class="modal-block modal-block-primary mfp-hide">
+										<section class="panel">
+											<div class="panel-body">
+												<form class="ajax-form" class="form-horizontal" method="post" action="{{ route('transfer.vifa') }}" novalidate="novalidate">
+													@csrf
+													<div class="form-group">
+														<label class="col-sm-3 control-label"><b>Amount of money (VND)</b></label>
+														<div class="col-sm-9">
+														<input type="number" name="amount_money"  class="form-control" placeholder="Amount of money" value="{{ old('amount_money') }}"/>
+														<div class="errors errors-amount_money"></div>
+														</div>
+													</div>
+													<br>
+													<div class="form-group">
+														<div class="col-sm-3"></div>
+														<div class="col-sm-9">
+															<button type="submit" class="btn btn-primary">Transfer</button>
+															<button class="btn btn-default modal-dismiss">Cancel</button>
+														</div>
+													</div>
+												</form>
+											</div>
+										</section>
+									</div>
 								</div>
 								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
                                     <a href="#">
@@ -290,6 +314,7 @@
 </section>
 @endsection
 @section('js')
-    {{-- <script src="{{ asset('js/magnific-popup.js') }}"></script>
-    <script src="{{ asset('js/examples.modals.js') }}"></script> --}}
+    <script src="{{ asset('js/magnific-popup.js') }}"></script>
+	<script src="{{ asset('js/examples.modals.js') }}"></script>
+    <script src="{{ asset('js/form.js') }}"></script>
 @endsection

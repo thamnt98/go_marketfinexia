@@ -39,6 +39,7 @@ Route::group([
         Route::get('/my-profile', 'DetailController@main')->name('account.detail');
         Route::post('/my-profile', 'UpdateController@main')->name('account.update');
         Route::post('/my-profile/upload', 'UploadFileController@main')->name('account.upload');
+        Route::post('/transfer/vifa', 'TransferByVifaController@main')->name('transfer.vifa');
     });
     Route::group([
         'namespace' => 'DepositAndWithDraw'
