@@ -31,6 +31,12 @@ class TransferByVifaController extends Controller
             $isValid = $isValid->errors();
         } else {
             $user = Auth::user();
+            $order = Order::create(
+                [
+                    'user_id' => $user->id,
+                    'amount_money' => $price,
+                ]
+            );
             $serverUrl = config('vifa.server_url');
             $appId = config('vifa.app_id');
             $APPPrivateKEY  = config('vifa.app_private_key');
@@ -40,13 +46,7 @@ class TransferByVifaController extends Controller
             $wapObj->userName = $user->full_name;
             $wapObj->userId = $user->id;
             $wapObj->price = $price;
-            $order = Order::create(
-                [
-                    'user_id' => $user->id,
-                    'amount_money' => $price,
-                ]
-                );
-            $wapObj->tradeNo = $order->id ;
+            $wapObj->tradeNo = $order->id;
             $request = new TigerpayTradeWapReq($wapObj);
             $url = $client->sdkExecute($request);
         }
@@ -65,7 +65,7 @@ class TransferByVifaController extends Controller
         return Validator::make(
             $data,
             [
-                'amount_money' => 'bail|required|numeric|min:1'
+                'amount_money' => 'bail|required|numeric|min:10000'
             ]
         );
     }
