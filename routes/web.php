@@ -19,6 +19,7 @@ Route::get('logout', function() {
     return redirect('/login');
 });
 Auth::routes();
+Route::get('', 'User\HomeController@main')->middleware('auth')->name('home');
 Route::post('/register', 'Auth\RegisterController@main')->name('register');
 Route::get('/password/reset', 'ResetPasswordController@main')->name('password.reset');
 Route::post('/password/reset', 'UpdatePasswordController@main')->name('password.update');
@@ -27,7 +28,6 @@ Route::group([
     'middleware' => 'auth',
     'prefix' => 'trader'
 ], function () {
-    Route::get('', 'HomeController@main')->name('home');
     Route::get('/support', 'SupportController@main')->name('support');
     Route::group([
         'namespace' => 'Account'
