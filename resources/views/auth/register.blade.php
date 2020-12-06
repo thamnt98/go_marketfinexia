@@ -99,7 +99,7 @@
                         <div class="col-md-8 form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} required>
                             <label class="form-check-label" for="remember">
-                                I have read and consent to my data being used in accordance with the Privacy Policy.
+                                I have read and consent to my data being used in accordance with the <a href="https://gemifx.com/index.php/privacy-statement/" target="_blank" style="text-decoration: none;" > Privacy Policy.</a>
                             </label>
                         </div>
                     </div>
