@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\User\Account;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Tarikhagustia\LaravelMt5\Entities\User;
 use Tarikhagustia\LaravelMt5\LaravelMt5;
 

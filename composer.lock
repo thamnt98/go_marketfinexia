@@ -4770,10 +4770,6 @@
                 "pop3",
                 "webklex"
             ],
-            "support": {
-                "issues": "https://github.com/Webklex/laravel-imap/issues",
-                "source": "https://github.com/Webklex/laravel-imap/tree/2.2.0"
-            },
             "time": "2020-10-16T14:29:33+00:00"
         },
         {
@@ -4832,10 +4828,6 @@
                 "pop3",
                 "webklex"
             ],
-            "support": {
-                "issues": "https://github.com/Webklex/php-imap/issues",
-                "source": "https://github.com/Webklex/php-imap/tree/2.2.3"
-            },
             "time": "2020-11-02T12:43:21+00:00"
         }
     ],
@@ -6898,5 +6890,5 @@
         "php": "^7.2.5|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
