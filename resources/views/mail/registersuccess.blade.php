@@ -18,7 +18,7 @@
         <br>
         <p>Cảm ơn bạn đã đăng ký tài khoản của Gemifx</p>
         <p>Chỉ cần nhấp chuột vào liên kết bên dưới để tiếp tục sử dụng dịch vụ :</p>
-        <a href="https://accounts.gemifx.com/password/reset?token=b32385ee7d2c58a4e798ec3265b601270a3fd54f4dc13b56b9731c1fa45b4621&email=thamnt090498%40gmail.com">https://accounts.gemifx.com/password/reset?token=b32385ee7d2c58a4e798ec3265b601270a3fd54f4dc13b56b9731c1fa45b4621&email=thamnt090498%40gmail.com</a>
+        <a href="{{ $url }}">{{ $url }}</a>
         <br>
         <p>Trân trọng,</p>
         <p>Đội ngũ GemiFx</p>

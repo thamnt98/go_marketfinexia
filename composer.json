@@ -16,7 +16,6 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "2.4",
         "prettus/l5-repository": "^2.7",
-        "tarikhagustia/laravel-mt5": "^1.2",
         "webklex/laravel-imap": "^2.2"
     },
     "require-dev": {
