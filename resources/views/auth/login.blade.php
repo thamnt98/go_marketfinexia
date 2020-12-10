@@ -18,7 +18,7 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Username">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
                             <i class="fa fa-user fa-lg"></i>
                             @error('email')
                             <span class="invalid-feedback">

@@ -39,7 +39,7 @@ class RegisterController extends Controller
             $email = $user->email;
             $token = $this->createToken($email);
             Mail::to($email)->send(new UserRegisteredSuccess($user, $token));
-            return back()->with('success', "We have sent you an email to setting password. Please check your inbox");
+            return back()->with('success', "We have sent you an email to setting password. Please check your inbox or spam");
         } else {
             return back()->with('error', "Something went wrong");
         }
