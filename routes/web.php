@@ -14,11 +14,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.page');
+Route::get('logout', function() {
+    Auth::logout();
+    return redirect('/login');
 });
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('', 'User\HomeController@main')->middleware('auth')->name('home');
 Route::post('/register', 'Auth\RegisterController@main')->name('register');
+Route::get('/password/reset', 'ResetPasswordController@main')->name('password.reset');
+Route::post('/password/reset', 'UpdatePasswordController@main')->name('password.update');
+Route::group([
+    'namespace' => 'User',
+    'middleware' => 'auth',
+    'prefix' => 'trader'
+], function () {
+    Route::get('/support', 'SupportController@main')->name('support');
+    Route::group([
+        'namespace' => 'Account'
+    ], function () {
+        Route::get('/open-trading-account', 'LiveAccountController@main')->name('account.live');
+        // Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
+        Route::get('/open-ib-account/{type}', 'IBAccountController@main')->name('account.ib');
+        Route::get('/change-mt-password', 'MTPasswordController@main')->name('account.changepassword');
+        Route::get('/my-profile', 'DetailController@main')->name('account.detail');
+        Route::post('/my-profile', 'UpdateController@main')->name('account.update');
+        Route::post('/my-profile/upload', 'UploadFileController@main')->name('account.upload');
+        Route::post('/transfer/vifa', 'TransferByVifaController@main')->name('transfer.vifa');
+    });
+    Route::group([
+        'namespace' => 'DepositAndWithDraw'
+    ], function () {
+        Route::get('/deposit-funds', 'DepositFundsController@main')->name('deposit.funds');
+        Route::get('/withdraw-funds', 'WithDrawFundsController@main')->name('withdraw.funds');
+    });
+});

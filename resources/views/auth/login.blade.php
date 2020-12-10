@@ -7,7 +7,7 @@
         <div class="row justify-content-center card">
             <div class="card-body">
                 <div class="logo" style="text-align: center !important;">
-                    <a href="#">
+                    <a href="https://gemifx.com/">
                         <img src="{{ asset('image/logo.png')}}" class="img-fluid" style="width:120px; margin:40px">
                     </a>
                 </div>
@@ -18,10 +18,10 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Username">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
                             <i class="fa fa-user fa-lg"></i>
                             @error('email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
@@ -30,10 +30,10 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <input id="password" type="password" placeholder="Password" class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                            <input id="password" type="password" placeholder="Password" class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="password">
                             <i class="fa fa-lock fa-lg"></i>
                             @error('password')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
@@ -47,7 +47,7 @@
                                 <label class="form-check-label" for="remember">
                                     {{ __('Remember Me') }}
                                 </label>
-                                <a class="btn btn-link" href="{{ route('password.request') }}" style="float: right; padding-top:0px">Forgot password?</a>
+                                <a class="btn btn-link" href="#" style="float: right; padding-top:0px">Forgot password?</a>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@
                             <button type="submit" class="btn btn-primary btn-block"><b>LOGIN</b></button>
                         </div>
                     </div>
-                    <div class="login-method row">
+                    {{-- <div class="login-method row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <hr class="hr-text" data-content="Or login with">
@@ -74,7 +74,7 @@
                             </a>
                         </div>
                         <div class="col-md-2"></div>
-                    </div>
+                    </div> --}}
                     <div class="form-group row" style="text-align: center">
                         <div class="col-md-2"></div>
                         <div class="col-md-8" style="margin-top:16px">
