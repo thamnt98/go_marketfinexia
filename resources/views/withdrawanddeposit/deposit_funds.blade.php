@@ -15,7 +15,7 @@
                         <div class="inner-body mg-main">
                             <div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
                                 <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
-                                    <a href="#bepay" class="modal-with-form">
+                                    <a href="{{ route('deposit.bepay') }}">
                                         <div class="thumbnail">
                                             <div class="thumb-preview text-center">
                                                 <img src="{{ asset('image/bepay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px; width:110px">
@@ -23,48 +23,6 @@
                                             </div>
                                         </div>
 									</a>
-									<div id="bepay" class="modal-block modal-block-primary mfp-hide">
-										<section class="panel">
-											<div class="panel-body">
-												<form class="ajax-form" class="form-horizontal" method="post" action="{{ route('transfer.vifa') }}" novalidate="novalidate">
-													@csrf
-													<div class="form-group">
-														<div class="row">
-															<div class="col-lg-1"></div>
-															<div class="col-lg-10">
-																<label class="col-sm-3 control-label"><b>Số tiền nạp (VND)</b></label>
-																<input class="form-control">
-															</div>
-															<div class="col-lg-1"></div>
-														</div>
-													</div>
-													<br>
-													<div class="form-group">
-														<div class="row">
-															<div class="col-lg-1"></div>
-															<div class="col-lg-10">
-																<label class="control-label"><b>Chọn ngân hàng</b></label>
-																<div class="row" style="margin-top: 20px">
-																	@foreach ($banks as $bank)
-																		<div class="col-lg-3">
-																			<img src="{{ $bank->bank_logo }}" class="img-thumbnail" style="height: 100px;margin-bottom:20px">
-																		</div>
-																	@endforeach
-																</div>
-															</div>
-															<div class="col-lg-1"></div>
-														</div>
-													</div>
-													<div class="form-group">
-														<div class="col-sm-1"></div>
-														<div class="col-sm-10 text-center">
-															<button type="submit" class="btn btn-primary">Chuyển  khoản qua internet banking</button>
-														</div>
-													</div>
-												</form>
-											</div>
-										</section>
-									</div>
 								</div>
 								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
                                     <a href="#vifa" class="modal-with-form">

@@ -46,5 +46,6 @@ Route::group([
     ], function () {
         Route::get('/deposit-funds', 'DepositFundsController@main')->name('deposit.funds');
         Route::get('/withdraw-funds', 'WithDrawFundsController@main')->name('withdraw.funds');
+        Route::get('/bepay', 'GetFormBepayController@main')->name('deposit.bepay');
     });
 });
