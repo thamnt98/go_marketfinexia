@@ -17,7 +17,8 @@ class Order extends Model
         'bank_code',
         'sign',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'type'
     ];
 
 }

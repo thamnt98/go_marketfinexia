@@ -23,6 +23,7 @@ class BepayTransferController extends Controller
         $user = Auth::user();
         $data['user_id'] = $user->id;
         $data['status'] = 2;
+        $data['type'] = config('bepay.type');
         $data['merchant_id'] = config('bepay.merchant_id');
         $data['payment_method'] = 1;
         $data['merchant_txn'] = $data['order_number'] = Str::random(6);
