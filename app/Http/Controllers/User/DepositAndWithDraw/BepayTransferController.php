@@ -28,7 +28,7 @@ class BepayTransferController extends Controller
         $data['payment_method'] = 1;
         $data['merchant_txn'] = $data['order_number'] = Str::random(6);
         $data['merchant_customer'] =   str_replace(' ', '_', $user->full_name);
-        $data['ur_success'] = route('deposit.bepay');
+        $data['url_success'] = route('deposit.bepay');
         $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('bepay.secret_key'));
         $data['amount'] = $data['amount_money'];
         Order::create($data);
