@@ -1,0 +1,9 @@
+  label:hover {
+    filter: brightness(0.5);
+  }
+  input[type="radio"]:checked + label {
+    filter: drop-shadow(2px 4px 6px black);
+  }
+.bepay input[type="radio"]{
+    display: none;
+}

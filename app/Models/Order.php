@@ -13,6 +13,9 @@ class Order extends Model
         'user_id',
         'amount_money',
         'status',
+        'order_number',
+        'bank_code',
+        'sign',
         'created_at',
         'updated_at'
     ];
