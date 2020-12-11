@@ -55,11 +55,12 @@
 															<div class="col-lg-1"></div>
 														</div>
 													</div>
-													<div class="col-sm-1"></div>
-													<div class="col-sm-10 text-center">
-														<button type="submit" class="btn btn-primary">Chuyển  khoản qua internet banking</button>
+													<div class="form-group">
+														<div class="col-sm-1"></div>
+														<div class="col-sm-10 text-center">
+															<button type="submit" class="btn btn-primary">Chuyển  khoản qua internet banking</button>
+														</div>
 													</div>
-												</div>
 												</form>
 											</div>
 										</section>
