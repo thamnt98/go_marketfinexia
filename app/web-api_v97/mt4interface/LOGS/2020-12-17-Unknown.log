@@ -558,3 +558,31 @@ INFO_LVL|2020-12-17_10:45:51.578|000029D0| server ip: 127.0.0.1
 INFO_LVL|2020-12-17_10:45:51.578|000029D0| server port: 8000
 INFO_LVL|2020-12-17_10:45:51.991|000029FC| pumping mode started
 INFO_LVL|2020-12-17_10:45:52.000|00002728| on_pump_update_users(3, 0, without data)
+
+
+Restarting...
+Log file created at:     Thu Dec 17 12:38:43 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     4852
+Is service:              0
+
+INFO_LVL|2020-12-17_12:38:43.341|000029C0| Product version: 97
+INFO_LVL|2020-12-17_12:38:43.341|000029C0| t4b_lib version: 134
+INFO_LVL|2020-12-17_12:38:43.341|000029C0| t4b_license version: 106
+INFO_LVL|2020-12-17_12:38:43.511|000029C0| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_12:38:43.581|000029C0| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_12:38:43.765|000029C0| Login finished
+INFO_LVL|2020-12-17_12:38:43.833|000029C0| MT4 connected.
+INFO_LVL|2020-12-17_12:38:44.288|000029C0| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_12:38:44.361|000029C0| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_12:38:44.630|000029C0| Login finished
+INFO_LVL|2020-12-17_12:38:44.702|000029C0| MT4 connected.
+INFO_LVL|2020-12-17_12:38:44.704|0000242C| server started.
+INFO_LVL|2020-12-17_12:38:44.704|0000242C| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_12:38:44.704|0000242C| server port: 8000
+INFO_LVL|2020-12-17_12:38:45.210|00003970| pumping mode started
+INFO_LVL|2020-12-17_12:38:45.215|00002F54| on_pump_update_users(3, 0, without data)
