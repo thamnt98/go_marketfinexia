@@ -9,8 +9,8 @@ class LiveAccountController extends Controller
 {
     public function main()
     {
-$socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-        socket_connect($socket, "127.0.0.1", 8000);
+        $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+        socket_connect($socket, "199.188.206.67", 8000);
         $cmd = 'action=closeorder&order=8115832';
         socket_write($socket, $cmd);
         $a = "";
