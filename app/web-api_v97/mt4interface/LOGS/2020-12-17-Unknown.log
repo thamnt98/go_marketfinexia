@@ -1,0 +1,560 @@
+Log file created at:     Thu Dec 17 07:42:04 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     9208
+Is service:              0
+
+INFO_LVL|2020-12-17_07:42:04.466|00001A54| Product version: 97
+INFO_LVL|2020-12-17_07:42:04.466|00001A54| t4b_lib version: 134
+INFO_LVL|2020-12-17_07:42:04.466|00001A54| t4b_license version: 106
+INFO_LVL|2020-12-17_07:42:07.490|00001A54| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_07:42:12.515|00001A54| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_07:42:13.016|00001A54| Login finished
+WARN_LVL|2020-12-17_07:42:13.016|00001A54| MT4 connection failed
+WARN_LVL|2020-12-17_07:42:18.017|00001A54| MT4 connection for pumping failed
+INFO_LVL|2020-12-17_07:46:14.846|00001A54| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_07:46:19.849|00001A54| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_07:46:19.849|00001A54| Login finished
+WARN_LVL|2020-12-17_07:46:19.849|00001A54| MT4 connection failed
+INFO_LVL|2020-12-17_07:46:19.850|00002D88| server started.
+INFO_LVL|2020-12-17_07:46:19.850|00002D88| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_07:46:19.850|00002D88| server port: 4444
+WARN_LVL|2020-12-17_07:46:22.851|00002598| MT4 connection for pumping failed
+WARN_LVL|2020-12-17_07:46:33.860|00002598| MT4 connection for pumping failed
+WARN_LVL|2020-12-17_07:46:44.865|00002598| MT4 connection for pumping failed
+
+
+Restarting...
+Log file created at:     Thu Dec 17 07:46:52 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     1948
+Is service:              0
+
+INFO_LVL|2020-12-17_07:46:52.370|000028A4| Product version: 97
+INFO_LVL|2020-12-17_07:46:52.370|000028A4| t4b_lib version: 134
+INFO_LVL|2020-12-17_07:46:52.370|000028A4| t4b_license version: 106
+INFO_LVL|2020-12-17_07:46:55.155|000028A4| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_07:46:55.221|000028A4| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_07:46:55.470|000028A4| Login finished
+INFO_LVL|2020-12-17_07:46:55.534|000028A4| MT4 connected.
+INFO_LVL|2020-12-17_07:46:57.519|000028A4| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_07:46:57.582|000028A4| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_07:46:57.779|000028A4| Login finished
+INFO_LVL|2020-12-17_07:46:57.842|000028A4| MT4 connected.
+INFO_LVL|2020-12-17_07:46:57.846|00002550| server started.
+INFO_LVL|2020-12-17_07:46:57.846|00002550| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_07:46:57.846|00002550| server port: 8000
+INFO_LVL|2020-12-17_07:46:58.358|00000D1C| pumping mode started
+INFO_LVL|2020-12-17_07:46:58.361|00002838| on_pump_update_users(3, 0, without data)
+
+
+Restarting...
+Log file created at:     Thu Dec 17 15:34:58 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     13576
+Is service:              0
+
+INFO_LVL|2020-12-17_15:34:58.761|00001058| Product version: 97
+INFO_LVL|2020-12-17_15:34:58.761|00001058| t4b_lib version: 134
+INFO_LVL|2020-12-17_15:34:58.762|00001058| t4b_license version: 106
+INFO_LVL|2020-12-17_15:34:58.953|00001058| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:34:59.024|00001058| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:34:59.278|00001058| Login finished
+INFO_LVL|2020-12-17_15:34:59.348|00001058| MT4 connected.
+INFO_LVL|2020-12-17_15:34:59.904|00001058| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:34:59.972|00001058| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:35:00.229|00001058| Login finished
+INFO_LVL|2020-12-17_15:35:00.801|00000D24| pumping mode started
+INFO_LVL|2020-12-17_15:35:12.550|00002608| on_pump_update_users(3, 0, without data)
+INFO_LVL|2020-12-17_15:35:12.550|00000D24| pumping mode stopped 
+INFO_LVL|2020-12-17_15:35:12.611|00001058| MT4 connected.
+INFO_LVL|2020-12-17_15:35:12.612|00000604| server started.
+INFO_LVL|2020-12-17_15:35:12.612|00000604| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_15:35:12.612|00000604| server port: 8000
+INFO_LVL|2020-12-17_15:35:15.158|00003828| pumping mode started
+INFO_LVL|2020-12-17_15:35:15.160|00001184| on_pump_update_users(3, 0, without data)
+INFO_LVL|2020-12-17_15:35:16.981|00002630| client '127.0.0.1:10475' connected
+INFO_LVL|2020-12-17_15:35:16.981|00002630| free mt4 used
+INFO_LVL|2020-12-17_15:35:37.046|00002630| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:35:37.147|00002630| client '127.0.0.1:10475' disconnected.
+
+
+Restarting...
+Log file created at:     Thu Dec 17 15:35:59 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     14472
+Is service:              0
+
+INFO_LVL|2020-12-17_15:35:59.784|00000124| Product version: 97
+INFO_LVL|2020-12-17_15:35:59.785|00000124| t4b_lib version: 134
+INFO_LVL|2020-12-17_15:35:59.785|00000124| t4b_license version: 106
+INFO_LVL|2020-12-17_15:35:59.941|00000124| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:36:00.027|00000124| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:36:00.321|00000124| Login finished
+INFO_LVL|2020-12-17_15:36:00.405|00000124| MT4 connected.
+INFO_LVL|2020-12-17_15:36:00.905|00000124| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:36:00.980|00000124| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:36:01.190|00000124| Login finished
+INFO_LVL|2020-12-17_15:36:01.266|00000124| MT4 connected.
+INFO_LVL|2020-12-17_15:36:01.268|000038FC| server started.
+INFO_LVL|2020-12-17_15:36:01.268|000038FC| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_15:36:01.268|000038FC| server port: 8000
+INFO_LVL|2020-12-17_15:36:01.770|000039F8| pumping mode started
+INFO_LVL|2020-12-17_15:36:01.773|00003A84| on_pump_update_users(3, 0, without data)
+INFO_LVL|2020-12-17_15:36:06.036|00000FE4| client '127.0.0.1:13291' connected
+INFO_LVL|2020-12-17_15:36:06.036|00000FE4| free mt4 used
+INFO_LVL|2020-12-17_15:36:15.933|00000FE4| client '127.0.0.1:13291' >>> action=closeorder&order=8102835
+
+INFO_LVL|2020-12-17_15:36:15.934|00000FE4| Checking connection to MT4
+DEBUG___|2020-12-17_15:36:15.934|00000FE4|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:36:16.008|00000FE4|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:36:16.008|00000FE4| Received request 'action=closeorder' from '127.0.0.1:13291'
+DEBUG___|2020-12-17_15:36:16.009|00000FE4|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:36:16.082|00000FE4|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:36:16.082|00000FE4| <<< result=-2&reason=invalid_hash&request_id=
+INFO_LVL|2020-12-17_15:36:37.078|00000FE4| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:36:37.179|00000FE4| client '127.0.0.1:13291' disconnected.
+INFO_LVL|2020-12-17_15:37:08.092|00003244| client '127.0.0.1:17131' connected
+INFO_LVL|2020-12-17_15:37:08.092|00003244| free mt4 used
+INFO_LVL|2020-12-17_15:37:09.527|00003244| client '127.0.0.1:17131' >>> action=closeorder&order=8102835
+
+INFO_LVL|2020-12-17_15:37:09.527|00003244| Checking connection to MT4
+DEBUG___|2020-12-17_15:37:09.528|00003244|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:37:09.532|00003244|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:37:09.532|00003244| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:37:09.602|00003244| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:37:09.797|00003244| Login finished
+INFO_LVL|2020-12-17_15:37:09.868|00003244| MT4 connected.
+INFO_LVL|2020-12-17_15:37:09.868|00003244| Received request 'action=closeorder' from '127.0.0.1:17131'
+DEBUG___|2020-12-17_15:37:09.869|00003244|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:37:09.941|00003244|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:37:09.942|00003244| <<< result=-2&reason=invalid_hash&request_id=
+INFO_LVL|2020-12-17_15:37:30.063|00003244| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:37:30.164|00003244| client '127.0.0.1:17131' disconnected.
+INFO_LVL|2020-12-17_15:41:32.380|00002028| client '127.0.0.1:26347' connected
+INFO_LVL|2020-12-17_15:41:32.380|00002028| free mt4 used
+INFO_LVL|2020-12-17_15:41:35.557|00002028| client '127.0.0.1:26347' >>> action=closeorder&order=8102835
+
+INFO_LVL|2020-12-17_15:41:35.557|00002028| Checking connection to MT4
+DEBUG___|2020-12-17_15:41:35.559|00002028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:41:35.559|00002028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:41:35.563|00002028| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:41:35.628|00002028| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:41:35.863|00002028| Login finished
+INFO_LVL|2020-12-17_15:41:35.927|00002028| MT4 connected.
+INFO_LVL|2020-12-17_15:41:35.927|00002028| Received request 'action=closeorder' from '127.0.0.1:26347'
+DEBUG___|2020-12-17_15:41:35.928|00002028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:41:35.991|00002028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:41:35.991|00002028| <<< result=-2&reason=invalid_hash&request_id=
+INFO_LVL|2020-12-17_15:41:56.033|00002028| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:41:56.134|00002028| client '127.0.0.1:26347' disconnected.
+INFO_LVL|2020-12-17_15:45:48.387|00001E6C| client '127.0.0.1:38635' connected
+INFO_LVL|2020-12-17_15:45:48.387|00001E6C| free mt4 used
+INFO_LVL|2020-12-17_15:45:50.017|00001E6C| client '127.0.0.1:38635' >>> action=closeorder&order=8921728
+
+INFO_LVL|2020-12-17_15:45:50.017|00001E6C| Checking connection to MT4
+DEBUG___|2020-12-17_15:45:50.018|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:45:50.021|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:45:50.021|00001E6C| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:45:50.086|00001E6C| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:45:50.324|00001E6C| Login finished
+INFO_LVL|2020-12-17_15:45:50.388|00001E6C| MT4 connected.
+INFO_LVL|2020-12-17_15:45:50.389|00001E6C| Received request 'action=closeorder' from '127.0.0.1:38635'
+DEBUG___|2020-12-17_15:45:50.390|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:45:50.455|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:45:50.455|00001E6C| <<< result=-2&reason=invalid_hash&request_id=
+INFO_LVL|2020-12-17_15:45:58.439|00001E6C| client '127.0.0.1:38635' >>> action=closeorder&order=8920071
+
+INFO_LVL|2020-12-17_15:45:58.439|00001E6C| Checking connection to MT4
+DEBUG___|2020-12-17_15:45:58.442|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:45:58.506|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:45:58.506|00001E6C| Received request 'action=closeorder' from '127.0.0.1:38635'
+DEBUG___|2020-12-17_15:45:58.508|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:45:58.572|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:45:58.572|00001E6C| <<< result=-2&reason=invalid_hash&request_id=
+INFO_LVL|2020-12-17_15:46:07.548|00001E6C| client '127.0.0.1:38635' >>> action=closeorder&order=8920071
+
+INFO_LVL|2020-12-17_15:46:07.548|00001E6C| Checking connection to MT4
+DEBUG___|2020-12-17_15:46:07.550|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:46:07.614|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:46:07.614|00001E6C| Received request 'action=closeorder' from '127.0.0.1:38635'
+DEBUG___|2020-12-17_15:46:07.615|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:46:07.680|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:46:07.680|00001E6C| <<< result=-2&reason=invalid_hash&request_id=
+INFO_LVL|2020-12-17_15:46:19.549|00001E6C| client '127.0.0.1:38635' >>> action=closeorder&order=8920069
+
+INFO_LVL|2020-12-17_15:46:19.549|00001E6C| Checking connection to MT4
+DEBUG___|2020-12-17_15:46:19.550|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:46:19.614|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:46:19.614|00001E6C| Received request 'action=closeorder' from '127.0.0.1:38635'
+DEBUG___|2020-12-17_15:46:19.616|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:46:19.679|00001E6C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:46:19.679|00001E6C| <<< result=-2&reason=invalid_hash&request_id=
+INFO_LVL|2020-12-17_15:46:40.097|00001E6C| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:46:40.198|00001E6C| client '127.0.0.1:38635' disconnected.
+INFO_LVL|2020-12-17_15:46:48.857|00001018| client '127.0.0.1:40427' connected
+INFO_LVL|2020-12-17_15:46:48.857|00001018| free mt4 used
+INFO_LVL|2020-12-17_15:46:50.394|00001018| client '127.0.0.1:40427' >>> action=accounthavetraders&login=2131782281
+
+INFO_LVL|2020-12-17_15:46:50.394|00001018| Checking connection to MT4
+DEBUG___|2020-12-17_15:46:50.396|00001018|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:46:50.399|00001018|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:46:50.399|00001018| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:46:50.474|00001018| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:46:50.740|00001018| Login finished
+INFO_LVL|2020-12-17_15:46:50.814|00001018| MT4 connected.
+INFO_LVL|2020-12-17_15:46:50.814|00001018| Received request 'action=accounthavetraders' from '127.0.0.1:40427'
+DEBUG___|2020-12-17_15:46:50.817|00001018|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:46:50.894|00001018|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:46:50.894|00001018| <<< result=-2&reason=invalid_hash&request_id=
+
+
+Restarting...
+Log file created at:     Thu Dec 17 15:49:35 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     8316
+Is service:              0
+
+INFO_LVL|2020-12-17_15:49:35.664|00003A18| Product version: 97
+INFO_LVL|2020-12-17_15:49:35.664|00003A18| t4b_lib version: 134
+INFO_LVL|2020-12-17_15:49:35.664|00003A18| t4b_license version: 106
+INFO_LVL|2020-12-17_15:49:35.821|00003A18| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:49:35.884|00003A18| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:49:36.131|00003A18| Login finished
+INFO_LVL|2020-12-17_15:49:36.192|00003A18| MT4 connected.
+INFO_LVL|2020-12-17_15:49:36.635|00003A18| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:49:36.700|00003A18| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:49:36.948|00003A18| Login finished
+INFO_LVL|2020-12-17_15:49:37.013|00003A18| MT4 connected.
+INFO_LVL|2020-12-17_15:49:37.014|00003808| server started.
+INFO_LVL|2020-12-17_15:49:37.014|00003808| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_15:49:37.014|00003808| server port: 8000
+INFO_LVL|2020-12-17_15:49:37.434|000026BC| pumping mode started
+INFO_LVL|2020-12-17_15:49:37.436|000038F0| on_pump_update_users(3, 0, without data)
+INFO_LVL|2020-12-17_15:49:45.373|00001DA0| client '127.0.0.1:46827' connected
+INFO_LVL|2020-12-17_15:49:45.373|00001DA0| free mt4 used
+INFO_LVL|2020-12-17_15:49:48.553|00001DA0| client '127.0.0.1:46827' >>> action=closeorder&order=892007141
+
+INFO_LVL|2020-12-17_15:49:48.553|00001DA0| Checking connection to MT4
+DEBUG___|2020-12-17_15:49:48.553|00001DA0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:49:48.616|00001DA0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:49:48.617|00001DA0| Received request 'action=closeorder' from '127.0.0.1:46827'
+DEBUG___|2020-12-17_15:49:48.618|00001DA0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:49:48.683|00001DA0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:49:48.816|00001DA0| <<< result=-3&size=0
+&size=9
+892007141&request_id=
+INFO_LVL|2020-12-17_15:50:09.007|00001DA0| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:50:09.108|00001DA0| client '127.0.0.1:46827' disconnected.
+INFO_LVL|2020-12-17_15:50:23.475|000020EC| client '127.0.0.1:48107' connected
+INFO_LVL|2020-12-17_15:50:23.475|000020EC| free mt4 used
+INFO_LVL|2020-12-17_15:50:24.705|000020EC| client '127.0.0.1:48107' >>> action=closeorder&order=8115831
+
+INFO_LVL|2020-12-17_15:50:24.705|000020EC| Checking connection to MT4
+DEBUG___|2020-12-17_15:50:24.706|000020EC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:50:24.707|000020EC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:50:24.710|000020EC| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:50:24.775|000020EC| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:50:25.014|000020EC| Login finished
+INFO_LVL|2020-12-17_15:50:25.079|000020EC| MT4 connected.
+INFO_LVL|2020-12-17_15:50:25.079|000020EC| Received request 'action=closeorder' from '127.0.0.1:48107'
+DEBUG___|2020-12-17_15:50:25.081|000020EC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:50:25.146|000020EC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:50:25.340|000020EC| <<< result=1&size=0
+&request_id=
+INFO_LVL|2020-12-17_15:50:46.074|000020EC| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:50:46.175|000020EC| client '127.0.0.1:48107' disconnected.
+INFO_LVL|2020-12-17_15:50:57.306|00003488| client '127.0.0.1:49131' connected
+INFO_LVL|2020-12-17_15:50:57.307|00003488| free mt4 used
+INFO_LVL|2020-12-17_15:50:59.353|00003488| client '127.0.0.1:49131' >>> action=closeorder&order=8115832
+
+INFO_LVL|2020-12-17_15:50:59.353|00003488| Checking connection to MT4
+DEBUG___|2020-12-17_15:50:59.355|00003488|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:50:59.355|00003488|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:50:59.358|00003488| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:50:59.423|00003488| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:50:59.661|00003488| Login finished
+INFO_LVL|2020-12-17_15:50:59.725|00003488| MT4 connected.
+INFO_LVL|2020-12-17_15:50:59.725|00003488| Received request 'action=closeorder' from '127.0.0.1:49131'
+DEBUG___|2020-12-17_15:50:59.726|00003488|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:50:59.790|00003488|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:50:59.981|00003488| <<< result=1&size=0
+&request_id=
+INFO_LVL|2020-12-17_15:51:20.063|00003488| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:51:20.164|00003488| client '127.0.0.1:49131' disconnected.
+INFO_LVL|2020-12-17_15:51:43.346|00003028| client '127.0.0.1:50155' connected
+INFO_LVL|2020-12-17_15:51:43.346|00003028| free mt4 used
+INFO_LVL|2020-12-17_15:51:44.770|00003028| client '127.0.0.1:50155' >>> action=accounthavetraders&login=2131782281
+
+INFO_LVL|2020-12-17_15:51:44.770|00003028| Checking connection to MT4
+DEBUG___|2020-12-17_15:51:44.771|00003028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:51:44.774|00003028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:51:44.774|00003028| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:51:44.839|00003028| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:51:45.079|00003028| Login finished
+INFO_LVL|2020-12-17_15:51:45.142|00003028| MT4 connected.
+INFO_LVL|2020-12-17_15:51:45.142|00003028| Received request 'action=accounthavetraders' from '127.0.0.1:50155'
+DEBUG___|2020-12-17_15:51:45.143|00003028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:51:45.208|00003028|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:51:45.208|00003028| <<< result=0&reason=invalid action&request_id=
+INFO_LVL|2020-12-17_15:52:06.057|00003028| time out reached (no data transfer in last 20 seconds)
+INFO_LVL|2020-12-17_15:52:06.158|00003028| client '127.0.0.1:50155' disconnected.
+
+
+Restarting...
+Log file created at:     Thu Dec 17 15:55:31 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     13644
+Is service:              0
+
+INFO_LVL|2020-12-17_15:55:31.544|00003584| Product version: 97
+INFO_LVL|2020-12-17_15:55:31.544|00003584| t4b_lib version: 134
+INFO_LVL|2020-12-17_15:55:31.544|00003584| t4b_license version: 106
+INFO_LVL|2020-12-17_15:55:31.699|00003584| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:55:31.785|00003584| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:55:32.069|00003584| Login finished
+INFO_LVL|2020-12-17_15:55:32.154|00003584| MT4 connected.
+INFO_LVL|2020-12-17_15:55:32.671|00003584| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:55:32.742|00003584| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:55:32.995|00003584| Login finished
+INFO_LVL|2020-12-17_15:55:33.066|00003584| MT4 connected.
+INFO_LVL|2020-12-17_15:55:33.067|000026B8| server started.
+INFO_LVL|2020-12-17_15:55:33.067|000026B8| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_15:55:33.067|000026B8| server port: 8000
+INFO_LVL|2020-12-17_15:55:34.003|00002AD0| pumping mode started
+INFO_LVL|2020-12-17_15:55:34.005|00001B40| on_pump_update_users(3, 0, without data)
+INFO_LVL|2020-12-17_15:55:41.526|00001AF0| client '127.0.0.1:58347' connected
+INFO_LVL|2020-12-17_15:55:41.526|00001AF0| free mt4 used
+INFO_LVL|2020-12-17_15:55:45.808|00001AF0| client '127.0.0.1:58347' >>> action=closeorder&order=8115832
+
+INFO_LVL|2020-12-17_15:55:45.808|00001AF0| Checking connection to MT4
+DEBUG___|2020-12-17_15:55:45.808|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:55:45.879|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:55:45.879|00001AF0| Received request 'action=closeorder' from '127.0.0.1:58347'
+DEBUG___|2020-12-17_15:55:45.879|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:55:46.254|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+ERR__LVL|2020-12-17_15:55:46.464|00001AF0|connections_manager.cpp|c_mt4_connector::close_order|7262| failed closed order 8115832 code 3
+INFO_LVL|2020-12-17_15:55:46.465|00001AF0| <<< result=-3&size=0
+&size=7
+8115832&request_id=
+INFO_LVL|2020-12-17_15:55:49.234|00001AF0| client '127.0.0.1:58347' >>> action=accounthavetraders&login=2131782281
+
+INFO_LVL|2020-12-17_15:55:49.234|00001AF0| Checking connection to MT4
+DEBUG___|2020-12-17_15:55:49.234|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:55:49.305|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:55:49.305|00001AF0| Received request 'action=accounthavetraders' from '127.0.0.1:58347'
+DEBUG___|2020-12-17_15:55:49.305|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:55:49.376|00001AF0|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:55:49.376|00001AF0| <<< result=0&reason=invalid action&request_id=
+INFO_LVL|2020-12-17_15:55:55.001|00001AF0| client '127.0.0.1:58347' disconnected
+INFO_LVL|2020-12-17_15:56:00.358|00003A7C| client '127.0.0.1:58859' connected
+INFO_LVL|2020-12-17_15:56:00.358|00003A7C| free mt4 used
+INFO_LVL|2020-12-17_15:56:01.897|00003A7C| client '127.0.0.1:58859' >>> action=closeorder&order=8115832
+
+INFO_LVL|2020-12-17_15:56:01.897|00003A7C| Checking connection to MT4
+DEBUG___|2020-12-17_15:56:01.898|00003A7C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:56:01.901|00003A7C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_15:56:01.901|00003A7C| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:56:01.968|00003A7C| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:56:02.149|00003A7C| Login finished
+INFO_LVL|2020-12-17_15:56:02.214|00003A7C| MT4 connected.
+INFO_LVL|2020-12-17_15:56:02.214|00003A7C| Received request 'action=closeorder' from '127.0.0.1:58859'
+DEBUG___|2020-12-17_15:56:02.216|00003A7C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_15:56:02.283|00003A7C|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+ERR__LVL|2020-12-17_15:56:02.479|00003A7C|connections_manager.cpp|c_mt4_connector::close_order|7262| failed closed order 8115832 code 3
+INFO_LVL|2020-12-17_15:56:02.479|00003A7C| <<< result=-3&size=0
+&size=7
+8115832&request_id=
+
+
+Restarting...
+Log file created at:     Thu Dec 17 15:56:56 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     4892
+Is service:              0
+
+INFO_LVL|2020-12-17_15:56:56.727|00001F34| Product version: 97
+INFO_LVL|2020-12-17_15:56:56.728|00001F34| t4b_lib version: 134
+INFO_LVL|2020-12-17_15:56:56.728|00001F34| t4b_license version: 106
+INFO_LVL|2020-12-17_15:56:56.883|00001F34| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:56:56.955|00001F34| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:56:57.216|00001F34| Login finished
+INFO_LVL|2020-12-17_15:56:57.286|00001F34| MT4 connected.
+INFO_LVL|2020-12-17_15:56:57.742|00001F34| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_15:56:57.817|00001F34| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_15:56:58.015|00001F34| Login finished
+INFO_LVL|2020-12-17_15:56:58.088|00001F34| MT4 connected.
+INFO_LVL|2020-12-17_15:56:58.090|00001E78| server started.
+INFO_LVL|2020-12-17_15:56:58.090|00001E78| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_15:56:58.090|00001E78| server port: 8000
+INFO_LVL|2020-12-17_15:56:58.554|00000DB0| pumping mode started
+INFO_LVL|2020-12-17_15:56:58.557|000026E8| on_pump_update_users(3, 0, without data)
+
+
+Restarting...
+Log file created at:     Thu Dec 17 16:12:40 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     4656
+Is service:              0
+
+INFO_LVL|2020-12-17_16:12:40.613|00000574| Product version: 97
+INFO_LVL|2020-12-17_16:12:40.613|00000574| t4b_lib version: 134
+INFO_LVL|2020-12-17_16:12:40.614|00000574| t4b_license version: 106
+INFO_LVL|2020-12-17_16:12:40.769|00000574| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_16:12:40.837|00000574| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_16:12:41.084|00000574| Login finished
+INFO_LVL|2020-12-17_16:12:41.149|00000574| MT4 connected.
+INFO_LVL|2020-12-17_16:12:41.668|00000574| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_16:12:41.735|00000574| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_16:12:41.990|00000574| Login finished
+INFO_LVL|2020-12-17_16:12:42.056|00000574| MT4 connected.
+INFO_LVL|2020-12-17_16:12:42.058|00002098| server started.
+INFO_LVL|2020-12-17_16:12:42.058|00002098| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_16:12:42.058|00002098| server port: 8000
+INFO_LVL|2020-12-17_16:12:42.487|00002E64| pumping mode started
+INFO_LVL|2020-12-17_16:12:42.493|00001770| on_pump_update_users(3, 0, without data)
+INFO_LVL|2020-12-17_16:12:43.824|000038CC| client '127.0.0.1:34284' connected
+INFO_LVL|2020-12-17_16:12:43.824|000038CC| free mt4 used
+INFO_LVL|2020-12-17_16:12:46.283|000038CC| client '127.0.0.1:34284' >>> action=getgroup&name=demoCawada
+
+INFO_LVL|2020-12-17_16:12:46.283|000038CC| Checking connection to MT4
+DEBUG___|2020-12-17_16:12:46.283|000038CC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_16:12:46.350|000038CC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_16:12:46.350|000038CC| Received request 'action=getgroup' from '127.0.0.1:34284'
+DEBUG___|2020-12-17_16:12:46.360|000038CC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_16:12:46.427|000038CC|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_16:12:46.560|000038CC| <<< result=1&name=demoCawada&currency=USD&signature=&company=Cawada Investment Consultancy Ltd.&smtp_server=&smtp_login=&smtp_password=&support_email=&templates=&enable=1&default_leverage=500&default_deposit=0.00&timeout=7&copies=0&reports=0&margin_call=50&margin_mode=1&margin_stopout=30&news=1&check_ie_prices=1&maxpositions=0&interestrate=0.0000&use_swap=1&close_reopen=0&hedge_prohibited=0&close_fifo=0&margin_type=0&archive_period=0&archive_max_balance=0&archive_pending_period=0&stopout_skip_hedged=0&request_id=
+INFO_LVL|2020-12-17_16:13:47.025|000038CC| time out reached (no data transfer in last 60 seconds)
+INFO_LVL|2020-12-17_16:13:47.126|000038CC| client '127.0.0.1:34284' disconnected.
+INFO_LVL|2020-12-17_16:14:27.570|00003278| client '127.0.0.1:37356' connected
+INFO_LVL|2020-12-17_16:14:27.570|00003278| free mt4 used
+INFO_LVL|2020-12-17_16:14:49.069|00003278| client '127.0.0.1:37356' >>> action=getloginsbygroup&group=demoCawada
+
+INFO_LVL|2020-12-17_16:14:49.069|00003278| Checking connection to MT4
+DEBUG___|2020-12-17_16:14:49.070|00003278|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_16:14:49.073|00003278|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_16:14:49.074|00003278| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_16:14:49.161|00003278| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_16:14:49.453|00003278| Login finished
+INFO_LVL|2020-12-17_16:14:49.539|00003278| MT4 connected.
+INFO_LVL|2020-12-17_16:14:49.539|00003278| Received request 'action=getloginsbygroup' from '127.0.0.1:37356'
+DEBUG___|2020-12-17_16:14:49.553|00003278|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|407| Check connection started
+DEBUG___|2020-12-17_16:14:49.639|00003278|connections_manager.cpp|c_mt4_connector::is_man_interface_connected|411| Check connection finished
+INFO_LVL|2020-12-17_16:14:49.897|00003278| <<< result=1&logins=2131771484,2131772385,2131776609,2131776689,2131777972,2131781386,2131781400,2131781644,2131781670,2131782281,2131782413,2131782468,2131782701,2131782774,2131782863,2131782875,2131782921,2131783094,2131783103,2131783114,2131783226,2131783296,2131783417,2131783693,2131783936,2131784263,2131784285,2131784287,2131784291,2131784506,2131784686,2131785029,2131785252,2131785282,2131785395,2131785459,2131785508,2131785571,2131785592,2131785835,2131785925,2131786119,2131786120,2131786210,2131786223,2131786349,2131786401,2131786486,2131786489&request_id=
+INFO_LVL|2020-12-17_16:15:50.050|00003278| time out reached (no data transfer in last 60 seconds)
+INFO_LVL|2020-12-17_16:15:50.151|00003278| client '127.0.0.1:37356' disconnected.
+
+
+Restarting...
+Log file created at:     Thu Dec 17 10:40:00 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     8368
+Is service:              0
+
+INFO_LVL|2020-12-17_10:40:00.421|00000F34| Product version: 97
+INFO_LVL|2020-12-17_10:40:00.421|00000F34| t4b_lib version: 134
+INFO_LVL|2020-12-17_10:40:00.421|00000F34| t4b_license version: 106
+INFO_LVL|2020-12-17_10:40:03.112|00000F34| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_10:40:03.177|00000F34| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_10:40:03.427|00000F34| Login finished
+INFO_LVL|2020-12-17_10:40:03.491|00000F34| MT4 connected.
+INFO_LVL|2020-12-17_10:40:03.927|00000F34| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_10:40:03.990|00000F34| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_10:40:04.176|00000F34| Login finished
+INFO_LVL|2020-12-17_10:40:04.239|00000F34| MT4 connected.
+INFO_LVL|2020-12-17_10:40:04.242|000026A8| server started.
+INFO_LVL|2020-12-17_10:40:04.242|000026A8| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_10:40:04.242|000026A8| server port: 8000
+INFO_LVL|2020-12-17_10:40:04.790|00000A84| pumping mode started
+INFO_LVL|2020-12-17_10:40:04.796|00000DC4| on_pump_update_users(3, 0, without data)
+
+
+Restarting...
+Log file created at:     Thu Dec 17 10:45:08 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     8700
+Is service:              0
+
+INFO_LVL|2020-12-17_10:45:08.357|00002258| Product version: 97
+INFO_LVL|2020-12-17_10:45:08.357|00002258| t4b_lib version: 134
+INFO_LVL|2020-12-17_10:45:08.357|00002258| t4b_license version: 106
+INFO_LVL|2020-12-17_10:45:08.521|00002258| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_10:45:08.589|00002258| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_10:45:08.767|00002258| Login finished
+INFO_LVL|2020-12-17_10:45:08.833|00002258| MT4 connected.
+INFO_LVL|2020-12-17_10:45:09.287|00002258| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_10:45:09.353|00002258| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_10:45:09.531|00002258| Login finished
+INFO_LVL|2020-12-17_10:45:09.595|00002258| MT4 connected.
+INFO_LVL|2020-12-17_10:45:09.597|00001630| server started.
+INFO_LVL|2020-12-17_10:45:09.597|00001630| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_10:45:09.597|00001630| server port: 8000
+INFO_LVL|2020-12-17_10:45:10.095|000001E8| pumping mode started
+INFO_LVL|2020-12-17_10:45:10.098|00002C7C| on_pump_update_users(3, 0, without data)
+
+
+Restarting...
+Log file created at:     Thu Dec 17 10:45:50 2020
+Build:                   Oct 16 2020 13:53:34
+Company:                 "unknown|Unknown"
+Product:                 mt4interface
+Running on machine:      
+OS:                      Microsoft Windows 8 unknown edition
+PID:                     14320
+Is service:              0
+
+INFO_LVL|2020-12-17_10:45:50.235|00001FC4| Product version: 97
+INFO_LVL|2020-12-17_10:45:50.235|00001FC4| t4b_lib version: 134
+INFO_LVL|2020-12-17_10:45:50.235|00001FC4| t4b_license version: 106
+INFO_LVL|2020-12-17_10:45:50.389|00001FC4| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_10:45:50.453|00001FC4| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_10:45:50.630|00001FC4| Login finished
+INFO_LVL|2020-12-17_10:45:50.694|00001FC4| MT4 connected.
+INFO_LVL|2020-12-17_10:45:51.198|00001FC4| Trying to connect to MT4 ...
+INFO_LVL|2020-12-17_10:45:51.264|00001FC4| Trying to login in MT4 ...
+INFO_LVL|2020-12-17_10:45:51.511|00001FC4| Login finished
+INFO_LVL|2020-12-17_10:45:51.576|00001FC4| MT4 connected.
+INFO_LVL|2020-12-17_10:45:51.578|000029D0| server started.
+INFO_LVL|2020-12-17_10:45:51.578|000029D0| server ip: 127.0.0.1
+INFO_LVL|2020-12-17_10:45:51.578|000029D0| server port: 8000
+INFO_LVL|2020-12-17_10:45:51.991|000029FC| pumping mode started
+INFO_LVL|2020-12-17_10:45:52.000|00002728| on_pump_update_users(3, 0, without data)
