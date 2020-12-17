@@ -15,17 +15,17 @@
                         <div class="inner-body mg-main">
                             <div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
                                 <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
-                                    <a href="https://www.nganluong.vn/vn/home.html" target="_blank">
+                                    <a href="{{ route('deposit.bepay') }}">
                                         <div class="thumbnail">
-                                            <div class="thumb-preview">
-                                                <img src="{{ asset('image/nganluong.png') }}" class="img-responsive" alt="Project">
+                                            <div class="thumb-preview text-center">
+                                                <img src="{{ asset('image/bepay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px; width:110px">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>
-                                    </a>
+									</a>
 								</div>
 								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
-                                    <a href="#openForm" class="modal-with-form">
+                                    <a href="#vifa" class="modal-with-form">
                                         <div class="thumbnail">
                                             <div class="thumb-preview">
                                                 <img src="{{ asset('image/vifapay.jpg') }}" class="img-responsive" alt="Project" style="padding-top:23.13px; padding-bottom: 23.13px">
@@ -33,7 +33,7 @@
                                             </div>
                                         </div>
 									</a>
-									<div id="openForm" class="modal-block modal-block-primary mfp-hide">
+									<div id="vifa" class="modal-block modal-block-primary mfp-hide">
 										<section class="panel">
 											<div class="panel-body">
 												<form class="ajax-form" class="form-horizontal" method="post" action="{{ route('transfer.vifa') }}" novalidate="novalidate">

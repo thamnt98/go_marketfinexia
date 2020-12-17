@@ -58,7 +58,7 @@
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox" value="">
-                                    <b>I agree to the </b><a href="#"><b>Terms & Conditions</b></a>
+                                    <b>I agree to the </b><a href="#"><b><a href="https://gemifx.com/en/term-of-services-for-trade/">Terms & Conditions</a></b>
                                 </label>
                             </div>
                         </div>
