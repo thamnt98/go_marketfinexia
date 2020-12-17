@@ -33,7 +33,7 @@ Route::group([
         'namespace' => 'Account'
     ], function () {
         Route::get('/open-trading-account', 'LiveAccountController@main')->name('account.live');
-        // Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
+        Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
         Route::get('/open-ib-account/{type}', 'IBAccountController@main')->name('account.ib');
         Route::get('/change-mt-password', 'MTPasswordController@main')->name('account.changepassword');
         Route::get('/my-profile', 'DetailController@main')->name('account.detail');
