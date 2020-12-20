@@ -27,17 +27,38 @@ class OpenIBAccountController extends Controller
         $data['state'] = $user->state;
         $data['address'] = $user->address;
         $data['country'] = $user->country;
-        $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         try {
-            if (socket_connect($socket, config('mt4.vps_ip'), config('mt4.vps_port'))) {
-                $cmd = 'action=createaccount&login=next';
-                foreach ($data as $key => $value) {
-                    $cmd = $cmd . '&' . $key . '=' . $value;
-                }
-                socket_write($socket, $cmd);
-                return redirect()->back()->with('success', "Open account successfully");
+            $cmd = 'action=createaccount&login=next';
+            foreach ($data as $key => $value) {
+                $cmd = $cmd . '&' . $key . '=' . $value;
             }
-        } catch (\Exception $th) {
+            $cmd = 'action=createaccount&login=next';
+            foreach ($data as $key => $value) {
+                $cmd = $cmd . '&' . $key . '=' . $value;
+            }
+            $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
+            if (!$fp) {
+                return redirect()->back()->with('error', "Something went wrong. Please try again");
+            } else {
+                fwrite($fp, $cmd);
+                stream_set_timeout($fp, 1);
+                $result = '';
+                $info = stream_get_meta_data($fp);
+                while (!$info['timed_out'] && !feof($fp)) {
+                    $str = @fgets($fp, 1024);
+                    if (strpos($str, 'login')) {
+                        $result .= $str;
+                        $info = stream_get_meta_data($fp);
+                    }
+                }
+                fclose($fp);
+                $result = explode('&', $result);
+                $data['login'] = explode('=', $result[1])[1];
+                $data['user_id'] = $user->id;
+                LiveAccount::create($data);
+                return redirect()->back()->with('success', "Open live account successfully");
+            }
+        } catch (\Exception $e) {
             return redirect()->back()->with('error', "Something went wrong. Please try again");
         }
     }

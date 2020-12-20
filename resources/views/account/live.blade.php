@@ -1,5 +1,7 @@
 @extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
 @section('css')
+<link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
+
 @endsection
 <header class="page-header">
     @include('layouts.menutop')
@@ -40,7 +42,7 @@
                 <h2 class="panel-title">Open Trading Account</h2>
             </header>
             <div class="panel-body">
-                <form action="{{route('account.ib.open')}}" class="form-horizontal form-bordered" method="post">
+                <form action="{{route('account.ib.open')}}" class="form-horizontal form-bordered @if($liveAccounts->count() ==2) hidden @endif" method="post">
                     @csrf
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>Type</b></label>
@@ -88,6 +90,27 @@
                         </div>
                     </div>
                 </form>
+                <br>
+                <div class="table-responsive @if(!$liveAccounts->count()) hidden @endif">
+                    <table id="table" data-toggle="table" data-resizable="true" >
+                        <thead>
+                            <tr>
+                                <th>Login</th>
+                                <th>Group</th>
+                                <th>Leverage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($liveAccounts as $account)
+                            <tr>
+                                <td>{{ $account->login }}</td>
+                                <td>{{ $account->group }}</td>
+                                <td>{{ $account->leverage }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </section>
     </div>
@@ -97,4 +120,6 @@
 </section>
 @endsection
 @section('js')
+<script src="{{ asset('js/bootstrap-table.js') }}"></script>
+<script src="{{ asset('js/data-table-active.js') }}"></script>
 @endsection
