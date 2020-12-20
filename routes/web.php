@@ -35,6 +35,7 @@ Route::group([
         Route::get('/open-trading-account', 'LiveAccountController@main')->name('account.live');
         Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
         Route::get('/open-ib-account/{type}', 'IBAccountController@main')->name('account.ib');
+        Route::post('/open-ib-account', 'OpenIBAccountController@main')->name('account.ib.open');
         Route::get('/change-mt-password', 'MTPasswordController@main')->name('account.changepassword');
         Route::get('/my-profile', 'DetailController@main')->name('account.detail');
         Route::post('/my-profile', 'UpdateController@main')->name('account.update');

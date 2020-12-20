@@ -31,6 +31,9 @@ class AlterUsersTableAddSomeColumn extends Migration
      */
     public function down()
     {
-        //
+        
+        Schema::table('users', function($table) {
+            $table->dropColumn(['city', 'state', 'zip_code', 'address', 'country', 'copy_of_id', 'proof_of_address', 'addtional_file']);
+        });
     }
 }

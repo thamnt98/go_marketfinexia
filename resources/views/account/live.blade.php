@@ -19,6 +19,18 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
+        @if ($message = Session::get('error'))
+                <div class="alert alert-danger alert-block" style="margin: 0px 15px 20px 15px">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+        @endif
+        @if ($message = Session::get('success'))
+                <div class="alert alert-success alert-block" style="margin: 0px 15px 20px 15px">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+        @endif
         <section class="panel">
             <header class="panel-heading">
                 <div class="panel-actions">
@@ -28,28 +40,34 @@
                 <h2 class="panel-title">Open Trading Account</h2>
             </header>
             <div class="panel-body">
-                <form class="form-horizontal form-bordered" method="get">
+                <form action="{{route('account.ib.open')}}" class="form-horizontal form-bordered" method="post">
+                    @csrf
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>Type</b></label>
                         <div class="col-md-6">
-                            <select class="form-control">
-                                <option>Select...</option>
-                                <option>Standard</option>
+                            <select class="form-control" name="group">
+                                <option value="">Select...</option>
+                                @foreach(config('mt4.group') as $key => $group)
+                                    <option value="{{$key}}">{{$group}}</option>
+                                @endforeach
                             </select>
+                            @if($errors->has('group'))
+                                <span class="text-danger text-md-left" >{{ $errors->first('group') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>Leverage</b></label>
                         <div class="col-md-6">
-                            <select class="form-control">
-                                <option>Select...</option>
-                                <option>1:1</option>
-                                <option>1:50</option>
-                                <option>1:100</option>
-                                <option>1:200</option>
-                                <option>1:300</option>
-                                <option>1:500</option>
+                            <select class="form-control" name="leverage">
+                                <option value="">Select...</option>
+                                @foreach(config('mt4.leverage') as $key => $leverage)
+                                    <option value="{{$key}}">{{$leverage}}</option>
+                                @endforeach
                             </select>
+                            @if($errors->has('leverage'))
+                                <span class="text-danger text-md-left" >{{ $errors->first('leverage') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group">
@@ -57,7 +75,7 @@
                         <div class="col-md-6">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" value="">
+                                    <input type="checkbox" value="" required>
                                     <b>I agree to the </b><a href="#"><b><a href="https://gemifx.com/en/term-of-services-for-trade/">Terms & Conditions</a></b>
                                 </label>
                             </div>
@@ -66,7 +84,7 @@
                     <div class="form-group">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Open account</button>
+                            <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">Open account</button>
                         </div>
                     </div>
                 </form>

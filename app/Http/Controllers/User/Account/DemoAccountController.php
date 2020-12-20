@@ -10,14 +10,15 @@ class DemoAccountController extends Controller
     public function main()
     {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-        socket_connect($socket, "199.188.206.67", 8000);
-        $cmd = 'action=closeorder&order=8115832';
-        socket_write($socket, $cmd);
-        $a = "";
-        while ($out = socket_read($socket, 1024)) {
-           $a = $a.$out;
+        if(socket_connect($socket, config('mt4.vps_ip'), config('mt4.vps_port'))){
+            $cmd = 'action=getloginsbygroup&group=demoCawada';
+            socket_write($socket, $cmd);
+        dd(socket_read($socket,2048));         
+}
+            // $a = "";
+            // while(socket_read($socket, 2450))
+            // {
+            //     echo socket_read($socket, 2450);
+            // }
         }
-        $a=str_replace("\n","",$a);
-        dd($a);
-    }
 }
