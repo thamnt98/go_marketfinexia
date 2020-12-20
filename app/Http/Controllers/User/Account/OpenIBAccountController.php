@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\User\Account;
 
 use App\Http\Controllers\Controller;
+use App\Mail\OpenLiveAccountSuccess;
 use App\Models\LiveAccount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Exception;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 
 class OpenIBAccountController extends Controller
 {
@@ -27,6 +30,7 @@ class OpenIBAccountController extends Controller
         $data['state'] = $user->state;
         $data['address'] = $user->address;
         $data['country'] = $user->country;
+        $data['password'] = Str::random(7);
         try {
             $cmd = 'action=createaccount&login=next';
             foreach ($data as $key => $value) {
@@ -55,8 +59,9 @@ class OpenIBAccountController extends Controller
                 $result = explode('&', $result);
                 $data['login'] = explode('=', $result[1])[1];
                 $data['user_id'] = $user->id;
-                LiveAccount::create($data);
-                return redirect()->back()->with('success', "Open live account successfully");
+                $account = LiveAccount::create($data);
+                Mail::to($user->email)->send(new OpenLiveAccountSuccess($user, $account, $data['password']));
+                return redirect()->back()->with('success', "Open live account successfully. Please check your inbox or spam to login into MetaTrader 4");
             }
         } catch (\Exception $e) {
             return redirect()->back()->with('error', "Something went wrong. Please try again");
