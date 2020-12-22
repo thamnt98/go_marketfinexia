@@ -61,7 +61,7 @@
 								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
                                     <a href="#">
                                         <div class="thumbnail">
-                                            <div class="thumb-preview" style="padding-top:19px; padding-bottom:19px">
+                                            <div class="thumb-preview" style="padding-top:23.5px; padding-bottom:23.5px">
                                                 <img src="{{ asset('image/neteller.jpg') }}" class="img-responsive" alt="Project">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
