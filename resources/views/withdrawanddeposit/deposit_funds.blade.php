@@ -18,7 +18,7 @@
                                     <a href="{{ route('deposit.bepay') }}">
                                         <div class="thumbnail">
                                             <div class="thumb-preview text-center">
-                                                <img src="{{ asset('image/bepay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px; width:110px">
+                                                <img src="{{ asset('image/bepay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>
@@ -27,8 +27,8 @@
 								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
                                     <a href="#vifa" class="modal-with-form">
                                         <div class="thumbnail">
-                                            <div class="thumb-preview">
-                                                <img src="{{ asset('image/vifapay.jpg') }}" class="img-responsive" alt="Project" style="padding-top:23.13px; padding-bottom: 23.13px">
+                                            <div class="thumb-preview" style="padding-top: 34px; padding-bottom:34px">
+                                                <img src="{{ asset('image/vifapay.jpg') }}" class="img-responsive" alt="Project">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>
@@ -62,7 +62,7 @@
                                     <a href="#">
                                         <div class="thumbnail">
                                             <div class="thumb-preview">
-                                                <img src="{{ asset('image/neteller.jpg') }}" class="img-responsive" alt="Project" style="padding-top:6.05px; padding-bottom: 6.05px">
+                                                <img src="{{ asset('image/neteller.jpg') }}" class="img-responsive" alt="Project" style="height:110px">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>

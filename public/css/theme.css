@@ -16437,6 +16437,7 @@ html.dark .timeline.timeline-simple .tm-body .tm-items > li .tm-box:before {
 }
 .media-gallery .mg-files .thumbnail {
 	padding: 10px;
+	height: 130px;
 	border-radius: 5px;
 	margin-bottom: 30px;
 	-webkit-transform: translate3d(0, 0, 0);
