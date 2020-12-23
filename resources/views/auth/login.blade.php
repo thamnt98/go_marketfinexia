@@ -47,7 +47,7 @@
                                 <label class="form-check-label" for="remember">
                                     {{ __('Remember Me') }}
                                 </label>
-                                <a class="btn btn-link" href="#" style="float: right; padding-top:0px">Forgot password?</a>
+                                <a class="btn btn-link" href="{{route('password.forgot')}}" style="float: right; padding-top:0px">Forgot password?</a>
                             </div>
                         </div>
                     </div>

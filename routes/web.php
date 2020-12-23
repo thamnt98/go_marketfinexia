@@ -23,6 +23,8 @@ Route::get('', 'User\HomeController@main')->middleware('auth')->name('home');
 Route::post('/register', 'Auth\RegisterController@main')->name('register');
 Route::get('/password/reset', 'ResetPasswordController@main')->name('password.reset');
 Route::post('/password/reset', 'UpdatePasswordController@main')->name('password.update');
+Route::get('/password/forgot', 'ForgotPasswordController@main')->name('password.forgot');
+Route::post('/password/forgot', 'SendEmailForgotPasswordController@main')->name('password.email');
 Route::group([
     'namespace' => 'User',
     'middleware' => 'auth',
