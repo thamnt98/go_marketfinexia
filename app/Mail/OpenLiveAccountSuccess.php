@@ -42,7 +42,7 @@ class OpenLiveAccountSuccess extends Mailable
     public function build()
     {
         return $this->view('mail.openliveaccount')
-            ->subject('Tài khoản MT5 Real đã được tạo')
+            ->subject('Tài khoản MT4 Real đã được tạo')
             ->with([
                 'name' => $this->user['full_name'],
                 'login' => $this->account['login'],
