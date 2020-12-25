@@ -187,29 +187,39 @@
                 <h2 class="panel-title"><b>Change Your Password</b></h2>
             </header>
             <div class="panel-body">
-                <form class="form-horizontal form-bordered" method="get">
+                <form class="form-horizontal form-bordered" method="post" action="{{ route('account.password.change') }}">
+                    @csrf
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>Current Password</b></label>
                         <div class="col-md-6">
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" name="current_password" value="{{ old('current_password') }}">
+                            @if($errors->has('current_password'))
+                                <span class="text-danger text-md-left" >{{ $errors->first('current_password') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>New Password</b></label>
                         <div class="col-md-6">
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" name="new_password" value="{{ old('new_password') }}">
+                            @if($errors->has('new_password'))
+                                <span class="text-danger text-md-left" >{{ $errors->first('new_password') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>Confirm Password</b></label>
                         <div class="col-md-6">
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}">
+                            @if($errors->has('password_confirmation'))
+                                <span class="text-danger text-md-left" >{{ $errors->first('password_confirmation') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
-                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-primary">Save changes</button>
+                            <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </form>

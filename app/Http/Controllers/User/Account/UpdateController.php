@@ -9,14 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class UpdateController extends Controller
 {
-    public function main(Request $request){
+    public function main(Request $request)
+    {
         $data = $request->except(['_token']);
         $user = User::where('id', Auth::user()->id)->update($data);
-        if($user){
+        if ($user) {
             return redirect()->back()->with('success', 'You updated your info successfully');
-        }
-        else
-        {
+        } else {
             return redirect()->back()->with('error', 'You updated your info fail');
         }
     }

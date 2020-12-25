@@ -38,10 +38,11 @@ Route::group([
         Route::get('/open-demo-account', 'DemoAccountController@main')->name('account.demo');
         Route::get('/open-ib-account/{type}', 'IBAccountController@main')->name('account.ib');
         Route::post('/open-ib-account', 'OpenIBAccountController@main')->name('account.ib.open');
-        Route::get('/change-mt-password', 'MTPasswordController@main')->name('account.changepassword');
+        Route::get('/change-mt-password', 'MTPasswordController@main')->name('account.MTPassword');
         Route::get('/my-profile', 'DetailController@main')->name('account.detail');
         Route::post('/my-profile', 'UpdateController@main')->name('account.update');
         Route::post('/my-profile/upload', 'UploadFileController@main')->name('account.upload');
+        Route::post('/my-profile/password', 'ChangePasswordController@main')->name('account.password.change');
         Route::post('/transfer/vifa', 'TransferByVifaController@main')->name('transfer.vifa');
     });
     Route::group([

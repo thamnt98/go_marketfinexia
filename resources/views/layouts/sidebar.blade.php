@@ -93,7 +93,7 @@
                             </ul>
                         </li>
                         <li class="level-1" data-toggle="password">
-                            <a href="{{ route('account.changepassword') }}">
+                            <a href="{{ route('account.MTPassword') }}">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span>Change MT Passworrd</span>
                             </a>
