@@ -175,7 +175,7 @@
 														 </p>
 													<p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
-														Kính gửi quý khách hàng!</p>
+														Kính gửi {{ $firstName . ' ' . $lastName }}!</p>
 													<p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
 														 </p>

@@ -44,7 +44,8 @@ class OpenLiveAccountSuccess extends Mailable
         return $this->view('mail.openliveaccount')
             ->subject('Tài khoản MT4 Real đã được tạo')
             ->with([
-                'name' => $this->user['full_name'],
+                'firstName' => $this->user['first_name'],
+                'lastName' => $this->user['last_name'],
                 'login' => $this->account['login'],
                 'password' => $this->password,
                 'leverage' => $this->account['leverage']
