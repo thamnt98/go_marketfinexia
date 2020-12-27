@@ -45,6 +45,7 @@ Route::group([
         Route::post('/my-profile/upload', 'UploadFileController@main')->name('account.upload');
         Route::post('/my-profile/password', 'ChangePasswordController@main')->name('account.password.change');
         Route::post('/transfer/vifa', 'TransferByVifaController@main')->name('transfer.vifa');
+        Route::get('/{login}/balance', 'GetBalanceByLoginController@main');
     });
     Route::group([
         'namespace' => 'DepositAndWithDraw'
