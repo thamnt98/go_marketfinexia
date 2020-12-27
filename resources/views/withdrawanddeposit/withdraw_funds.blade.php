@@ -19,6 +19,12 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success alert-block" style="margin: 0px 15px 20px 15px">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <section class="panel">
             <header class="panel-heading">
                 <div class="panel-actions">
@@ -37,13 +43,23 @@
                                 <label><b>Account Number</b></label>
                                 <select class="form-control" name="login">
                                     @foreach ($logins as $login)
-                                        <option value="{{$login}}">{{$login}}</option>
+                                        @if ($login == old('login'))
+                                            <option value="{{$login}}" selected>{{$login}}</option>
+                                        @else
+                                            <option value="{{$login}}">{{$login}}</option>
+                                        @endif
                                     @endforeach
                                 </select>
+                                @if($errors->has('login'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('login') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>Account Name</b></label>
-                                <input type="text" name="account_name" class="form-control" placeholder="Account Name">
+                                <input type="text" name="account_name" class="form-control" placeholder="Account Name" value="{{old('account_name')}}">
+                                @if($errors->has('account_name'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('account_name') }}</span>
+                                @endif
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -54,13 +70,19 @@
                             <div class="col-md-5">
                                 <label><b>Currency</b></label>
                                 <select class="form-control" name="currency">
-                                    <option>USD</option>
-                                    <option>EUR</option>
+                                    <option value="usd" @if(old('currency') == 'usd') selected @endif>USD</option>
+                                    <option value="eur"  @if(old('currency') == 'eur') selected @endif>EUR</option>
                                 </select>
+                                @if($errors->has('currency'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('currency') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>Balance</b></label>
-                                <input type="number" class="form-control" placeholder="Balance" name="balance">
+                                <input type="number" class="form-control" placeholder="Balance" name="balance" value="{{ old('balance') }}">
+                                @if($errors->has('balance'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('balance') }}</span>
+                                @endif
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -70,15 +92,18 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <label><b>Available Balance</b></label>
-                                <input type="number" class="form-control" name="available_balance" placeholder="Available Balance">
+                                <input type="number" class="form-control" name="available_balance" placeholder="Available Balance" value="{{old('available_balance')}}" >
+                                @if($errors->has('available_balance'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('available_balance') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>Withdrawal Currency</b></label>
                                 <select class="form-control" name="withdrawal_currency">
-                                    <option>USD</option>
-                                    <option>EUR</option>
+                                    <option value="usd" @if(old('currency') == 'usd') selected @endif>USD</option>
+                                    <option value="eur" @if(old('currency') == 'eur') selected @endif>EUR</option>
                                 </select>
-                            </div>
+                            </div>  
                             <div class="col-md-1"></div>
                         </div>
                     </div>
@@ -88,13 +113,16 @@
                             <div class="col-md-5">
                                 <label><b>Withdrawal Type</b></label>
                                 <select class="form-control" name="withdrawal_type">
-                                    <option>USD</option>
-                                    <option>EUR</option>
+                                    <option value="usd" @if(old('currency') == 'usd') selected @endif>USD</option>
+                                    <option value="eur" @if(old('currency') == 'eur') selected @endif>EUR</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b><i class="fa fa-usd"></i></b></label>
-                                <input type="number" class="form-control" placeholder="Amount" name="amount">
+                                <input type="number" class="form-control" placeholder="Amount" name="amount" value="{{old('amount')}}">
+                                @if($errors->has('amount'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('amount') }}</span>
+                                @endif
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -104,11 +132,17 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <label><b>Bank Account</b></label>
-                                <input type="number" class="form-control" placeholder="Bank Account" name="bank_account">
+                                <input type="number" class="form-control" placeholder="Bank Account" name="bank_account" value="{{old('bank_account')}}">
+                                @if($errors->has('bank_account'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('bank_account') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>Account Holder</b></label>
-                                <input type="text" class="form-control" placeholder="Account Holder" name="account_holder">
+                                <input type="text" class="form-control" placeholder="Account Holder" name="account_holder" value="{{old('account_holder')}}">
+                                @if($errors->has('account_holder'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('account_holder') }}</span>
+                                @endif
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -118,11 +152,17 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <label><b>Bank Name</b></label>
-                                <input type="number" class="form-control">
+                                <input type="text" class="form-control" name="bank_name" value="{{old('bank_name')}}">
+                                @if($errors->has('bank_name'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('bank_name') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>Bank Branch Name</b></label>
-                                <input type="text" class="form-control" name="bank_branch_name">
+                                <input type="text" class="form-control" name="bank_branch_name" value="{{old('bank_branch_name')}}">
+                                @if($errors->has('bank_branch_name'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('bank_branch_name') }}</span>
+                                @endif
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -132,11 +172,17 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <label><b>SWIFT Code</b></label>
-                                <input type="text" class="form-control" placeholder="Swift Code" name="swift_code">
+                                <input type="text" class="form-control" placeholder="Swift Code" name="swift_code" value="{{old('swift_code')}}">
+                                @if($errors->has('swift_code'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('swift_code') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>Bank Address</b></label>
-                                <input type="number" class="form-control" placeholder="Bank Address" name="bank_address">
+                                <input type="text" class="form-control" placeholder="Bank Address" name="bank_address" value="{{old('bank_address')}}">
+                                @if($errors->has('bank_address'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('bank_address') }}</span>
+                                @endif
                             </div>
                             <div class="col-md-1"></div>
                         </div>
@@ -146,11 +192,17 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <label><b>IBAN</b></label>
-                                <input type="text" class="form-control" placeholder="IBAN" name="iban">
+                                <input type="text" class="form-control" placeholder="IBAN" name="iban" value="{{old('iban')}}">
+                                @if($errors->has('iban'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('iban') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>Comment</b></label>
-                                <input type="text" class="form-control" placeholder="Comment" name="comment">
+                                <input type="text" class="form-control" placeholder="Comment" name="note" value="{{old('note')}}">
+                                @if($errors->has('note'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('note') }}</span>
+                                @endif
                             </div>
                             <div class="col-md-1"></div>
                         </div>

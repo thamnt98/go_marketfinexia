@@ -28,7 +28,8 @@
                 <h2 class="panel-title">Change MT Password</h2>
             </header>
             <div class="panel-body">
-                <form class="form-horizontal form-bordered" method="get">
+                <form class="form-horizontal form-bordered" method="post" action="{{route('account.MTPassword.change')}}">
+                    @csrf
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>Account</b></label>
                         <div class="col-md-6">

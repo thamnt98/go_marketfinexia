@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class ChangeMTPasswordController extends Controller
 {
-    //
+    public function main(Request $request)
+    {
+        
+    }
 }
