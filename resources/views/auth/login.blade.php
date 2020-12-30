@@ -57,24 +57,6 @@
                             <button type="submit" class="btn btn-primary btn-block"><b>LOGIN</b></button>
                         </div>
                     </div>
-                    {{-- <div class="login-method row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
-                            <hr class="hr-text" data-content="Or login with">
-                        </div>
-                    </div>
-                    <div class="form-group login-method row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
-                            <a href="https://www.facebook.com/" class="fb btn">
-                                <i class="fa fa-facebook fa-fw"></i>Facebook
-                            </a>
-                            <a href="https://twitter.com/?lang=vi" class="twitter btn">
-                                <i class="fa fa-twitter fa-fw"></i>Twitter
-                            </a>
-                        </div>
-                        <div class="col-md-2"></div>
-                    </div> --}}
                     <div class="form-group row" style="text-align: center">
                         <div class="col-md-2"></div>
                         <div class="col-md-8" style="margin-top:16px">
@@ -86,5 +68,4 @@
         </div>
     </div>
 </div>
-
 @endsection
