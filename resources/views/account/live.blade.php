@@ -3,8 +3,8 @@
 <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
 
 @endsection
+@include('layouts.menutop')
 <header class="page-header">
-    @include('layouts.menutop')
     <div class="right-wrapper pull-right">
         <ol class="breadcrumbs">
             <li>

@@ -2515,7 +2515,8 @@ ul.nav-main li .nav-children .nav-children .nav-children li a {
 
 .page-header .breadcrumbs a,
 .page-header .breadcrumbs span {
-	color:#0088cc;
+	color:#ccd3d6;
+	font-weight: 500;
 	display: inline-block;
 	font-size: 14px;
 	font-size: 1.4rem;

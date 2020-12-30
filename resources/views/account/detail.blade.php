@@ -126,8 +126,6 @@
                             <thead>
                                 <tr>
                                     <th>File Type</th>
-                                    <th>Status</th>
-                                    <th>Uploaded On</th>
                                     <th>View</th>
                                     <th>Action</th>
                                 
@@ -136,8 +134,6 @@
                             <tbody>
                                 <tr>
                                     <td><b>Copy Of Id</b></td>
-                                    <td></td>
-                                    <td>-</td>
                                     <td>@if($user->copy_of_id)<img src="{{$user->copy_of_id}}" style="height:100px">@endif</td>
                                     <td>
                                         <input  type="file" name="copy_of_id" id="copy-of-id">
@@ -149,8 +145,6 @@
                                 </tr>
                                 <tr>
                                     <td><b>Proof Of Address</b></td>
-                                    <td></td>
-                                    <td>-</td>
                                     <td>@if($user->proof_of_address)<img src="{{$user->proof_of_address}}" style="height:100px">@endif</td>
                                     <td>
                                         <input type="file" name="proof_of_address">
@@ -161,8 +155,6 @@
                                 </tr>
                                 <tr>
                                     <td><b>New Additional File</b></td>
-                                    <td></td>
-                                    <td>-</td>
                                     <td>@if($user->addtional_file)<img src="{{$user->addtional_file}}" style="height:100px">@endif</td>
                                     <td>
                                         <input  type="file" name="addtional_file">
