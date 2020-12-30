@@ -18,7 +18,9 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                name="email" value="{{ old('email') }}" required autocomplete="email"
+                                placeholder="Email">
                             <i class="fa fa-user fa-lg"></i>
                             @error('email')
                             <span class="invalid-feedback">
@@ -30,7 +32,9 @@
                     <div class="form-group row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <input id="password" type="password" placeholder="Password" class="form-control  @error('password') is-invalid @enderror" name="password" required autocomplete="password">
+                            <input id="password" type="password" placeholder="Password"
+                                class="form-control  @error('password') is-invalid @enderror" name="password" required
+                                autocomplete="password">
                             <i class="fa fa-lock fa-lg"></i>
                             @error('password')
                             <span class="invalid-feedback">
@@ -43,11 +47,13 @@
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
                                 <label class="form-check-label" for="remember">
                                     {{ __('Remember Me') }}
                                 </label>
-                                <a class="btn btn-link" href="{{route('password.forgot')}}" style="float: right; padding-top:0px">Forgot password?</a>
+                                <a class="btn btn-link" href="{{route('password.forgot')}}"
+                                    style="float: right; padding-top:0px">Forgot password?</a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +66,8 @@
                     <div class="form-group row" style="text-align: center">
                         <div class="col-md-2"></div>
                         <div class="col-md-8" style="margin-top:16px">
-                            <span class="">Don't have an account? <a href="{{ route('register')}}">Register here</a></span>
+                            <span class="">Don't have an account? <a href="{{ route('register')}}">Register
+                                    here</a></span>
                         </div>
                     </div>
                 </form>

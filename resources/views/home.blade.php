@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
 @endsection
 <header class="page-header">
-    @include('layouts.menutop')  
+    @include('layouts.menutop')
 </header>
 @section('content')
 <div class="row">
@@ -11,7 +11,9 @@
         <section class="panel">
             <div class="panel-body" style="margin-top: -60px;">
                 <h2>Welcome to Gemifx</h2>
-                <p>Complete account management at your fingertips: from downloads, electronic deposits and withdrawals, to advanced partnership automation and analytics. Start by downloading our Trading Terminal for your computer and making a deposit.</p>
+                <p>Complete account management at your fingertips: from downloads, electronic deposits and withdrawals,
+                    to advanced partnership automation and analytics. Start by downloading our Trading Terminal for your
+                    computer and making a deposit.</p>
             </div>
         </section>
         <section class="panel">
@@ -24,7 +26,7 @@
             </header>
             <div class="panel-body">
                 <div class="table-responsive">
-                    <table id="table" data-toggle="table" data-resizable="true" >
+                    <table id="table" data-toggle="table" data-resizable="true">
                         <thead>
                             <tr>
                                 <th>Login</th>
@@ -52,11 +54,15 @@
     </div>
 </div>
 <div class="footer" style="position: fixed; bottom: 10px; width: 100%;">
-    <p style="font-size:11px">Risk Warning Note: Forex and CFDs are leveraged products, incur a high level of risk and may not be suitable for all investors. You should not risk more than you are prepared to lose. Before deciding to trade, please ensure you understand the risks involved and take into account your level of experience. Seek independent advice if necessary.
-        © 2020 Copyright GemiFx Inc. 2010-2020 All rights reserved. Various trademarks held by their respective owners. One Financial Center, Suite 1000, Boston, MA, 02111, United States
-        <input type="hidden" class="level1-toggle" value="account"/></p>
+    <p style="font-size:11px">Risk Warning Note: Forex and CFDs are leveraged products, incur a high level of risk and
+        may not be suitable for all investors. You should not risk more than you are prepared to lose. Before deciding
+        to trade, please ensure you understand the risks involved and take into account your level of experience. Seek
+        independent advice if necessary.
+        © 2020 Copyright GemiFx Inc. 2010-2020 All rights reserved. Various trademarks held by their respective owners.
+        One Financial Center, Suite 1000, Boston, MA, 02111, United States
+        <input type="hidden" class="level1-toggle" value="account" /></p>
 </div>
-<input type="hidden" class="level1-toggle" value="dashboard"/>
+<input type="hidden" class="level1-toggle" value="dashboard" />
 </section>
 @endsection
 @section('js')
