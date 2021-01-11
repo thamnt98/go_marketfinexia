@@ -1,3 +1,9 @@
+<?php
+if(\Request::route()->getName() != 'account.live'){
+    Session::forget('showForm');
+    Session::forget('phone');
+}
+?>
 <header class="header">
     <div class="logo-container">
         <a href="{{ route('home') }}" class="logo">
