@@ -20,51 +20,52 @@ class OpenIBAccountController extends Controller
     public function main(Request $request)
     {
         $data = $request->except('_token');
-        $token = config('twilio.token');
-        $twilio_sid =  config('twilio.sid');
-        $twilio_verify_sid =  config('twilio.verify_sid');
-        $twilio = new Client($twilio_sid, $token);
-        if (Session::get('showForm') == 1) {
-            $validatePhone = $this->validatePhone($data['phone']);
-            if ($validatePhone->fails()) {
-                return redirect()->back()->withErrors($validatePhone->errors())->withInput();
-            }
-            if ($data['phone'][0] == 0) {
-                $data['phone'] = substr($data['phone'], 1);
-            }
-            $data['phone'] = '+' . $data['country_code'] . $data['phone'];
-            try {
-                $twilio->verify->v2->services($twilio_verify_sid)
-                    ->verifications
-                    ->create($data['phone'], "sms");
-                Session::put([
-                    'showForm' => 2,
-                    'phone' => $data['phone']
-                ]);
-                Session::put('phone', $data['phone']);
-                return redirect()->back()->with('success', 'Send OTP successfully');
-            } catch (\Exception $e) {
-                return redirect()->back()->with('error', 'Something went wrong while sending OTP. Please try again later');
-            }
-        }
-        if (Session::get('showForm') == 2) {
-            $validateOTP = $this->verifyOTP($data['otp']);
-            if ($validateOTP->fails()) {
-                return redirect()->back()->withErrors($validateOTP->errors())->withInput();
-            }
-            $phone = Session::get('phone');
-            $verification = $twilio->verify->v2->services($twilio_verify_sid)
-                ->verificationChecks
-                ->create($data['otp'], array('to' => $phone));
-            if ($verification->valid) {
-                Session::put('showForm', 3);
-                return redirect()->back();
-            } else {
-                $error = new MessageBag();
-                $error->add('otp', 'OTP is invalid');
-                return redirect()->back()->withErrors($error->getMessages());
-            }
-        }
+        // $token = config('twilio.token');
+        // $twilio_sid =  config('twilio.sid');
+        // $twilio_verify_sid =  config('twilio.verify_sid');
+        // $twilio = new Client($twilio_sid, $token);
+        // if (Session::get('showForm') == 1) {
+        //     $validatePhone = $this->validatePhone($data['phone']);
+        //     if ($validatePhone->fails()) {
+        //         return redirect()->back()->withErrors($validatePhone->errors())->withInput();
+        //     }
+        //     if ($data['phone'][0] == 0) {
+        //         $data['phone'] = substr($data['phone'], 1);
+        //     }
+        //     $data['phone'] = '+' . $data['country_code'] . $data['phone'];
+        //     try {
+        //         $twilio->verify->v2->services($twilio_verify_sid)
+        //             ->verifications
+        //             ->create($data['phone'], "sms");
+        //         Session::put([
+        //             'showForm' => 2,
+        //             'phone' => $data['phone']
+        //         ]);
+        //         Session::put('phone', $data['phone']);
+        //         return redirect()->back()->with('success', 'Send OTP successfully');
+        //     } catch (\Exception $e) {
+        //         dd($e->getMessage());
+        //         return redirect()->back()->with('error', 'Something went wrong while sending OTP. Please try again later');
+        //     }
+        // }
+        // if (Session::get('showForm') == 2) {
+        //     $validateOTP = $this->verifyOTP($data['otp']);
+        //     if ($validateOTP->fails()) {
+        //         return redirect()->back()->withErrors($validateOTP->errors())->withInput();
+        //     }
+        //     $phone = Session::get('phone');
+        //     $verification = $twilio->verify->v2->services($twilio_verify_sid)
+        //         ->verificationChecks
+        //         ->create($data['otp'], array('to' => $phone));
+        //     if ($verification->valid) {
+        //         Session::put('showForm', 3);
+        //         return redirect()->back();
+        //     } else {
+        //         $error = new MessageBag();
+        //         $error->add('otp', 'OTP is invalid');
+        //         return redirect()->back()->withErrors($error->getMessages());
+        //     }
+        // }
         if (Session::get('showForm') == 3) {
             $isValid = $this->isValid($data);
             if ($isValid->fails()) {

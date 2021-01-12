@@ -14,7 +14,7 @@ class LiveAccountController extends Controller
     {
         $liveAccounts = LiveAccount::where('user_id', Auth::user()->id)->get();
         if (!Session::has('showForm')) {
-            Session::put('showForm', 1);
+            Session::put('showForm', 3);
         }
         return view('account.live', compact('liveAccounts'));
     }
