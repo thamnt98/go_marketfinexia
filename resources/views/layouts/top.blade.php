@@ -1,17 +1,8 @@
-<?php
-if(\Request::route()->getName() != 'account.live'){
-    Session::forget('showForm');
-    Session::forget('phone');
-}
-?>
 <header class="header">
     <div class="logo-container">
         <a href="{{ route('home') }}" class="logo">
         <img src="{{ asset('image/logo.png') }}" height="35" alt="Porto Admin" />
         </a>
-        <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
-            <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-        </div>
     </div>
 
     <!-- start: search & user box -->

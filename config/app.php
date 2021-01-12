@@ -2,6 +2,17 @@
 
 return [
 
+
+    'firebase_api_key' => env('FB_API_KEY', 'AIzaSyC7DDtPyxaIa5AESlNFBmHqlNmDmMc4r5E'),
+    'firebase_auth_domain' => env('FB_AUTH_DOMAIN', 'gemifx-vn.firebaseapp.com'),
+    'firebase_database_url' => env('FB_DATABASE_URL', 'https://laravelotp-bb918.firebaseio.com'),
+    'firebase_project_id' => env('FB_PROJECT_ID', 'gemifx-vn'),
+    'firebase_storage_bucket' => env('FB_STORAGE_BUCKET', 'gemifx-vn.appspot.com'),
+    'firebase_messaging_sender_id' => env('FB_MESSAGING_SENDER_ID', '464562989951'),
+    'firebase_app_id' => env('FB_APP_ID', '1:464562989951:web:396b77b0542fa1912d484a'),
+    'firebase_measurement_id' => env('FB_MEASUREMENT_ID', 'G-MZZFL6GSJB'),
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

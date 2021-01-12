@@ -10,6 +10,7 @@ class LiveAccount extends Model
         'user_id',
         'group',
         'leverage',
-        'login'
+        'login',
+        'phone_number'
     ];
 }

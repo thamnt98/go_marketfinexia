@@ -10,12 +10,10 @@ use Illuminate\Support\Facades\Session;
 
 class LiveAccountController extends Controller
 {
-    public function main()
+    public function main(Request $request)
     {
         $liveAccounts = LiveAccount::where('user_id', Auth::user()->id)->get();
-        if (!Session::has('showForm')) {
-            Session::put('showForm', 3);
-        }
-        return view('account.live', compact('liveAccounts'));
+        $phone = $request->mobile_no;
+        return view('account.live', compact('liveAccounts', 'phone'));
     }
 }

@@ -1,0 +1,111 @@
+ul {
+    list-style: none;
+}
+/*li {*/
+/*    margin-top: 20px;*/
+/*}*/
+a {
+    text-decoration: none;
+}
+ul.nav-main li.nav-parent > a:after{
+    padding:0px 25px;
+}
+
+.page-header .breadcrumbs{
+    line-height: 0px;
+}
+.userbox.open .dropdown-menu {
+    border: none;
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    left: -11px;
+    padding: 45px 10px 0;
+    top: -10px;
+    width: 100%;
+    z-index: 992;
+    display: block;
+    margin-top: 15px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+}
+figure {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.userbox {
+    margin:0px;
+    margin-right: 20px;
+}
+.userbox.open .dropdown-menu li {
+    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-left: -25px;
+}
+
+
+ul.nav-main li.nav-parent > a {
+    cursor: pointer;
+}
+ul.nav-main > li.nav-expanded > a {
+    width: unset;
+}
+ul.nav-main li a {
+    font-size: 13px;
+    font-size: 1.3rem;
+    color: #abb4be;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+ul.nav-main > li > a {
+    padding: 12px 25px;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+ul.nav-main li.nav-parent.nav-expanded > a:after {
+    content: '\f106';
+}
+ul.nav-main li.nav-parent > a:after {
+    font-family: 'FontAwesome';
+    content: '\f107';
+    font-size: 16px;
+    font-size: 1.6rem;
+    color: #abb4be;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 14px 25px;
+}
+
+.page-header .breadcrumbs li{
+    margin-top:15px;
+}
+
+.panel-body{
+    font-size: 14px;
+    margin-top: 60px;
+}

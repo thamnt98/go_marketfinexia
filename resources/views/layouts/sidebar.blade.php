@@ -1,6 +1,9 @@
 	<!-- start: sidebar -->
+    <?php
+    $liveAccounts = \App\Models\LiveAccount::where('user_id', Auth::user()->id)->get();
+    ?>
     <aside id="sidebar-left" class="sidebar-left">
-				
+
         <div class="sidebar-header">
             <div class="sidebar-title">
                 <img src="{{ asset('image/icon_offline_0.jpeg') }}">
@@ -9,7 +12,7 @@
                 <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
             </div>
         </div>
-    
+
         <div class="nano">
             <div class="nano-content">
                 <nav id="menu" class="nav-main" role="navigation">
@@ -27,7 +30,7 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li class="level-2" data-toggle="live">
-                                    <a href="{{ route('account.live') }}">
+                                    <a href="@if(count($liveAccounts) <2) {{ route('send.otp') }} @else {{ route('account.live') }} @endif">
                                         Live Account
                                     </a>
                                 </li>
