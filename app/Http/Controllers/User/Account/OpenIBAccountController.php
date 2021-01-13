@@ -37,10 +37,6 @@ class OpenIBAccountController extends Controller
             foreach ($data as $key => $value) {
                 $cmd = $cmd . '&' . $key . '=' . $value;
             }
-            $cmd = 'action=createaccount&login=next';
-            foreach ($data as $key => $value) {
-                $cmd = $cmd . '&' . $key . '=' . $value;
-            }
             $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
             if (!$fp) {
                 return redirect()->back()->with('error', "Something went wrong. Please try again");
