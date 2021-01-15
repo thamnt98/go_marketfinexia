@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User\Account;
+namespace App\Http\Controllers\User\DepositAndWithDraw;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
@@ -9,8 +9,6 @@ use TigerpaySDK\TigerpayClient;
 use TigerpaySDK\TigerpayTradeWapObj;
 use TigerpaySDK\TigerpayTradeWapReq;
 
-use TigerpaySDK\TigerpayTradeWappayObj;
-use TigerpaySDK\TigerpayTradeWappayReq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -35,12 +33,14 @@ class TransferByVifaController extends Controller
                 [
                     'user_id' => $user->id,
                     'amount_money' => $price,
+                    'type' => config('deposit.type.vifa'),
+                    'status' => config('deposit.status.no')
                 ]
             );
-            $serverUrl = config('vifa.server_url');
-            $appId = config('vifa.app_id');
-            $APPPrivateKEY  = config('vifa.app_private_key');
-            $ServerPublicKey = config('vifa.server_public_key');
+            $serverUrl = config('deposit.vifa.server_url');
+            $appId = config('deposit.vifa.app_id');
+            $APPPrivateKEY  = config('deposit.vifa.app_private_key');
+            $ServerPublicKey = config('deposit.vifa.server_public_key');
             $client = new TigerpayClient($serverUrl, $appId, $APPPrivateKEY, $ServerPublicKey);
             $wapObj = new TigerpayTradeWapObj();
             $wapObj->userName = $user->full_name;
@@ -52,12 +52,12 @@ class TransferByVifaController extends Controller
         }
         return json_encode(
             [
-            'data' => $isValid,
-            'message' => $message,
-            'url' => $url,
-            'status' => $code
-        ]
-    );
+                'data' => $isValid,
+                'message' => $message,
+                'url' => $url,
+                'status' => $code
+            ]
+        );
     }
 
     private function isValid($data)

@@ -34,14 +34,14 @@
                                 <div class="col-lg-1"></div>
                                 <div class="col-lg-10">
                                     <label class="control-label"><b>Chọn ngân hàng</b></label>
-                                    @if($errors->has('bank_code'))
+                                    @if($errors->has('bank'))
                                         <br>
-                                        <span class="text-danger text-md-left font-weight-bold" >{{ $errors->first('bank_code') }}</span>
+                                        <span class="text-danger text-md-left font-weight-bold" >{{ $errors->first('bank') }}</span>
                                     @endif
                                     <div class="row" style="margin-top: 20px">
                                         @foreach ($banks as $bank)
                                         <div class="col-lg-3">
-                                            <input type="radio" name="bank_code" value="{{ $bank->code }}" id="{{ $bank->code }}">
+                                            <input type="radio" name="bank" value="{{ $bank->code . '-' . $bank->bank_name }}" id="{{ $bank->code }}">
                                             <label for="{{ $bank->code }}">
                                                 <img src="{{ $bank->bank_logo }}" class="img-thumbnail"
                                                 style="height: 100px;margin-bottom:20px">

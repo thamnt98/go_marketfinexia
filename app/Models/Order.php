@@ -14,7 +14,7 @@ class Order extends Model
         'amount_money',
         'status',
         'order_number',
-        'bank_code',
+        'bank_name',
         'sign',
         'created_at',
         'updated_at',

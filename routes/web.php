@@ -45,7 +45,6 @@ Route::group([
         Route::post('/my-profile', 'UpdateController@main')->name('account.update');
         Route::post('/my-profile/upload', 'UploadFileController@main')->name('account.upload');
         Route::post('/my-profile/password', 'ChangePasswordController@main')->name('account.password.change');
-        Route::post('/transfer/vifa', 'TransferByVifaController@main')->name('transfer.vifa');
         Route::get('/{login}/balance', 'GetBalanceByLoginController@main');
         Route::get('/send/otp', 'SendOTPController@main')->name('send.otp');
     });
@@ -57,5 +56,11 @@ Route::group([
         Route::post('/withdrawal-funds', 'CreateWithdrawalFundsController@main')->name('withdraw.funds.create');
         Route::get('/bepay', 'GetFormBepayController@main')->name('deposit.bepay');
         Route::post('/bepay', 'BepayTransferController@main')->name('deposit.bepay.transfer');
+        Route::post('/transfer/vifa', 'TransferByVifaController@main')->name('transfer.vifa');
+    });
+    Route::group([
+        'namespace' => 'Trading'
+    ], function () {
+        Route::get('/trading/history', 'TradingHistoryController@main')->name('trading.history');
     });
 });
