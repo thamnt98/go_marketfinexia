@@ -10,8 +10,8 @@ class GetFormBepayController extends Controller
     public function main()
     {
         $banks = [];
-        $merchantId = config('bepay.merchant_id');
-        $secretKey = config('bepay.secret_key');
+        $merchantId = config('deposit.bepay.merchant_id');
+        $secretKey = config('deposit.bepay.secret_key');
         $sign = md5($merchantId . $secretKey);
         $endpoint = "https://bepay2.com/api/v2/payment/listBank?merchant_id=" . $merchantId . "&sign=" . $sign;
         $client = new Client();

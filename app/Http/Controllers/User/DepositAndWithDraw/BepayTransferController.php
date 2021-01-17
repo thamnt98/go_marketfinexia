@@ -21,15 +21,19 @@ class BepayTransferController extends Controller
             return redirect()->back()->withErrors($isValid->errors())->withInput();
         }
         $user = Auth::user();
+        $data['bank'] = explode('-', $data['bank']);
+        $data['bank_code'] = $data['bank'][0];
+        $data['bank_name'] = $data['bank'][1];
+        unset($data['bank']);
         $data['user_id'] = $user->id;
-        $data['status'] = 2;
-        $data['type'] = config('bepay.type');
-        $data['merchant_id'] = config('bepay.merchant_id');
+        $data['status'] = config('deposit.status.no');
+        $data['type'] = config('deposit.type.bepay');
+        $data['merchant_id'] = config('deposit.bepay.merchant_id');
         $data['payment_method'] = 1;
         $data['merchant_txn'] = $data['order_number'] = Str::random(6);
         $data['merchant_customer'] =   str_replace(' ', '_', $user->full_name);
         $data['url_success'] = route('deposit.bepay');
-        $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('bepay.secret_key'));
+        $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
         $data['amount'] = $data['amount_money'];
         Order::create($data);
         $endpoint = "https://bepay2.com/api/v2/payment/request";
@@ -38,7 +42,7 @@ class BepayTransferController extends Controller
             'form_params' => $data
         ));
         $result = json_decode($response->getBody());
-        if(isset($result->data->redirect_url) && $result->data->redirect_url){
+        if (isset($result->data->redirect_url) && $result->data->redirect_url) {
             return Redirect::to($result->data->redirect_url);
         }
         return redirect()->back()->withInput();
@@ -50,7 +54,7 @@ class BepayTransferController extends Controller
             $data,
             [
                 'amount_money' => 'required|min:150000|numeric',
-                'bank_code' => 'required'
+                'bank' => 'required'
             ]
         );
     }
