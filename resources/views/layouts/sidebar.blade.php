@@ -69,18 +69,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-parent level-1" data-toggle="trading">
-                            <a>
+                        <li class="level-1" data-toggle="trading">
+                            <a href="{{  route('trading.history') }}">
                                 <i class="fa fa-history" aria-hidden="true"></i>
-                                <span>Trading</span>
+                                <span>History</span>
                             </a>
-                            <ul class="nav nav-children">
-                                <li class="level-2" data-toggle="history">
-                                    <a href="{{ route('trading.history') }}">
-                                         Trading History
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-parent level-1" data-toggle="partnership">
                             <a>
