@@ -109,10 +109,10 @@
                         </thead>
                         <tbody>
                             @foreach ($liveAccounts as $account)
-                            <tr>
+                            <tr class="text-center">
                                 <td>{{ $account->login }}</td>
                                 <td>{{ $account->group }}</td>
-                                <td>{{ $account->leverage }}</td>
+                                <td>{{ config('mt4.leverage')[$account->leverage] }}</td>
                             </tr>
                             @endforeach
                         </tbody>
