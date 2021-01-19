@@ -48,7 +48,7 @@ class OpenLiveAccountSuccess extends Mailable
                 'lastName' => $this->user['last_name'],
                 'login' => $this->account['login'],
                 'password' => $this->password,
-                'leverage' => config('mt4.leverage')[$this->account['leverage']]
+                'leverage' => $this->account['leverage']
             ]);
     }
 }
