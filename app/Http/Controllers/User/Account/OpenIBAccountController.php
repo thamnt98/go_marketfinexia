@@ -25,7 +25,7 @@ class OpenIBAccountController extends Controller
         $phone = $request->phone;
         $user = Auth::user();
         $data['name'] = $user->full_name;
-        $data['phone'] = $phone[1]. $phone[2] .'xxxxxx' . substr($phone, -4);
+        $data['phone'] = $phone[1] . $phone[2] . 'xxxxxx' . substr($phone, -4);
         $data['zipcode'] = $user->zip_code;
         $data['city'] = $user->city;
         $data['state'] = $user->state;
@@ -56,7 +56,7 @@ class OpenIBAccountController extends Controller
                 $result = explode('&', $result);
                 $data['login'] = explode('=', $result[1])[1];
                 $data['user_id'] = $user->id;
-                $data['phone_number'] = $phone;
+                $data['phone_number'] = substr($phone, 1);
                 $account = LiveAccount::create($data);
                 Mail::to($user->email)->send(new OpenLiveAccountSuccess($user, $account, $data['password']));
                 return redirect()->back()->with('success', "Open live account successfully. Please check your inbox or spam to login into MetaTrader 4");
