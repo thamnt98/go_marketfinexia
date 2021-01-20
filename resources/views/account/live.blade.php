@@ -43,7 +43,7 @@
             </header>
             <div class="panel-body">
                 <form action="{{route('account.ib.open')}}"
-                    class="form-horizontal form-bordered @if($liveAccounts->count() == 2) hidden @endif" method="post">
+                    class="form-horizontal form-bordered @if($liveAccounts->count() >= 2) hidden @endif" method="post">
                     @csrf
                     <input class="hidden" name="phone" value="{{ $phone }}">
                     <div class="form-group">
