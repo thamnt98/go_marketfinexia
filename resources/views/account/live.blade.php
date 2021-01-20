@@ -98,7 +98,7 @@
                     </div>
                 </form>
                 <br>
-                <div class="table-responsive @if(!$liveAccounts->count()) hidden @endif">
+                <div class="table-responsive @if($liveAccounts->count() <2) hidden @endif">
                     <table id="table" data-toggle="table" data-resizable="true">
                         <thead>
                             <tr>
