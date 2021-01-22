@@ -37,9 +37,9 @@
                                 <tr>
                                     <th>Amount Money</th>
                                     <th>Type</th>
-                                    <th>Status</th>
-                                    <th>Transaction Date</th>
                                     <th>Bank Name</th>
+                                    <th>Transaction Date</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,9 +47,9 @@
                                 <tr class="text-center">
                                     <td>{{ number_format($order->amount_money) }}</td>
                                     <td>{{ config('deposit.type_text')[$order->type] }}</td>
-                                    <td>{{ config('deposit.status_text')[$order->status] }}</td>
-                                    <td>{{ $order->created_at }}</td>
                                     <td>{{ $order->bank_name }}</td>
+                                    <td>{{ $order->created_at }}</td>
+                                    <td>{{ config('deposit.status_text')[$order->status] }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -68,8 +68,8 @@
                                     <th>Amount Money</th>
                                     <th>Withdrawal Currency </th>
                                     <th>Note</th>
-                                    <th>Status</th>
                                     <th>Transaction Date</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,8 +82,8 @@
                                     <td>{{ number_format($withdrawal->amount) }}</td>
                                     <td>{{ $withdrawal->withdrawal_currency }}</td>
                                     <td>{{ $withdrawal->note }}</td>
-                                    <td>{{ config('deposit.status_text')[$withdrawal->status] }}</td>
                                     <td>{{ $withdrawal->created_at }}</td>
+                                    <td>{{ config('deposit.status_text')[$withdrawal->status] }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
