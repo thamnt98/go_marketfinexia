@@ -82,7 +82,7 @@
                                     <td>{{ number_format($withdrawal->amount) }}</td>
                                     <td>{{ $withdrawal->withdrawal_currency }}</td>
                                     <td>{{ $withdrawal->note }}</td>
-                                    <td>{{ config('deposit.status_text')[$order->status] }}</td>
+                                    <td>{{ config('deposit.status_text')[$withdrawal->status] }}</td>
                                     <td>{{ $withdrawal->created_at }}</td>
                                 </tr>
                                 @endforeach
