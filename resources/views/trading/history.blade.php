@@ -66,6 +66,8 @@
                                     <th>Bank Name</th>
                                     <th>Account Name</th>
                                     <th>Amount Money</th>
+                                    <th>Withdrawal Currency </th>
+                                    <th>Note</th>
                                     <th>Status</th>
                                     <th>Transaction Date</th>
                                 </tr>
@@ -78,6 +80,8 @@
                                     <td>{{ $withdrawal->bank_name }}</td>
                                     <td>{{ $withdrawal->account_name }}</td>
                                     <td>{{ number_format($withdrawal->amount) }}</td>
+                                    <td>{{ $withdrawal->withdrawal_currency }}</td>
+                                    <td>{{ $withdrawal->note }}</td>
                                     <td>{{ config('deposit.status_text')[$order->status] }}</td>
                                     <td>{{ $withdrawal->created_at }}</td>
                                 </tr>
