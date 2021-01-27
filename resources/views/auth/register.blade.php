@@ -53,7 +53,8 @@
                             @endif
                         </div>
                         <div class="col-md-5">
-                            <input id="ib_id" type="text" class="form-control @error('ib_id') is-invalid @enderror" name="ib_id" value="{{ old('ib_id') }}" required autocomplete="ib_id" autofocus placeholder="IB ID">
+                            <input id="ib_id" type="text" class="form-control @error('ib_id') is-invalid @enderror" name="ib_id" value="{{ old('ib_id', $ibId) }}"
+                                   required autocomplete="ib_id" autofocus placeholder="IB ID" @if(!is_null($ibId)) disabled @endif>
                             @if($errors->has('ib_id'))
                                 <span class="text-danger text-md-left" >{{ $errors->first('ib_id') }}</span>
                             @endif
