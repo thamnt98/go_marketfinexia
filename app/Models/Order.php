@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Order extends Model
 {
     use SoftDeletes;
-    
+
     protected $fillable = [
         'user_id',
         'amount_money',
@@ -18,7 +18,8 @@ class Order extends Model
         'sign',
         'created_at',
         'updated_at',
-        'type'
+        'type',
+        'is_staff'
     ];
 
 }

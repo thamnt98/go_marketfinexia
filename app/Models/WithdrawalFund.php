@@ -24,6 +24,7 @@ class WithdrawalFund extends Model
         'bank_branch_name',
         'bank_address',
         'note',
-        'status'
+        'status',
+        'is_staff'
     ];
 }
