@@ -25,7 +25,6 @@
     <!-- Skin CSS -->
     <link rel="stylesheet" href="{{ asset('css/default.css')}}" />
     <link rel="stylesheet" href="{{ asset('css/otp.css')}}" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/theme-custom.css')}}">
@@ -107,38 +106,12 @@
                 </div>
                 <!---------------------------------end firebase otp --------------------->
             </div>
-            <div class="panel-body">
-                <div class="table-responsive @if(!$liveAccounts->count()) hidden @endif" style="margin-top:200px;">
-                    <table id="table" data-toggle="table" data-resizable="true">
-                        <thead>
-                        <tr>
-                            <th>Login</th>
-                            <th>IB ID</th>
-                            <th>Group</th>
-                            <th>Leverage</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach ($liveAccounts as $account)
-                            <tr class="text-center">
-                                <td>{{ $account->login }}</td>
-                                <td>{{ $account->ib_id }}</td>
-                                <td>{{ $account->group }}</td>
-                                <td>{{ config('mt4.leverage')[$account->leverage] }}</td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
             <input type="hidden" class="level1-toggle" value="account" />
             <input type="hidden" class="level2-toggle" value="live" />
         </section>
     </div>
 </section>
 @include('layouts.footer')
-<script src="{{ asset('js/bootstrap-table.js') }}"></script>
-<script src="{{ asset('js/data-table-active.js') }}"></script>
 <script>
     function getUiConfig() {
         return {
