@@ -12,7 +12,7 @@ class LiveAccountController extends Controller
 {
     public function main(Request $request)
     {
-        $liveAccounts = LiveAccount::where('user_id', Auth::user()->id)->get();
+        $liveAccounts = LiveAccount::where('user_id', Auth::user()->id)->where('is_staff', 2)->get();
         $phone = $request->mobile_no;
         return view('account.live', compact('liveAccounts', 'phone'));
     }

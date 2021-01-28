@@ -11,7 +11,7 @@ class WithDrawFundsController extends Controller
 {
     public function main()
     {
-        $logins = LiveAccount::where('user_id', Auth::user()->id)->pluck('login');
+        $logins = LiveAccount::where('user_id', Auth::user()->id)->where('is_staff', 2)->pluck('login');
         return view('withdrawanddeposit.withdraw_funds', compact('logins'));
     }
 }

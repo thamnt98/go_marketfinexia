@@ -13,8 +13,8 @@ class TradingHistoryController extends Controller
     public function main()
     {
         $id = Auth::user()->id;
-        $orders = Order::where('user_id', $id)->get();
-        $withdrawals = WithdrawalFund::where('user_id', $id)->get();
+        $orders = Order::where('user_id', $id)->where('is_staff', 2)->get();
+        $withdrawals = WithdrawalFund::where('user_id', $id)->where('is_staff', 2)->get();
         return view('trading.history', compact('orders', 'withdrawals'));
     }
 }
