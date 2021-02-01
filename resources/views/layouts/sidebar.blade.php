@@ -3,7 +3,6 @@
     $liveAccounts = \App\Models\LiveAccount::where('user_id', Auth::user()->id)->get();
     ?>
     <aside id="sidebar-left" class="sidebar-left">
-
         <div class="sidebar-header">
             <div class="sidebar-title">
                 <img src="{{ asset('image/icon_offline_0.jpeg') }}">

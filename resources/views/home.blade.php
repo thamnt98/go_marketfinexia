@@ -53,7 +53,7 @@
         </section>
     </div>
 </div>
-<div class="footer" style="position: fixed; bottom: 10px; width: 100%;">
+<div class="footer" style="">
     <p style="font-size:11px">Risk Warning Note: Forex and CFDs are leveraged products, incur a high level of risk and
         may not be suitable for all investors. You should not risk more than you are prepared to lose. Before deciding
         to trade, please ensure you understand the risks involved and take into account your level of experience. Seek

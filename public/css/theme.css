@@ -368,7 +368,7 @@ a:active {
 		background: #FFF;
 		float: none !important;
 		height: 60px;
-		margin-top: 60px;
+		/*margin-top: 60px;*/
 		width: 100%;
 	}
 
@@ -379,10 +379,11 @@ a:active {
 
 	.content-body {
 		padding: 0 15px 15px;
+        margin-top: 40px;
 	}
 
 	.page-header {
-		margin: 0 -15px 20px;
+		margin: 0 -15px 0px;
 	}
 
 	.sidebar-left {
@@ -2560,11 +2561,28 @@ html.sidebar-right-opened .page-header .sidebar-right-toggle i:before {
 	content: "\f054";
 }
 
+.page-header{
+    height: auto;
+    margin-top: 60px;
+}
+.footer{
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+}
+
 /* Page Header - Mobile */
 @media only screen and (max-width: 767px) {
 	.page-header {
 		padding-right: 80px;
 	}
+.content-body{
+    padding:0px;
+}
+.footer {
+    padding:0px 10px 0px 10px;
+    position:unset;
+}
 
 	.page-header .breadcrumbs {
 		display: none;

@@ -3,8 +3,10 @@
         <a href="{{ route('home') }}" class="logo">
         <img src="{{ asset('image/logo.png') }}" height="35" alt="Porto Admin" />
         </a>
+        <div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+            <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+        </div>
     </div>
-
     <!-- start: search & user box -->
     <div class="header-right">
         <div id="userbox" class="userbox">
