@@ -29,6 +29,6 @@ return [
     ],
     'status_text' => [
         1 => 'Approved',
-        2 => 'Pending'
+        2 => 'Processing'
     ]
 ];

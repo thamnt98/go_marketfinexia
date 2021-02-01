@@ -20,8 +20,7 @@ class RegisterController extends Controller
 
     /**
      * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
+     * @param array $data
      * @return \App\User
      */
     protected function main(Request $request)
@@ -37,7 +36,8 @@ class RegisterController extends Controller
             $email = $user->email;
             $token = $this->createToken($email);
             Mail::to($email)->send(new UserRegisteredSuccess($user, $token));
-            return back()->with('success', "We have sent you an email to setting password. Please check your inbox or spam");
+            return back()->with('success',
+                "We have sent you an email to setting password. Please check your inbox or spam");
         } else {
             return back()->with('error', "Something went wrong");
         }
@@ -45,18 +45,23 @@ class RegisterController extends Controller
 
     /**
      * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
+        return Validator::make(
+            $data, [
+            'first_name'   => ['required', 'string', 'max:255'],
+            'last_name'    => ['required', 'string', 'max:255'],
             'phone_number' => 'required|regex:/[0-9]{10}/',
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-        ]);
+            'email'        => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'ib_id'        => 'required|regex:/[0-9]{6}/',
+        ],
+            [
+                'ib_id.regex' => 'The IB ID has only 6 digits',
+            ]
+        );
     }
 
     private function createToken($email)
@@ -69,9 +74,9 @@ class RegisterController extends Controller
         PasswordReset::updateOrCreate(
             ['email' => $email],
             [
-                'token' => $token,
-                'email' =>  $email,
-                'created_at' => Carbon::now()
+                'token'      => $token,
+                'email'      => $email,
+                'created_at' => Carbon::now(),
             ]
         );
         return $token;

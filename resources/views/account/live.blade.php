@@ -43,9 +43,18 @@
             </header>
             <div class="panel-body">
                 <form action="{{route('account.ib.open')}}"
-                    class="form-horizontal form-bordered @if($liveAccounts->count() == 2) hidden @endif" method="post">
+                    class="form-horizontal form-bordered @if($liveAccounts->count() >= 2) hidden @endif" method="post">
                     @csrf
                     <input class="hidden" name="phone" value="{{ $phone }}">
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="inputSuccess"><b>IB ID</b></label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="ib_id" value="{{ old('ib_id') }}" placeholder="IB ID">
+                            @if($errors->has('ib_id'))
+                                <span class="text-danger text-md-left">{{ $errors->first('ib_id') }}</span>
+                            @endif
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>Type</b></label>
                         <div class="col-md-6">
@@ -103,6 +112,7 @@
                         <thead>
                             <tr>
                                 <th>Login</th>
+                                <th>IB ID</th>
                                 <th>Group</th>
                                 <th>Leverage</th>
                             </tr>
@@ -111,6 +121,7 @@
                             @foreach ($liveAccounts as $account)
                             <tr class="text-center">
                                 <td>{{ $account->login }}</td>
+                                <td>{{ $account->ib_id }}</td>
                                 <td>{{ $account->group }}</td>
                                 <td>{{ config('mt4.leverage')[$account->leverage] }}</td>
                             </tr>

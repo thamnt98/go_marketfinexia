@@ -33,16 +33,6 @@
                                         Live Account
                                     </a>
                                 </li>
-                                {{-- <li class="level-2" data-toggle="demo">
-                                    <a href="{{ route('account.demo') }}">
-                                        Demo Account
-                                    </a>
-                                </li> --}}
-                                <li class="level-2" data-toggle="ib">
-                                    <a href="{{ route('account.ib', 1)}}">
-                                         IB Account
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-parent level-1" data-toggle="bank">
@@ -61,11 +51,6 @@
                                          Withdrawal Funds
                                     </a>
                                 </li>
-                                <li class="level-2" data-toggle="transfer">
-                                    <a href="#">
-                                         Transfer Between Accounts
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="level-1" data-toggle="trading">
@@ -74,18 +59,11 @@
                                 <span>History</span>
                             </a>
                         </li>
-                        <li class="nav-parent level-1" data-toggle="partnership">
-                            <a>
+                        <li class="level-1" data-toggle="partnership">
+                            <a href="https://ib.gemifx.com/register">
                                 <i class="fa fa-users" aria-hidden="true"></i>
                                 <span>IB Partnership</span>
                             </a>
-                            <ul class="nav nav-children level-2" data-toggle="ib">
-                                <li>
-                                    <a href="{{ route('account.ib', 2) }}">
-                                         IB Account
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="level-1" data-toggle="password">
                             <a href="{{ route('account.MTPassword') }}">

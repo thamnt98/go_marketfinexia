@@ -25,13 +25,14 @@ class OpenIBAccountController extends Controller
         $phone = $request->phone;
         $user = Auth::user();
         $data['name'] = $user->full_name;
-        $data['phone'] = $phone[1]. $phone[2] .'xxxxxx' . substr($phone, -4);
+        $data['phone'] = $phone[1] . $phone[2] . 'xxxxxx' . substr($phone, -4);
         $data['zipcode'] = $user->zip_code;
         $data['city'] = $user->city;
         $data['state'] = $user->state;
         $data['address'] = $user->address;
         $data['country'] = $user->country;
         $data['password'] = Str::random(7);
+        $data['agent'] = $data['ib_id'];
         try {
             $cmd = 'action=createaccount&login=next';
             foreach ($data as $key => $value) {
@@ -56,10 +57,11 @@ class OpenIBAccountController extends Controller
                 $result = explode('&', $result);
                 $data['login'] = explode('=', $result[1])[1];
                 $data['user_id'] = $user->id;
-                $data['phone_number'] = $phone;
+                $data['phone_number'] = substr($phone, 1);
                 $account = LiveAccount::create($data);
                 Mail::to($user->email)->send(new OpenLiveAccountSuccess($user, $account, $data['password']));
-                return redirect()->back()->with('success', "Open live account successfully. Please check your inbox or spam to login into MetaTrader 4");
+                return redirect()->back()->with('success',
+                    "Open live account successfully. Please check your inbox or spam to login into MetaTrader 4");
             }
         } catch (Exception $e) {
             return redirect()->back()->with('error', "Something went wrong. Please try again");
@@ -71,8 +73,12 @@ class OpenIBAccountController extends Controller
         return Validator::make(
             $data,
             [
-                'group' => 'required',
-                'leverage' => 'required'
+                'group'    => 'required',
+                'leverage' => 'required',
+                'ib_id'    => 'required|regex:/[0-9]{6}/',
+            ],
+            [
+                'ib_id.regex' => 'The IB ID has only 6 digits',
             ]
         );
     }
@@ -92,7 +98,7 @@ class OpenIBAccountController extends Controller
         return Validator::make(
             ['otp' => $otp],
             [
-                'otp' => 'required'
+                'otp' => 'required',
             ]
         );
     }

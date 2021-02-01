@@ -199,7 +199,7 @@
                                                       <b>Tiền tệ tài khoản: USD</b></p>
                                                     <p
                                                       style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
-                                                     <b>Đòn bẩy tài khoản: {{ $leverage }}</b></p>
+                                                     <b>Đòn bẩy tài khoản: {{ config('mt4.leverage')[$leverage] }}</b></p>
 													<p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
 														 </p>
