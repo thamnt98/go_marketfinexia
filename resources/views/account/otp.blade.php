@@ -35,7 +35,7 @@
         var config = {
             apiKey: "{{ config('app.firebase_api_key') }}",
             authDomain: "{{ config('app.firebase_auth_domain') }}",
-            databaseURL: "{{ config('app.firebase_database_url') }}",
+            {{--databaseURL: "{{ config('app.firebase_database_url') }}",--}}
             projectId: "{{ config('app.firebase_project_id') }}",
             storageBucket: "{{ config('app.firebase_storage_bucket') }}",
             messagingSenderId: "{{ config('app.firebase_messaging_sender_id') }}",
