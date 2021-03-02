@@ -37,7 +37,7 @@
 {{--									</a>--}}
                                     <a href="#">
                                         <div class="thumbnail">
-                                            <div class="thumb-preview text-center">
+                                            <div class="thumb-preview text-center" style="margin-top:20px">
                                                 <img src="{{ asset('image/tether.png') }}" class="img-thumnail" alt="Project">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
