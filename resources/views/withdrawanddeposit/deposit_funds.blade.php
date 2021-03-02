@@ -27,14 +27,22 @@
                         <div class="inner-body mg-main">
                             <div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
                                 <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
-                                    <a href="{{ route('deposit.bepay') }}">
+{{--                                    <a href="{{ route('deposit.bepay') }}">--}}
+{{--                                        <div class="thumbnail">--}}
+{{--                                            <div class="thumb-preview text-center">--}}
+{{--                                                <img src="{{ asset('image/bepay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px">--}}
+{{--                                                <div class="mg-thumb-options"></div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--									</a>--}}
+                                    <a href="#">
                                         <div class="thumbnail">
                                             <div class="thumb-preview text-center">
-                                                <img src="{{ asset('image/bepay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px">
+                                                <img src="{{ asset('image/tether.png') }}" class="img-thumnail" alt="Project">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>
-									</a>
+                                    </a>
 								</div>
 								<div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
                                     <a href="#vifa" class="modal-with-form">
