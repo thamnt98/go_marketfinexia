@@ -24,6 +24,11 @@ class OpenIBAccountController extends Controller
         }
         $phone = $request->phone;
         $user = Auth::user();
+        $liveAccounts = LiveAccount::where('user_id', $user->id)->get();
+        if(count($liveAccounts) >= 2){
+            return redirect()->back()->with('error',
+                "You opened two accounts and cant open anymore");
+        }
         $data['name'] = $user->full_name;
         $data['phone'] = $phone[1] . $phone[2] . 'xxxxxx' . substr($phone, -4);
         $data['zipcode'] = $user->zip_code;
