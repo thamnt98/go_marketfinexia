@@ -56,7 +56,7 @@ class RegisterController extends Controller
             'last_name'    => ['required', 'string', 'max:255'],
             'phone_number' => 'required|regex:/[0-9]{10}/',
             'email'        => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'ib_id'        => 'required|regex:/[0-9]{6}/',
+            'ib_id'        => 'nullable|regex:/[0-9]{6}/',
         ],
             [
                 'ib_id.regex' => 'The IB ID has only 6 digits',
