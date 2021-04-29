@@ -81,17 +81,17 @@
                                 <div id="loaded" class="hidden">
                                     <div id="main">
                                         <div id="user-signed-in" class="hidden">
-{{--                                            <form action="{{ route('account.live') }}" method="post">--}}
-{{--                                                {{ csrf_field() }}--}}
-{{--                                                <div id="user-info">--}}
-{{--                                                    <div id="phone"></div>--}}
-{{--                                                    <input type="text" id="mobile_no" name="mobile_no" value="0378982200" readonly>--}}
-{{--                                                    <div class="clearfix"></div>--}}
-{{--                                                </div>--}}
-{{--                                                <p>--}}
-{{--                                                    <button type="submit" id="sign-out">Sign Out</button>--}}
-{{--                                                </p>--}}
-{{--                                            </form>--}}
+                                            <form action="{{ route('account.live') }}" method="post">
+                                                {{ csrf_field() }}
+                                                <div id="user-info">
+                                                    <div id="phone"></div>
+                                                    <input type="text" id="mobile_no" name="mobile_no" value="" readonly>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <p>
+                                                    <button type="submit" id="sign-out">Sign Out</button>
+                                                </p>
+                                            </form>
                                         </div>
                                         <div id="user-signed-out" class="hidden">
                                             <div id="firebaseui-spa">
