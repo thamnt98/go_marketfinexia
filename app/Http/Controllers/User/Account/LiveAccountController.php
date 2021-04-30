@@ -14,6 +14,7 @@ class LiveAccountController extends Controller
     {
         $liveAccounts = LiveAccount::where('user_id', Auth::user()->id)->get();
         $phone = $request->mobile_no;
-        return view('account.live', compact('liveAccounts', 'phone'));
+        $ibId = Auth::user()->ib_id;
+        return view('account.live', compact('liveAccounts', 'phone', 'ibId'));
     }
 }

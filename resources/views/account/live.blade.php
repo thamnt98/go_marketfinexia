@@ -49,7 +49,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="inputSuccess"><b>IB ID</b></label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="ib_id" value="{{ old('ib_id') }}" placeholder="IB ID">
+                            <input type="text" class="form-control" name="ib_id" value="{{ old('ib_id', $ibId) }}" placeholder="IB ID">
                             @if($errors->has('ib_id'))
                                 <span class="text-danger text-md-left">{{ $errors->first('ib_id') }}</span>
                             @endif
