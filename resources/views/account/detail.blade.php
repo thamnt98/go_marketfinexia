@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
 <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
 @endsection
-@include('layouts.menutop')  
+@include('layouts.menutop')
 <header class="page-header">
     <div class="right-wrapper pull-right">
         <ol class="breadcrumbs">
@@ -70,7 +70,10 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <label><b>Phone</b></label>
-                                <input id="phone" name="phone_number" type="text" class="form-control" value="{{ old('phone_number', $user->phone_number) }}">
+                                <input id="phone" name="phone_number" type="text" class="form-control" value="{{ old('phone_number', $user->phone_number) }}" placeholder="+19172678536">
+                                @if($errors->has('phone_number'))
+                                    <span class="text-danger text-md-left" >{{ $errors->first('phone_number') }}</span>
+                                @endif
                             </div>
                             <div class="form-group col-md-5">
                                 <label><b>State</b></label>
@@ -128,7 +131,7 @@
                                     <th>File Type</th>
                                     <th>View</th>
                                     <th>Action</th>
-                                
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -227,15 +230,6 @@
 </section>
 @endsection
 @section('js')
-<script src="{{ asset('js/intlTelInput.js')}}"></script>
 <script src="{{ asset('js/bootstrap-table.js') }}"></script>
 <script src="{{ asset('js/data-table-active.js') }}"></script>
-<script>
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input, {
-    })
-    $(document).on('change','#copy-of-id', function(){
-        $('#copy-of-id-value').val($(this).val());
-    })
-</script>
 @endsection

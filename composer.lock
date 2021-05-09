@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "69dd0f8318a6e58c486ecedb810ea0f9",
+    "content-hash": "5d5a6dd62ba0fcdc64c7c163169592d6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4520,16 +4520,16 @@
         },
         {
             "name": "twilio/sdk",
-            "version": "6.15.1",
+            "version": "6.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twilio/twilio-php.git",
-                "reference": "09e8cf28d1c53cb53472a917cddfdaeb4d8105f5"
+                "reference": "4e69cc175512db9ef07e87e92c124aefa4d01360"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/09e8cf28d1c53cb53472a917cddfdaeb4d8105f5",
-                "reference": "09e8cf28d1c53cb53472a917cddfdaeb4d8105f5",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/4e69cc175512db9ef07e87e92c124aefa4d01360",
+                "reference": "4e69cc175512db9ef07e87e92c124aefa4d01360",
                 "shasum": ""
             },
             "require": {
@@ -4568,9 +4568,9 @@
             ],
             "support": {
                 "issues": "https://github.com/twilio/twilio-php/issues",
-                "source": "https://github.com/twilio/twilio-php/tree/6.15.1"
+                "source": "https://github.com/twilio/twilio-php/tree/6.23.0"
             },
-            "time": "2020-12-16T21:07:31+00:00"
+            "time": "2021-05-05T19:15:04+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

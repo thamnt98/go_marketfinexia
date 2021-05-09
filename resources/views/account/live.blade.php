@@ -140,27 +140,4 @@
 @section('js')
 <script src="{{ asset('js/bootstrap-table.js') }}"></script>
 <script src="{{ asset('js/data-table-active.js') }}"></script>
-<script src="{{ asset('js/intlTelInput.js')}}"></script>
-<script>
-    var input = document.querySelector("#phone");
-    var phone = window.intlTelInput(input, {
-        initialCountry: "vn",
-        separateDialCode: true,
-        customPlaceholder: 'a'
-    });
-    input.addEventListener("countrychange", function () {
-        $('#country-code').val(phone.getSelectedCountryData().dialCode);
-    });
-    $(document).ready(function () {
-        $('#phone').on('change', function () {
-            $('#country-code').val(phone.getSelectedCountryData().dialCode);
-        })
-    })
-    if (!$('.open-account').is(':hidden')) {
-        $("input.checkbox").prop('required', true);
-    }
-    else{
-        $("input.checkbox").prop('required', false);
-    }
-</script>
 @endsection

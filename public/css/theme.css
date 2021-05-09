@@ -2566,7 +2566,6 @@ html.sidebar-right-opened .page-header .sidebar-right-toggle i:before {
     margin-top: 60px;
 }
 .footer{
-    position: fixed;
     bottom: 10px;
     width: 100%;
 }

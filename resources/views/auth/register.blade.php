@@ -67,7 +67,7 @@
                             </select>
                         </div>
                         <div class="col-md-5">
-                            <input id="phone_number" placeholder="Phone number" type="text" class="form-control" name="phone_number" required autocomplete="new-password" value="{{ old('phone_number') }}">
+                            <input id="phone_number" placeholder="Phone number" type="text" class="form-control" name="phone_number" required autocomplete="new-password" value="{{ old('phone_number') }}" placeholder="+19172678536">
                             @if($errors->has('phone_number'))
                                 <span class="text-danger text-md-left" >{{ $errors->first('phone_number') }}</span>
                             @endif

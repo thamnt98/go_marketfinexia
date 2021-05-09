@@ -1,6 +1,6 @@
 @extends('layouts.simplepage')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-table.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/intlTelInput.css') }}">
 @endsection
 @include('layouts.menutop')
@@ -39,17 +39,19 @@
                         <a href="#" class="fa fa-caret-down"></a>
                     </div>
 
-                    <h2 class="panel-title">Open Trading Account</h2>
+                    <h2 class="panel-title">Verify your phone number</h2>
                 </header>
                 <div class="panel-body">
-                    <form method="post" action="{{route('otp.send')}}" class="form-horizontal form-bordered ">
+                    Please enter the OTP sent to your number: {{ Session::get('phone') }}
+                    <form action="{{ route('otp.verify')}}" method="post">
                         @csrf
                         <div class="form-group">
-                            <label class="col-md-3 control-label" for="inputSuccess"><b>Phone nummber</b></label>
+                            <label class="col-md-3 control-label text-right" for="inputSuccess" style="margin-top: 6px;"><b>OTP</b></label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="phone_number" value="{{ old('phone_number') }}" placeholder="+19172678536">
-                                @if($errors->has('phone_number'))
-                                    <span class="text-danger text-md-left">{{ $errors->first('phone_number') }}</span>
+                                <input type="hidden" name="phone_number" value="{{ Session::get('phone') }}">
+                                <input id="verification_code" type="tel" class="form-control"  name="verification_code" value="{{ old('verification_code') }}" required>
+                                @if($errors->has('verification_code'))
+                                    <span class="text-danger text-md-left">{{ $errors->first('verification_code') }}</span>
                                 @endif
                             </div>
                         </div>
@@ -57,7 +59,7 @@
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
                                 <button type="submit" class="mb-xs mt-xs mr-xs btn btn-primary">
-                                    Send OTP
+                                    Verify phone number
                                 </button>
                             </div>
                         </div>
@@ -89,8 +91,8 @@
             </section>
         </div>
     </div>
-    <input type="hidden" class="level1-toggle" value="account" />
-    <input type="hidden" class="level2-toggle" value="live" />
+    <input type="hidden" class="level1-toggle" value="account"/>
+    <input type="hidden" class="level2-toggle" value="live"/>
     </section>
 @endsection
 @section('js')
