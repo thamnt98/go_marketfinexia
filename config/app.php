@@ -4,7 +4,7 @@ return [
 
 
     "TWILIO_SID" => "ACd669393d794f601b7eab3463b9f6ad3f",
-    "TWILIO_AUTH_TOKEN" => "eb5f3c2da3d218288d37abae1cd49011",
+    "TWILIO_AUTH_TOKEN" => "18d36bf882cadfc3653810f3306de6e0",
     "TWILIO_VERIFY_SID" => "VA4ee23b8f21a9de8cdcfe89b060b36462",
 
 
