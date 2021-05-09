@@ -57,7 +57,10 @@ class SendOTPController extends Controller
             [
                 'phone_number' => 'required|exists:users,phone_number|regex:/^\+\d{9,12}$/'
             ],
-            ['phone_number.regex' => "The phone number must  include phone country code"]
+            [
+                'phone_number.regex' => "The phone number must  include phone country code",
+                'phone_number.exists' => "The phone number does not match your phone number in your profile"
+            ]
         );
     }
 }
