@@ -30,11 +30,12 @@ class SendOTPController extends Controller
         $twilio_verify_sid = config("app.TWILIO_VERIFY_SID");
         $twilio = new Client($twilio_sid, $token);
         try {
-            $twilio->verify->v2->services($twilio_verify_sid)
+            $twilio = $twilio->verify->v2->services($twilio_verify_sid)
                 ->verifications
                 ->create($phone, "sms");
         } catch (Exception $e) {
             $code = $e->getCode();
+            dd($e->getMessage());
             switch ($code) {
                 case 60200 :
                     $message = "Cannot find the phone number you just entered"; break;

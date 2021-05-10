@@ -33,6 +33,9 @@ $('.ajax-form').on('submit', function (e) {
                 });
             }
             if (result.status == 200) {
+                $.magnificPopup.close();
+                form.find('.errors .text-danger').remove();
+                form.find('.errors').removeClass('has-error');
                 if (result.url == null) {
                     form.find('.errors .text-danger').remove();
                     form.find('.errors').removeClass('has-error');

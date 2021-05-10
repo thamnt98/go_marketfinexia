@@ -28,6 +28,30 @@
                                 <div class="col-lg-1"></div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-1"></div>
+                                <div class="col-lg-10">
+                                    <div class="choose_account">
+                                        <label class="control-label"><b>Chọn tài khoản</b></label>
+                                        <select name="login" id="" class="form-control">
+                                            <option value="">Choose account</option>
+                                            @foreach ($listAccounts as $account)
+                                                @if (old('login') == $account)
+                                                    <option value="{{$account}}" selected>{{$account}}</option>
+                                                @else
+                                                    <option value="{{$account}}">{{$account}}</option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        @if ($errors->has('login'))
+                                            <span
+                                                class="text-danger text-md-left font-weight-bold">{{ $errors->first('login') }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <br>
                         <div class="form-group">
                             <div class="row">

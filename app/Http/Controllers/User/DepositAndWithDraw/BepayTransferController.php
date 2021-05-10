@@ -54,7 +54,8 @@ class BepayTransferController extends Controller
             $data,
             [
                 'amount_money' => 'required|min:150000|numeric',
-                'bank' => 'required'
+                'bank' => 'required',
+                'login' => 'required'
             ]
         );
     }

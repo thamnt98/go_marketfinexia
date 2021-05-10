@@ -74,6 +74,22 @@
                                                                 <div class="errors errors-amount_money"></div>
                                                             </div>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label"><b>Choose account</b></label>
+                                                            <div class="col-sm-9">
+                                                                <select name="login" id="" class="form-control">
+                                                                    <option value="">Choose account</option>
+                                                                    @foreach ($listAccounts as $account)
+                                                                        @if (old('login') == $account)
+                                                                            <option value="{{$account}}" selected>{{$account}}</option>
+                                                                        @else
+                                                                            <option value="{{$account}}" >{{$account}}</option>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </select>
+                                                                <div class="errors errors-login"></div>
+                                                            </div>
+                                                        </div>
                                                         <br>
                                                         <div class="form-group">
                                                             <div class="col-sm-3"></div>

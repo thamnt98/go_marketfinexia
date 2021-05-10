@@ -23,7 +23,8 @@ class TransferByVifaController extends Controller
         $code = 200;
         $isValid = null;
         $price =  $request->amount_money;
-        $isValid = $this->isValid(['amount_money' => $price]);
+        $login = $request->login;
+        $isValid = $this->isValid(['amount_money' => $price, 'login' => $login]);
         if ($isValid->fails()) {
             $code = 400;
             $isValid = $isValid->errors();
@@ -34,7 +35,8 @@ class TransferByVifaController extends Controller
                     'user_id' => $user->id,
                     'amount_money' => $price,
                     'type' => config('deposit.type.vifa'),
-                    'status' => config('deposit.status.no')
+                    'status' => config('deposit.status.no'),
+                    'login' => $login
                 ]
             );
             $serverUrl = config('deposit.vifa.server_url');
@@ -65,7 +67,8 @@ class TransferByVifaController extends Controller
         return Validator::make(
             $data,
             [
-                'amount_money' => 'bail|required|numeric|min:10000'
+                'amount_money' => 'bail|required|numeric|min:10000',
+                'login' => 'required'
             ]
         );
     }
