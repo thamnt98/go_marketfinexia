@@ -31,11 +31,13 @@ class BepayTransferController extends Controller
         $data['merchant_id'] = config('deposit.bepay.merchant_id');
         $data['payment_method'] = 1;
         $data['merchant_txn'] = $data['order_number'] = Str::random(6);
-        $data['merchant_customer'] =   str_replace(' ', '_', $user->full_name);
+//        $data['merchant_customer'] =   str_replace(' ', '_', $user->full_name);
         $data['url_success'] = route('deposit.bepay');
-        $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
+        $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
+//        $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
         $data['amount'] = $data['amount_money'];
         Order::create($data);
+        unset($data['login']);
         $endpoint = "https://bepay2.com/api/v2/payment/request";
         $client = new Client();
         $response = $client->post($endpoint, array(
