@@ -37,7 +37,7 @@
                                     {{--									</a>--}}
                                     {{--								</div>--}}
                                     <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
-                                        <a href="{{ route('deposit.bepay') }}">
+                                        <a href="#vifa" class="modal-with-form">
                                             <div class="thumbnail">
                                                 <div class="thumb-preview" style="">
                                                     <img src="{{ asset('image/paynew.jpg') }}" class="img-responsive"
@@ -116,7 +116,7 @@
                                     {{--                                    </a>--}}
                                     {{--                                </div>--}}
                                     <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
-                                        <a href="{{ route('deposit.bepay') }}">
+                                        <a href="#vifa" class="modal-with-form">
                                             <div class="thumbnail">
                                                 <div class="thumb-preview text-center" style="margin-top:10px">
                                                     <img src="{{ asset('image/asia_pay.png') }}" class="img-thumnail"
