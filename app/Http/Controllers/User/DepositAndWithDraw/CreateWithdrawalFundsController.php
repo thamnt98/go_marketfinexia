@@ -24,21 +24,27 @@ class CreateWithdrawalFundsController extends Controller
 
     private function validateData($data)
     {
+        if (isset($data['available_balance'])) {
+            $data['available_balance'] =  (float) $data['available_balance'];
+        }
+        if (isset($data['balance'])) {
+            $data['balance'] =  (float) $data['balance'];
+        }
         return Validator::make(
             $data,
             [
                 'login' => 'required',
                 'currency' => 'required',
-                'available_balance' => 'bail|required|numeric|min:50',
+                'available_balance' => 'bail|required|lte:50',
                 'withdrawal_type' => 'required',
                 'bank_account' => 'required|string|max:255',
                 'bank_name' => 'required|string|max:255',
                 'swift_code' => 'required|string|regex:/[A-Z0-9]{8,}/',
                 'iban' => 'required|string|max:255',
                 'account_name' => 'required|string|max:255',
-                'balance' => 'bail|required|numeric|min:50',
+                'balance' => 'bail|required|lte:50',
                 'withdrawal_currency' => 'required',
-                'amount' => 'bail|required|numeric|min:50',
+                'amount' => 'bail|required|numeric|min:50|lte:balance',
                 'account_holder' => 'required|string|max:255',
                 'bank_branch_name' =>  'required|string|max:255',
                 'bank_address' =>  'required|string|max:255',

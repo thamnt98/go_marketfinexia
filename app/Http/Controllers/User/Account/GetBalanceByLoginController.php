@@ -10,7 +10,7 @@ class GetBalanceByLoginController extends Controller
     public function main($login)
     {
         $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
-        $cmd = 'action=getaccountbalance&login=' . $login;
+        $cmd = 'action=getaccountinfoex&login=' . $login;
         fwrite($fp, $cmd);
         stream_set_timeout($fp, 1);
         $result = '';
@@ -23,8 +23,9 @@ class GetBalanceByLoginController extends Controller
             }
         }
         $result = explode('&', $result);
-        $balance =  (int)(explode('=', $result[2])[1]);
+        $balance = (explode('=', $result[15])[1]);
+        $equity =  (explode('=', $result[28])[1]);
         fclose($fp);
-        return $balance;
+        return [$balance, $equity];
     }
 }

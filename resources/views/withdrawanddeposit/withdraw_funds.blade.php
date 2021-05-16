@@ -79,8 +79,8 @@
                                 @endif
                             </div>
                             <div class="form-group col-md-5">
-                                <label><b>Balance</b></label>
-                                <input type="number" class="form-control" placeholder="Balance" name="balance" value="{{ old('balance') }}">
+                                <label><b>Equity Balance</b></label>
+                                <input readonly class="form-control equity-balance" type="text" placeholder="Balance" name="balance" value="{{ old('balance') }}">
                                 @if($errors->has('balance'))
                                 <span class="text-danger text-md-left">{{ $errors->first('balance') }}</span>
                                 @endif
@@ -93,7 +93,7 @@
                             <div class="col-md-1"></div>
                             <div class="col-md-5">
                                 <label><b>Available Balance</b></label>
-                                <input type="number" class="form-control available-balance" name="available_balance" placeholder="Available Balance" value="{{old('available_balance')}}">
+                                <input readonly type="text" class="form-control available-balance" name="available_balance" placeholder="Available Balance" value="{{old('available_balance')}}">
                                 @if($errors->has('available_balance'))
                                 <span class="text-danger text-md-left">{{ $errors->first('available_balance') }}</span>
                                 @endif
@@ -243,7 +243,8 @@
                 type: 'get',
                 url: url ,
                 success: function(data) {
-                    $('.available-balance').val(data)
+                    $('.available-balance').val(data[0])
+                    $('.equity-balance').val(data[1])
                 },
             });
 
