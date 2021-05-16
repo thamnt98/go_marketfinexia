@@ -17,32 +17,45 @@ class HomeController extends Controller
         $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
         $logins = LiveAccount::where('user_id', $userId)->pluck('login');
         $balances = [];
-//        foreach ($logins as $login) {
-//            $cmd = 'action=getaccountbalance&login=' . $login;
-//            fwrite($fp, $cmd);
-//            stream_set_timeout($fp, 1);
-//            $result = '';
-//            $info = stream_get_meta_data($fp);
-//            while (!$info['timed_out'] && !feof($fp)) {
-//                $str = @fgets($fp, 1024);
-//                if (strpos($str, 'login')) {
-//                    $result .= $str;
-//                    $info = stream_get_meta_data($fp);
-//                }
-//            }
-//            $result = explode('&', $result);
-//            $balance = (int)(explode('=', $result[2])[1]);
-//            $balances[$login] = $balance;
-//        }
-//        fclose($fp);
+       foreach ($logins as $login) {
+           $cmd = 'action=getaccountbalance&login=' . $login;
+           fwrite($fp, $cmd);
+           stream_set_timeout($fp, 1);
+           $result = '';
+           $info = stream_get_meta_data($fp);
+           while (!$info['timed_out'] && !feof($fp)) {
+               $str = @fgets($fp, 1024);
+               if (strpos($str, 'login')) {
+                   $result .= $str;
+                   $info = stream_get_meta_data($fp);
+               }
+           }
+           $result = explode('&', $result);
+           $balance = (int)(explode('=', $result[2])[1]);
+           $balances[$login] = $balance;
+       }
+       fclose($fp);
         $fromDate = date('Y-m-d', strtotime(date('Y-m-d') . "-30 days"));
         $orders = Order::where('user_id', $userId)
             ->where('status', config('deposit.status.yes'))
-            ->whereBetween('created_at', [$fromDate, now()]);
-        $orderTotal = $orders->sum('amount_money');
-        $orders = $orders->groupBy('type')
-            ->selectRaw('sum(amount_money) as total,type')
+            ->whereBetween('created_at', [$fromDate, now()])
             ->get();
+        foreach(config('deposit.type') as $type){
+            $orderData[$type] = 0;
+        }
+        $orderTotal = 0;
+        foreach($orders  as $order)
+        {
+            if(is_null($order->usd)){
+                $usd =  round(($order->amount_money)/23000, 2);
+                $orderTotal += $usd;
+                $orderData[$order->type] += $usd;
+            }else 
+            {
+                $orderTotal += $order->usd;
+                $orderData[$order->type] += $order->usd;
+            }
+        }
         $withdrawals = WithdrawalFund::where('user_id', $userId)
             ->where('status', config('deposit.status.yes'))
             ->whereBetween('created_at', [$fromDate, now()]);
@@ -50,6 +63,6 @@ class HomeController extends Controller
         $withdrawals = $withdrawals->groupBy('login')
             ->selectRaw('sum(amount) as total,login')
             ->get();
-        return view('home', compact(['balances', 'orders', 'withdrawals', 'orderTotal', 'withdrawalTotal']));
+        return view('home', compact(['balances', 'orderData', 'withdrawals', 'orderTotal', 'withdrawalTotal']));
     }
 }
