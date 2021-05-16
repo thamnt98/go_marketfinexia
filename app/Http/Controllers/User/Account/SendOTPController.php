@@ -35,7 +35,6 @@ class SendOTPController extends Controller
                 ->create($phone, "sms");
         } catch (Exception $e) {
             $code = $e->getCode();
-            dd($e->getMessage());
             switch ($code) {
                 case 60200 :
                     $message = "Cannot find the phone number you just entered"; break;
