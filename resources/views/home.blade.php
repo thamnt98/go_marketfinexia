@@ -9,7 +9,7 @@
 @section('content')
     <div class="container-fluid">
         <ul class="index-links row an-mar-10"><a id="an-indexico0"
-                                                 href="{{ route('otp.send') }}">
+                                                 href="{{ route('send.otp') }}">
                 <li class="col-xs-12 col-sm-6 col-md-6 col-lg-3 an-pad-10">
                     <div class="insidebox">
                         <div class="an-index-ico an-bgcolor1"><i class="fa fa-id-card-o" aria-hidden="true"></i></div>

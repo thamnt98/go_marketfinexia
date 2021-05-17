@@ -29,7 +29,7 @@
                             </a>
                             <ul class="nav nav-children">
                                 <li class="level-2" data-toggle="live">
-                                    <a href="@if(count($liveAccounts) <2) {{ route('otp.send') }} @else {{ route('account.live') }} @endif">
+                                    <a href="@if(count($liveAccounts) <2) {{ route('send.otp') }} @else {{ route('account.live') }} @endif">
                                         Live Account
                                     </a>
                                 </li>

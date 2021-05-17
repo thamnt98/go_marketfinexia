@@ -46,10 +46,11 @@ Route::group([
         Route::post('/my-profile/upload', 'UploadFileController@main')->name('account.upload');
         Route::post('/my-profile/password', 'ChangePasswordController@main')->name('account.password.change');
         Route::get('/{login}/balance', 'GetBalanceByLoginController@main');
-        Route::get('/otp/send', 'SendOTPController@main');
-        Route::post('/otp/send', 'SendOTPController@send')->name('otp.send');
-        Route::get('/otp/verify', 'VerifyOtpController@main');
-        Route::post('/otp/verify', 'VerifyOtpController@verify')->name('otp.verify');
+        Route::get('/send/otp', 'SendOTPController@main')->name('send.otp');
+//        Route::get('/otp/send', 'SendOTPController@main');
+//        Route::post('/otp/send', 'SendOTPController@send')->name('otp.send');
+//        Route::get('/otp/verify', 'VerifyOtpController@main');
+//        Route::post('/otp/verify', 'VerifyOtpController@verify')->name('otp.verify');
     });
     Route::group([
         'namespace' => 'DepositAndWithDraw'

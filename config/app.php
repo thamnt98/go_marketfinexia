@@ -4,8 +4,16 @@ return [
 
 
     "TWILIO_SID" => "ACd669393d794f601b7eab3463b9f6ad3f",
-    "TWILIO_AUTH_TOKEN" => "18d36bf882cadfc3653810f3306de6e0",
+    "TWILIO_AUTH_TOKEN" => "220dbd862b65428277b38ed57e5cc4d6",
     "TWILIO_VERIFY_SID" => "VA4ee23b8f21a9de8cdcfe89b060b36462",
+    'firebase_api_key' => env('FB_API_KEY', 'AIzaSyBiUi1m4s0g_3bZnlPZKxsUH0KYPdT8POA'),
+    'firebase_auth_domain' => env('FB_AUTH_DOMAIN', 'bar-manager-4d1c3.firebaseapp.com'),
+    'firebase_database_url' => env('FB_DATABASE_URL', 'https://bar-manager-4d1c3.firebaseio.com'),
+    'firebase_project_id' => env('FB_PROJECT_ID', 'bar-manager-4d1c3'),
+    'firebase_storage_bucket' => env('FB_STORAGE_BUCKET', 'bar-manager-4d1c3.appspot.com'),
+    'firebase_messaging_sender_id' => env('FB_MESSAGING_SENDER_ID', '418024781546'),
+    'firebase_app_id' => env('FB_APP_ID', '1:418024781546:web:f546f9836ce3b2a9b50993'),
+    'firebase_measurement_id' => env('FB_MEASUREMENT_ID', 'G-PYTWQL5H3Q'),
 
 
 
