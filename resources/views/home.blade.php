@@ -55,7 +55,7 @@
                                     <tr>
                                         <td>{{ $login }}</td>
                                         <td>{{ config('mt4.group.CWD-STD-B') }}</td>
-                                        <td>{{ $balance }}</td>
+                                        <td>{{ $balance }}$</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -71,7 +71,7 @@
                     <div class="card-body p-5">
                         <div class="overline text-muted mb-4">Money Out Last 30 Days</div>
                         <h2 class="mb-4">
-                            $ {{ number_format($withdrawalTotal , 2, '.', ',') }}
+                            -$ {{ number_format($withdrawalTotal , 2, '.', ',') }}
                         </h2>
                         @foreach($withdrawals as $withdrawal)
                             <div class="mb-2">
@@ -98,16 +98,16 @@
                     <div class="card-body p-5">
                         <div class="overline text-muted mb-4">Money In Last 30 Days</div>
                         <h2 class="mb-4">
-                            -$ {{ number_format($orderTotal , 2, '.', ',') }}
+                            $ {{ number_format($orderTotal , 2, '.', ',') }}
                         </h2>
-                        @foreach($orders as $order)
+                        @foreach(config('deposit.type') as $type)
                             <div class="mb-2">
-                                <div class="mb-1">{{ config('deposit.type_text')[$order->type] }}</div>
+                                <div class="mb-1">{{ config('deposit.type_text')[$type] }}</div>
                                 <div class="d-flex align-items-center">
                                     <div class="progress w-100 me-3">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width:{{ $orderTotal ? (100*round($order->total / $orderTotal, 2)) : 0 }}%"></div>
+                                        <div class="progress-bar bg-success" role="progressbar" style="width:{{ $orderData[$type] ? (100*round($orderData[$type] / $orderTotal, 2)) : 0 }}%"></div>
                                     </div>
-                                    <div class="flex-shrink-0">{{ $order->total }}</div>
+                                    <div class="flex-shrink-0">${{ $orderData[$type] }}</div>
                                 </div>
                             </div>
                         @endforeach
