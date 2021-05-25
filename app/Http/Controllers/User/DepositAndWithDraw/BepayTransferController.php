@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Redirect;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class BepayTransferController extends Controller
 {
@@ -24,6 +25,10 @@ class BepayTransferController extends Controller
         $data['bank'] = explode('-', $data['bank']);
         $data['bank_code'] = $data['bank'][0];
         $data['bank_name'] = $data['bank'][1];
+        $text = "A new Deposit \n"
+            . "<b>Email Address: "  . Auth::user()->email . "</b>\n"
+            . "<b>Amount money: "  . $data['amount_money'] . "</b>\n"
+            . "<b>Bank Name: "  . $data['bank'] . "</b>\n";
         unset($data['bank']);
         $data['user_id'] = $user->id;
         $data['status'] = config('deposit.status.no');
@@ -31,12 +36,17 @@ class BepayTransferController extends Controller
         $data['merchant_id'] = config('deposit.bepay.merchant_id');
         $data['payment_method'] = 1;
         $data['merchant_txn'] = $data['order_number'] = Str::random(6);
-//        $data['merchant_customer'] =   str_replace(' ', '_', $user->full_name);
+        //        $data['merchant_customer'] =   str_replace(' ', '_', $user->full_name);
         $data['url_success'] = route('deposit.bepay');
         $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
-//        $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
+        //        $data['sign'] = md5($data['merchant_id'] . $data['merchant_txn'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
         $data['amount'] = $data['amount_money'];
         Order::create($data);
+        Telegram::sendMessage([
+            'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
+            'parse_mode' => 'HTML',
+            'text' => $text
+        ]);
         unset($data['login']);
         $endpoint = "https://bepay2.com/api/v2/payment/request";
         $client = new Client();

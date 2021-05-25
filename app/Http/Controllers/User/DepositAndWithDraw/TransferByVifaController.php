@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class TransferByVifaController extends Controller
 {
@@ -39,6 +40,15 @@ class TransferByVifaController extends Controller
                     'login' => $login
                 ]
             );
+            $text = "A new WD \n" .
+                "<b>Email Address: "  . Auth::user()->email . "</b>\n"
+                . "<b>Login: "  . $login . "</b>\n"
+                . "<b>Amount money: "  . $price . "</b>\n";
+            Telegram::sendMessage([
+                'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
+                'parse_mode' => 'HTML',
+                'text' => $text
+            ]);
             $serverUrl = config('deposit.vifa.server_url');
             $appId = config('deposit.vifa.app_id');
             $APPPrivateKEY  = config('deposit.vifa.app_private_key');

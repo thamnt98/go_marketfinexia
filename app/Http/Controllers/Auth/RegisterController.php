@@ -13,6 +13,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Carbon;
 use App\Models\PasswordReset;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -30,15 +32,21 @@ class RegisterController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withErrors($validate)->withInput();
         }
-        $data['password'] = Hash::make(Str::random(8));
-        $user = User::create($data);
-        if ($user) {
+        try {
+            DB::beginTransaction();
+            $data['password'] = Hash::make(Str::random(8));
+            $user = User::create($data);
             $email = $user->email;
             $token = $this->createToken($email);
             Mail::to($email)->send(new UserRegisteredSuccess($user, $token));
-            return back()->with('success',
-                "We have sent you an email to setting password. Please check your inbox or spam");
-        } else {
+            DB::commit();
+            return back()->with(
+                'success',
+                "We have sent you an email to setting password. Please check your inbox or spam"
+            );
+        } catch (\Exception $e) {
+            Log::channel('mail')->info($e->getTraceAsString());
+            DB::rollBack();
             return back()->with('error', "Something went wrong");
         }
     }
@@ -51,13 +59,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make(
-            $data, [
-            'first_name'   => ['required', 'string', 'max:255'],
-            'last_name'    => ['required', 'string', 'max:255'],
-            'phone_number' => 'required|unique:users|regex:/^\+\d{9,12}$/',
-            'email'        => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'ib_id'        => 'nullable|regex:/[0-9]{6}/',
-        ],
+            $data,
+            [
+                'first_name'   => ['required', 'string', 'max:255'],
+                'last_name'    => ['required', 'string', 'max:255'],
+                'phone_number' => 'required|unique:users|regex:/^\+\d{9,12}$/',
+                'email'        => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'ib_id'        => 'nullable|regex:/[0-9]{6}/',
+            ],
             [
                 'ib_id.regex' => 'The IB ID has only 6 digits',
                 'phone_number.regex' => "The phone number must  include phone country code"

@@ -18,11 +18,14 @@ class OpenIBAccountController extends Controller
     public function main(Request $request)
     {
         $data = $request->except('_token');
+        $phone = $request->phone;
+        if(is_null($phone)){
+            return redirect()->route('send.otp');
+        }
         $isValid = $this->isValid($data);
         if ($isValid->fails()) {
             return redirect()->back()->withErrors($isValid->errors())->withInput();
         }
-        $phone = $request->phone;
         $user = Auth::user();
         $liveAccounts = LiveAccount::where('user_id', $user->id)->get();
         if(count($liveAccounts) >= 2){

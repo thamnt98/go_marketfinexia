@@ -7,6 +7,7 @@ use App\Models\WithdrawalFund;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class CreateWithdrawalFundsController extends Controller
 {
@@ -19,6 +20,14 @@ class CreateWithdrawalFundsController extends Controller
         }
         $data['user_id'] = Auth::user()->id;
         WithdrawalFund::create($data);
+        $text = "A new WD \n"
+            . "<b>Amount money: "  . $data['amount'] . "</b>\n"
+            . "<b>Email Address: "  . Auth::user()->email . "</b>\n";
+        Telegram::sendMessage([
+            'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
+            'parse_mode' => 'HTML',
+            'text' => $text
+        ]);
         return redirect()->back()->with('success', 'You create withdrawal funds successfully!');
     }
 
