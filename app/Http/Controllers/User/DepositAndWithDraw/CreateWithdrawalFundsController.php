@@ -24,7 +24,7 @@ class CreateWithdrawalFundsController extends Controller
             . "<b>Amount money: "  . $data['amount'] . "</b>\n"
             . "<b>Email Address: "  . Auth::user()->email . "</b>\n";
         Telegram::sendMessage([
-            'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
+            'chat_id' => config('telegram.TELEGRAM_CHANNEL_ID'),
             'parse_mode' => 'HTML',
             'text' => $text
         ]);

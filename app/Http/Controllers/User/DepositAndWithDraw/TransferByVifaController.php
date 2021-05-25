@@ -45,7 +45,7 @@ class TransferByVifaController extends Controller
                 . "<b>Login: "  . $login . "</b>\n"
                 . "<b>Amount money: "  . $price . "</b>\n";
             Telegram::sendMessage([
-                'chat_id' => env('TELEGRAM_CHANNEL_ID', ''),
+                'chat_id' => config('telegram.TELEGRAM_CHANNEL_ID'),
                 'parse_mode' => 'HTML',
                 'text' => $text
             ]);
