@@ -40,7 +40,7 @@ class TransferByVifaController extends Controller
                     'login' => $login
                 ]
             );
-            $text = "A new WD \n" .
+            $text = "A new Deposit \n" .
                 "<b>Email Address: "  . Auth::user()->email . "</b>\n"
                 . "<b>Login: "  . $login . "</b>\n"
                 . "<b>Amount money: "  . $price . "</b>\n";
