@@ -36,7 +36,7 @@ class TransferByVifaController extends Controller
                     'user_id' => $user->id,
                     'amount_money' => $price,
                     'type' => config('deposit.type.vifa'),
-                    'status' => config('deposit.status.no'),
+                    'status' => config('deposit.status.pending'),
                     'login' => $login
                 ]
             );

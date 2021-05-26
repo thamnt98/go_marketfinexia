@@ -31,7 +31,7 @@ class BepayTransferController extends Controller
             . "<b>Bank Name: "  . $data['bank'] . "</b>\n";
         unset($data['bank']);
         $data['user_id'] = $user->id;
-        $data['status'] = config('deposit.status.no');
+        $data['status'] = config('deposit.status.pending');
         $data['type'] = config('deposit.type.bepay');
         $data['merchant_id'] = config('deposit.bepay.merchant_id');
         $data['payment_method'] = 1;
