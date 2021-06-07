@@ -16,7 +16,6 @@ $('.ajax-form').on('submit', function (e) {
             if (result.status == 400) {
                 form.find('.errors .text-danger').remove();
                 form.find('.errors').removeClass('has-error');
-                console.log(result);
                 $.each(result.data, function (index, value) {
                     index = index.replace(".", "_");
                     index = index.replace(".", "_");

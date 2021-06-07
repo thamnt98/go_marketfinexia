@@ -32,7 +32,7 @@ class ExnpayController extends Controller
             $data['status'] = config('deposit.status.pending');
             $data['type'] = config('deposit.type.exnpay');
             $data['merchant_id'] = config('deposit.exnpay.merchant_id');
-            $data['payment_method_id'] = 1;
+            $data['payment_method_id'] = 0;
             $data['mrc_order_id'] = $data['order_number'] = Str::random(6);
             //        $data['merchant_customer'] =   str_replace(' ', '_', $user->full_name);
             $data['url_success'] = route('deposit.bepay');
@@ -49,7 +49,7 @@ class ExnpayController extends Controller
             ));
             $result = json_decode($response->getBody());
             if ($result->code == 0) {
-                $url = $result->redirect_url;
+                $url = $result->data->redirect_url;
                 $data['user_id'] = $user->id;
                 $data['login'] = $login;
                 $data['amount_money'] = $price;

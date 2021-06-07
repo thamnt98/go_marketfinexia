@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Session;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use Illuminate\Support\Str;
 
 class TransferByVifaController extends Controller
 {
@@ -31,24 +32,7 @@ class TransferByVifaController extends Controller
             $isValid = $isValid->errors();
         } else {
             $user = Auth::user();
-            $order = Order::create(
-                [
-                    'user_id' => $user->id,
-                    'amount_money' => $price,
-                    'type' => config('deposit.type.vifa'),
-                    'status' => config('deposit.status.pending'),
-                    'login' => $login
-                ]
-            );
-            $text = "A new Deposit \n" .
-                "<b>Email Address: "  . Auth::user()->email . "</b>\n"
-                . "<b>Login: "  . $login . "</b>\n"
-                . "<b>Amount money: "  . $price . "</b>\n";
-            Telegram::sendMessage([
-                'chat_id' => config('telegram.TELEGRAM_CHANNEL_ID'),
-                'parse_mode' => 'HTML',
-                'text' => $text
-            ]);
+           
             $serverUrl = config('deposit.vifa.server_url');
             $appId = config('deposit.vifa.app_id');
             $APPPrivateKEY  = config('deposit.vifa.app_private_key');
@@ -58,9 +42,30 @@ class TransferByVifaController extends Controller
             $wapObj->userName = $user->full_name;
             $wapObj->userId = $user->id;
             $wapObj->price = $price;
-            $wapObj->tradeNo = $order->id;
+            $wapObj->tradeNo = Str::random(6);
             $request = new TigerpayTradeWapReq($wapObj);
             $url = $client->sdkExecute($request);
+            if($url){
+                $order = Order::create(
+                    [
+                        'user_id' => $user->id,
+                        'amount_money' => $price,
+                        'type' => config('deposit.type.vifa'),
+                        'status' => config('deposit.status.pending'),
+                        'login' => $login,
+                        'order_number' => $wapObj->tradeNo,
+                    ]
+                );
+                $text = "A new Deposit \n" .
+                    "<b>Email Address: "  . Auth::user()->email . "</b>\n"
+                    . "<b>Login: "  . $login . "</b>\n"
+                    . "<b>Amount money: "  . $price . "</b>\n";
+                Telegram::sendMessage([
+                    'chat_id' => config('telegram.TELEGRAM_CHANNEL_ID'),
+                    'parse_mode' => 'HTML',
+                    'text' => $text
+                ]);
+            }
         }
         return json_encode(
             [
