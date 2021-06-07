@@ -16,17 +16,37 @@ ul.tether_usd{
 ul.tether_usd li.checked {
     border: 1px solid #03a84e;
 }
-ul.tether_usd li{
-    margin-right: 20px;
+ul.tether_usd li, ul.tether_usd li{
+    margin-right: 30px;
     border: 1px solid #92929e6b;
-    padding: 8px;
+    padding: 11px;
+    position: relative;
+}
+#trc_code, #erc_code
+{
+    margin-top: 20px;
 }
 .trc_code, .erc_code
 {
-    /* padding-left: 27px; */
     margin-top: 40px;
 }
 .copy {
     margin-top: 15px;
     margin-bottom: 30px;
+}
+button.btn.btn-secondary.modal-dismiss{
+    background-color: #808080b8;
+    margin-bottom: 15px;
+}
+button.btn.btn-default.copy.copy_trc{
+    background-color: #92929e40;
+}
+.fa.fa-check{
+    position: absolute;
+    top: -6px;
+    border-radius: 50%;
+    background-color: #2b9c5f;
+    font-size: 10px;
+    padding:2px;
+    color: white;
 }

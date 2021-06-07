@@ -185,12 +185,12 @@
                                                 </h4>
                                                 <div>
                                                     <ul class="tether_usd">
-                                                        <li class="trc checked"><span>TRC20</span></li>
-                                                        <li class="erc">ERC20</li>
+                                                        <li class="trc checked"><span>TRC20</span><i class="fa fa-check"></i></li>
+                                                        <li class="erc"><span>ERC20</span><i class="fa fa-check hidden"></i></li>
                                                     </ul>
                                                 </div>
                                                 <div class="trc_code">
-                                                    <b>Vi USDT</b>
+                                                    <b>Ví USDT</b>
                                                     <p id="trc_code">TAX2oCLQs1bG7sBdRUApuBmTq6aGkZJMR5</p>
                                                     <button type="button" class="btn btn-default copy copy_trc" onclick="copyLink('trc_code')">Copy to clipboard</button>
                                                 </div>
@@ -199,8 +199,12 @@
                                                     <p id="erc_code">0x2260d99c0385a631ddf463da1d75ea69deb6cb9d</p>
                                                     <button type="button" class="btn btn-default copy copy_erc " onclick="copyLink('erc_code')">Copy to clipboard</button>
                                                 </div>
+                                                <button class="btn btn-secondary modal-dismiss">Cancel
+                                                            </button>
                                             </div>
+                                           
                                         </section>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -224,13 +228,19 @@
         $('.trc').addClass('checked')
         $('.erc').removeClass('checked')
         $('.trc_code').removeClass('hidden')
+        $('.trc .fa-check').removeClass('hidden')
         $('.erc_code').addClass('hidden')
+        $('.erc .fa-check').addClass('hidden')
+
     })
     $('.erc').on('click', function() {
         $('.erc').addClass('checked')
         $('.trc').removeClass('checked')
         $('.trc_code').addClass('hidden')
         $('.erc_code').removeClass('hidden')
+        $('.erc .fa-check').removeClass('hidden')
+        $('.trc .fa-check').addClass('hidden')
+
     })
 
     function copyLink(id) {
