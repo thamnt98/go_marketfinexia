@@ -39,9 +39,7 @@ class ExnpayController extends Controller
             $data['sign'] = md5($data['merchant_id'] . $data['mrc_order_id'] . $data['payment_method_id']. $price  .  config('deposit.exnpay.secret_key'));
             //        $data['sign'] = md5($data['merchant_id'] . $data['mrc_order_id'] . $data['merchant_customer'] . $data['amount_money'] . $data['bank_code'] .  config('deposit.bepay.secret_key'));
             $data['amount'] = $price;
-            $data['url_success'] = route('trading.history');
-            $data['url_cancel'] = route('deposit.funds');
-
+            $data['url_cancel'] = $data['url_success'] = $data['webhooks']= route('deposit.funds');
             $endpoint = "https://service.exnpay.com/api/order/send";
             $client = new Client();
             $response = $client->post($endpoint, array(

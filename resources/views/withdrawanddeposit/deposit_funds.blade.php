@@ -1,6 +1,7 @@
 @extends('layouts.simplepage', ['pageName' => 'Live account', 'parent' => 'Account', 'children' => 'Live'])
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/magnific-popup.css')}}">
+<link rel="stylesheet" href="{{ asset('css/loader.css')}}">
 @endsection
 @include('layouts.menutop')
 <header class="page-header">
@@ -18,6 +19,7 @@
     </div>
 </header>
 @section('content')
+<div id="loader" class="lds-dual-ring overlay hidden "></div>
 <div class="row">
     <div class="col-lg-12">
         <section class="panel">
@@ -98,6 +100,7 @@
                                             </div>
                                         </div>
                                     </a>
+                                    <div id="loader" class="lds-dual-ring overlay hidden"></div>
                                     <div id="vifa" class="modal-block modal-block-primary mfp-hide">
                                         <section class="panel">
                                             <div class="panel-body">

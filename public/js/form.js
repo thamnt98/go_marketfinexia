@@ -11,6 +11,9 @@ $('.ajax-form').on('submit', function (e) {
         data: form.serialize(),
         type: form.attr('method'),
         url: form.attr('action'),
+        beforeSend: function () { // Before we send the request, remove the .hidden class from the spinner and default to inline-block.
+            $('#loader').removeClass('hidden')
+        },
         success: function (response) {
             let result = JSON.parse(response);
             if (result.status == 400) {
@@ -42,8 +45,11 @@ $('.ajax-form').on('submit', function (e) {
                     window.open(result.url);
                 }
             }
-        },
+        },  
         error : function (response) {
-        }
+        },
+        complete: function () { // Set our complete callback, adding the .hidden class and hiding the spinner.
+            $('#loader').addClass('hidden')
+        },
     });
 });
