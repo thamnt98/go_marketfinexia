@@ -19,6 +19,7 @@ ul.tether_usd li.checked {
 ul.tether_usd li, ul.tether_usd li{
     margin-right: 30px;
     border: 1px solid #92929e6b;
+    border-radius: 6px;
     padding: 11px;
     position: relative;
 }
