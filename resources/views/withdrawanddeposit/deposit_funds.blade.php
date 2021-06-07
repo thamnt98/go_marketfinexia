@@ -165,6 +165,44 @@
                                         </div>
                                     </a>
                                 </div>
+                                <div class="isotope-item document col-sm-6 col-md-4 col-lg-2">
+                                    <a href="#tether" class="modal-with-form">
+                                        <div class="thumbnail">
+                                            <div class="thumb-preview text-center">
+                                                <img src="{{ asset('image/tether.png') }}" class="img-thumnail" alt="Project" style="height:110px">
+                                                <div class="mg-thumb-options"></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div id="tether" class="modal-block modal-block-primary mfp-hide">
+                                        <section class="panel">
+                                            <header class="panel-heading">
+                                                <h2 class="panel-title">Nạp Tether USDT</h2>
+                                            </header>
+                                            <div class="panel-body" style="padding-left: 50px;">
+                                                <h4 style="font-weight: 700;">
+                                                    Định dạng ví
+                                                </h4>
+                                                <div>
+                                                    <ul class="tether_usd">
+                                                        <li class="trc checked"><span>TRC20</span></li>
+                                                        <li class="erc">ERC20</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="trc_code">
+                                                    <b>Vi USDT</b>
+                                                    <p id="trc_code">TAX2oCLQs1bG7sBdRUApuBmTq6aGkZJMR5</p>
+                                                    <button type="button" class="btn btn-default copy copy_trc" onclick="copyLink('trc_code')">Copy to clipboard</button>
+                                                </div>
+                                                <div class="erc_code hidden">
+                                                    <b>Vi USDT</b>
+                                                    <p id="erc_code">0x2260d99c0385a631ddf463da1d75ea69deb6cb9d</p>
+                                                    <button type="button" class="btn btn-default copy copy_erc " onclick="copyLink('erc_code')">Copy to clipboard</button>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,4 +219,28 @@
 <script src="{{ asset('js/magnific-popup.js') }}"></script>
 <script src="{{ asset('js/examples.modals.js') }}"></script>
 <script src="{{ asset('js/form.js') }}"></script>
+<script>
+    $('.trc').on('click', function() {
+        $('.trc').addClass('checked')
+        $('.erc').removeClass('checked')
+        $('.trc_code').removeClass('hidden')
+        $('.erc_code').addClass('hidden')
+    })
+    $('.erc').on('click', function() {
+        $('.erc').addClass('checked')
+        $('.trc').removeClass('checked')
+        $('.trc_code').addClass('hidden')
+        $('.erc_code').removeClass('hidden')
+    })
+
+    function copyLink(id) {
+        var from = document.getElementById(id);
+        var range = document.createRange();
+        window.getSelection().removeAllRanges();
+        range.selectNode(from);
+        window.getSelection().addRange(range);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+    }
+</script>
 @endsection
