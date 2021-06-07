@@ -32,7 +32,7 @@
                                     <a href="#bepay" class="modal-with-form">
                                         <div class="thumbnail">
                                             <div class="thumb-preview text-center">
-                                                <img src="{{ asset('image/bepay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px">
+                                                <img src="{{ asset('image/exnpay.jpg') }}" class="img-thumnail" alt="Project" style="height:110px">
                                                 <div class="mg-thumb-options"></div>
                                             </div>
                                         </div>
