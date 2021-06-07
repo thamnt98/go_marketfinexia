@@ -5,6 +5,11 @@ return [
         'secret_key' => 'DNYgNYT4Ab8DnFG1',
         'type' => 2
     ],
+    'exnpay' => [
+        'merchant_id' => 'E1000023',
+        'secret_key' => 'n4T0IfpSbFMBPlqu',
+        'type' => 2
+    ],
     'vifa' => [
         'server_url' => 'https://apivnd.vifaotc.com/trade',
         'app_id' => '1606376100185',
@@ -17,11 +22,13 @@ return [
     ],
     'type' => [
         'vifa' => 1,
-        'bepay' => 2
+        'bepay' => 2,
+        'exnpay' => 3
     ],
     'type_text' => [
         1 => 'VIFA pay',
-        2 => 'e-Banking'
+        2 => 'e-Banking',
+        3 => 'ExnPay'
     ],
     'status' => [
         'yes' => 1,
