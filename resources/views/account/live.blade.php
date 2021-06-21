@@ -60,9 +60,7 @@
                         <div class="col-md-6">
                             <select class="form-control" name="group">
                                 <option value="">Select...</option>
-                                @foreach(config('mt4.group') as $key => $group)
-                                    <option value="{{$key}}">{{$group}}</option>
-                                @endforeach
+                                <option value="{{ $firstGroup }}">{{ $firstGroup }}</option>
                             </select>
                             @if($errors->has('group'))
                                 <span class="text-danger text-md-left">{{ $errors->first('group') }}</span>

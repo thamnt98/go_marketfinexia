@@ -46,16 +46,16 @@
                                 <thead>
                                 <tr>
                                     <th style="width:20%">Login</th>
-                                    <th style="width:20%">ACCOUNT TYPE</th>
+                                    <th style="width:20%">Group</th>
                                     <th style="width:20%">Balance</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($balances as $login => $balance)
+                                @foreach($balances as $login => $result)
                                     <tr>
                                         <td>{{ $login }}</td>
-                                        <td>{{ config('mt4.group.CWD-STD-B') }}</td>
-                                        <td>{{ $balance }}$</td>
+                                        <td>{{ $result['group'] }}</td>
+                                        <td>{{ $result['balance'] }}$</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

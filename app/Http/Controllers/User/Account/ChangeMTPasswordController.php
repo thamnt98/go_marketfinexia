@@ -5,9 +5,21 @@ namespace App\Http\Controllers\User\Account;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Helper\MT5Helper;
 
 class ChangeMTPasswordController extends Controller
 {
+
+    /**
+     * @var mT5Helper
+     */
+    private $mT5Helper;
+
+    public function __construct(MT5Helper $mT5Helper)
+    {
+        $this->mT5Helper = $mT5Helper;
+    }
+
     public function main(Request $request)
     {
         $data = $request->except(('_token'));
@@ -16,23 +28,8 @@ class ChangeMTPasswordController extends Controller
             return redirect()->back()->withErrors($validate->errors())->withInput();
         }
         try {
-            $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
-            $cmd = 'action=changepassword&investor=0&login=' . $data['login'] . '&pass=' . $data['password'];
-            fwrite($fp, $cmd);
-            stream_set_timeout($fp, 1);
-            $result = '';
-            $info = stream_get_meta_data($fp);
-            while (!$info['timed_out'] && !feof($fp)) {
-                $str = @fgets($fp, 1024);
-                if (strpos($str, 'login')) {
-                    $result .= $str;
-                    $info = stream_get_meta_data($fp);
-                }
-            }
-            $result = explode('&', $result);
-            $result = explode('=', $result[0])[1];
-            fclose($fp);
-            if ($result == 1) {
+            $result = $this->mT5Helper->changeMasterPassword($data);
+            if ($result->MSG_USER == null) {
                 return redirect()->back()->with('success', "You changed MT Password succesffully");
             } else {
                 return redirect()->back()->with('error', "Change MT Password failed");

@@ -10,16 +10,27 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
-use Twilio\Rest\Client;
+use App\Helper\MT5Helper;
 
 class OpenIBAccountController extends Controller
 {
+
+    /**
+     * @var mT5Helper
+     */
+    private $mT5Helper;
+
+    public function __construct(MT5Helper $mT5Helper)
+    {
+        $this->mT5Helper = $mT5Helper;
+    }
+
+
     public function main(Request $request)
     {
         $data = $request->except('_token');
         $phone = $request->phone;
-        if(is_null($phone)){
+        if (is_null($phone)) {
             return redirect()->route('send.otp');
         }
         $isValid = $this->isValid($data);
@@ -28,49 +39,42 @@ class OpenIBAccountController extends Controller
         }
         $user = Auth::user();
         $liveAccounts = LiveAccount::where('user_id', $user->id)->get();
-        if(count($liveAccounts) >= 2){
-            return redirect()->back()->with('error',
-                "You opened two accounts and cant open anymore");
+        if (count($liveAccounts) >= 2) {
+            return redirect()->back()->with(
+                'error',
+                "You opened two accounts and cant open anymore"
+            );
         }
-        $data['name'] = $user->full_name;
-        $data['phone'] = $phone[1] . $phone[2] . 'xxxxxx' . substr($phone, -4);
-        $data['zipcode'] = $user->zip_code;
-        $data['city'] = $user->city;
-        $data['state'] = $user->state;
-        $data['address'] = $user->address;
-        $data['country'] = $user->country;
-        $data['password'] = Str::random(7);
-        $data['agent'] = $data['ib_id'];
+        $params = [
+            "Account" => 0,
+            "ManagerIndex" => 101,
+            "Agent" => $data['ib_id'],
+            "First" =>  $user->first_name,
+            "Last" => $user->last_name,
+            "Group" => $data['group'],
+            "Email" => $user->email,
+            "Phone" => $phone[1] . $phone[2] . 'xxxxxx' . substr($phone, -4),
+            "Leverage" =>   $data['leverage'],
+            "Country" =>  $user->country,
+            'State' => $user->state,
+            'City' => $user->city,
+            'ZipCode' => $user->zip_code,
+            'Address' => $user->address
+        ];
         try {
-            $cmd = 'action=createaccount&login=next';
-            foreach ($data as $key => $value) {
-                $cmd = $cmd . '&' . $key . '=' . $value;
-            }
-            $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
-            if (!$fp) {
+            $result = $this->mT5Helper->openAccount($params);
+            if ($result['ERR_MSG'] != null) {
                 return redirect()->back()->with('error', "Something went wrong. Please try again");
-            } else {
-                fwrite($fp, $cmd);
-                stream_set_timeout($fp, 1);
-                $result = '';
-                $info = stream_get_meta_data($fp);
-                while (!$info['timed_out'] && !feof($fp)) {
-                    $str = @fgets($fp, 1024);
-                    if (strpos($str, 'login')) {
-                        $result .= $str;
-                        $info = stream_get_meta_data($fp);
-                    }
-                }
-                fclose($fp);
-                $result = explode('&', $result);
-                $data['login'] = explode('=', $result[1])[1];
-                $data['user_id'] = $user->id;
-                $data['phone_number'] = substr($phone, 1);
-                $account = LiveAccount::create($data);
-                Mail::to($user->email)->send(new OpenLiveAccountSuccess($user, $account, $data['password']));
-                return redirect()->back()->with('success',
-                    "Open live account successfully. Please check your inbox or spam to login into MetaTrader 4");
             }
+            $data['login'] = $result['Account'];
+            $data['user_id'] = $user->id;
+            $data['phone_number'] = substr($phone, 1);
+            $account = LiveAccount::create($data);
+            Mail::to($user->email)->send(new OpenLiveAccountSuccess($user, $account, $result['Pwd_Master']));
+            return redirect()->back()->with(
+                'success',
+                "Open live account successfully. Please check your inbox or spam to login into MetaTrader 5"
+            );
         } catch (Exception $e) {
             return redirect()->back()->with('error', "Something went wrong. Please try again");
         }

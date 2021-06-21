@@ -48,12 +48,12 @@
                         <div class="col-md-6">
                             <select class="form-control" name="login">
                                 <option value="">Select...</option>
-                                @foreach($data as $login => $balance)
+                                @foreach($data as $login => $result)
                                 @if(old('login') == $login)
-                                <option value="{{$login}}" selected>Trading # {{$login}} | Standard | {{$balance}} USD
+                                <option value="{{$login}}" selected>Trading # {{$login}} | {{ $result['group']}} | {{$result['balance']}} USD
                                 </option>
                                 @else
-                                <option value="{{$login}}">Trading # {{$login}} | Standard | {{$balance}} USD </option>
+                                <option value="{{$login}}">Trading # {{$login}} | {{ $result['group']}} | {{$result['balance']}} USD</option>
                                 @endif
                                 @endforeach
                             </select>

@@ -4,35 +4,33 @@ namespace App\Http\Controllers\User\Account;
 
 use App\Http\Controllers\Controller;
 use App\Models\LiveAccount;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Helper\MT5Helper;
 
 class MTPasswordController extends Controller
 {
+    /**
+     * @var mT5Helper
+     */
+    private $mT5Helper;
+
+    public function __construct(MT5Helper $mT5Helper)
+    {
+        $this->mT5Helper = $mT5Helper;
+    }
+
+
     public function main()
     {
         $logins = LiveAccount::where('user_id', Auth::user()->id)->pluck('login');
         $data = [];
         if (count($logins)) {
             try {
-                $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
-                foreach ($logins as $key => $login) {
-                    $cmd = 'action=getaccountbalance&login=' . $login;
-                    fwrite($fp, $cmd);
-                    stream_set_timeout($fp, 1);
-                    $result = '';
-                    $info = stream_get_meta_data($fp);
-                    while (!$info['timed_out'] && !feof($fp)) {
-                        $str = @fgets($fp, 1024);
-                        if (strpos($str, 'login')) {
-                            $result .= $str;
-                            $info = stream_get_meta_data($fp);
-                        }
-                    }
-                    $result = explode('&', $result);
-                    $data[$login] = (int)(explode('=', $result[2])[1]);
+                foreach ($logins as $login) {
+                    $result = $this->mT5Helper->getAccountInfo($login);
+                    $data[$login]['balance'] = $result->oAccount->Balance;
+                    $data[$login]['group'] = $result->oInfo->Group;
                 }
-                fclose($fp);
             } catch (\Exception $e) {
                 return redirect()->back()->with('error', "Something went wrong. Please try again");
             }

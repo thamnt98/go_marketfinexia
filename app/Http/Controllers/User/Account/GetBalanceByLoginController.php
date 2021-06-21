@@ -3,29 +3,26 @@
 namespace App\Http\Controllers\User\Account;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Helper\MT5Helper;
 
 class GetBalanceByLoginController extends Controller
 {
+
+    /**
+     * @var mT5Helper
+     */
+    private $mT5Helper;
+
+    public function __construct(MT5Helper $mT5Helper)
+    {
+        $this->mT5Helper = $mT5Helper;
+    }
+
     public function main($login)
     {
-        $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
-        $cmd = 'action=getaccountinfoex&login=' . $login;
-        fwrite($fp, $cmd);
-        stream_set_timeout($fp, 1);
-        $result = '';
-        $info = stream_get_meta_data($fp);
-        while (!$info['timed_out'] && !feof($fp)) {
-            $str = @fgets($fp, 1024);
-            if (strpos($str, 'login')) {
-                $result .= $str;
-                $info = stream_get_meta_data($fp);
-            }
-        }
-        $result = explode('&', $result);
-        $balance = (explode('=', $result[15])[1]);
-        $equity =  (explode('=', $result[28])[1]);
-        fclose($fp);
+        $result = $this->mT5Helper->getAccountInfo($login);
+        $balance = $result->oAccount->Balance;
+        $equity = $result->oAccount->Equity;
         return [$balance, $equity];
     }
 }

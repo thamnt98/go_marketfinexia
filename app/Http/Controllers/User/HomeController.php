@@ -8,50 +8,45 @@ use App\Models\Order;
 use App\Models\WithdrawalFund;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Helper\MT5Helper;
 
 class HomeController extends Controller
 {
+    /**
+     * @var mT5Helper
+     */
+    private $mT5Helper;
+
+    public function __construct(MT5Helper $mT5Helper)
+    {
+        $this->mT5Helper = $mT5Helper;
+    }
+
     public function main()
     {
         $userId = Auth::user()->id;
-        $fp = fsockopen(config('mt4.vps_ip'), config('mt4.vps_port'), $errno, $errstr, 6);
         $logins = LiveAccount::where('user_id', $userId)->pluck('login');
         $balances = [];
-       foreach ($logins as $login) {
-           $cmd = 'action=getaccountbalance&login=' . $login;
-           fwrite($fp, $cmd);
-           stream_set_timeout($fp, 1);
-           $result = '';
-           $info = stream_get_meta_data($fp);
-           while (!$info['timed_out'] && !feof($fp)) {
-               $str = @fgets($fp, 1024);
-               if (strpos($str, 'login')) {
-                   $result .= $str;
-                   $info = stream_get_meta_data($fp);
-               }
-           }
-           $result = explode('&', $result);
-           $balance = (int)(explode('=', $result[2])[1]);
-           $balances[$login] = $balance;
-       }
-       fclose($fp);
+        foreach ($logins as $login) {
+            $result = $this->mT5Helper->getAccountInfo($login);
+            $balances[$login]['balance'] = $result->oAccount->Balance;
+            $balances[$login]['group'] = $result->oInfo->Group;
+        }
         $fromDate = date('Y-m-d', strtotime(date('Y-m-d') . "-30 days"));
         $orders = Order::where('user_id', $userId)
             ->where('status', config('deposit.status.yes'))
             ->whereBetween('created_at', [$fromDate, now()])
             ->get();
-        foreach(config('deposit.type') as $type){
+        foreach (config('deposit.type') as $type) {
             $orderData[$type] = 0;
         }
         $orderTotal = 0;
-        foreach($orders  as $order)
-        {
-            if(is_null($order->usd)){
-                $usd =  round(($order->amount_money)/23000, 2);
+        foreach ($orders  as $order) {
+            if (is_null($order->usd)) {
+                $usd =  round(($order->amount_money) / 23000, 2);
                 $orderTotal += $usd;
                 $orderData[$order->type] += $usd;
-            }else 
-            {
+            } else {
                 $orderTotal += $order->usd;
                 $orderData[$order->type] += $order->usd;
             }
