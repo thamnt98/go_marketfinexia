@@ -206,7 +206,7 @@
 													<p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
 														Để bắt đầu giao dịch, trước tiên bạn nên tải xuống và cài đặt <a
-															href="https://accounts.gemifx.com/file/cawadainvestment4setup.exe.zip"
+															href="https://accounts.gemifx.com/file/finexiamarkets5setup.exe"
 															rel="noopener" style="color: #f61e1e;" target="_blank">Meta Trader4</a></p>
 													<p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">

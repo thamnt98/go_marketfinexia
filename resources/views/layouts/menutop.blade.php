@@ -6,7 +6,7 @@
             </a>
         </li>
         <li style="float: left;">
-            <a href="{{ asset('file/cawadainvestment4setup.exe.zip') }}">
+            <a href="{{ asset('file/finexiamarkets5setup.exe') }}">
                 <span>Download</span>
             </a>
         </li>
