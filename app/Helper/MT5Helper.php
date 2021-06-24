@@ -8,9 +8,21 @@ class MT5Helper
 {
     protected static $mt5Url = 'http://79.143.176.19:17014/ManagerAPIFOREX/';
 
+    protected $session = '';
+
+
+    private function connectMT5(){
+        $endpoint = self::$mt5Url . 'LOGIN_SESSION?Email=startingmt5broker@gmail.com&Password=rasa8r&Source=1';
+        $client = new Client();
+        $response = $client->request('GET', $endpoint);
+        $result = json_decode($response->getBody());
+        $this->session =  $result->Session;
+    }
+
     public function getGroups()
     {
-        $endpoint = self::$mt5Url . 'GET_GROUPS?ManagerIndex=101';
+        $this->connectMT5();
+        $endpoint = self::$mt5Url . 'GET_GROUPS?Session=' .$this->session. '&ManagerIndex=101';
         $client = new Client();
         $response = $client->request('GET', $endpoint);
         $result = json_decode($response->getBody());
@@ -20,7 +32,6 @@ class MT5Helper
     public function openAccount($data)
     {
         $endpoint = self::$mt5Url . 'ADD_MT_USER';
-        $client = new Client();
         $client = new Client([
             'headers' => [
                 'Content-Type' => 'application/json',
@@ -34,7 +45,7 @@ class MT5Helper
     }
 
     public function getAccountInfo($login){
-        $endpoint = self::$mt5Url . 'GET_USER_INFO?ManagerIndex=101&Account=' . $login;
+        $endpoint = self::$mt5Url . 'GET_USER_INFO?Session=' .$this->session. '&ManagerIndex=101&Account=' . $login;
         $client = new Client();
         $response = $client->request('GET', $endpoint);
         $result = json_decode($response->getBody());
@@ -42,7 +53,7 @@ class MT5Helper
     }
 
     public function changeMasterPassword($data){
-        $endpoint = self::$mt5Url . 'CHANGE_MASTER_PASSWORD?ManagerIndex=101&Account=' . $data['login'] . '&Password=' . $data['password'];
+        $endpoint = self::$mt5Url . 'CHANGE_MASTER_PASSWORD?Session=' .$this->session.  '&ManagerIndex=101&Account=' . $data['login'] . '&Password=' . $data['password'];
         $client = new Client();
         $response = $client->request('GET', $endpoint);
         $result = json_decode($response->getBody());
