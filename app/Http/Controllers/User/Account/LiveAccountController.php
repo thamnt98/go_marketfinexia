@@ -31,6 +31,7 @@ class LiveAccountController extends Controller
         if($groups){
             $firstGroup = $groups[0];
         }
+        $firstGroup = 'IB_FXIN_01';
         return view('account.live', compact('liveAccounts', 'phone', 'ibId', 'firstGroup'));
     }
 }
