@@ -46,8 +46,7 @@ class UploadFileController extends Controller
         return Validator::make(
             $data,
             [
-                'copy_of_id_value' => 'required',
-                'copy_of_id' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'copy_of_id' => 'required|bail|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'addtional_file' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'proof_of_address' => 'bail|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]
