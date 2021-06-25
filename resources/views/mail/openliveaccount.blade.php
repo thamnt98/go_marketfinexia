@@ -184,7 +184,7 @@
                                                         Cảm ơn bạn đã mở một tài khoản giao dịch Real mới với Gemi Broker.</p>
                                                     <p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
-                                                       <b>Meta Trader 4 :</b></p>
+                                                       <b>Meta Trader 5:</b></p>
 													<p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
                                                        <b>Tên đăng nhập : {{ $login }}</b></p>
@@ -207,7 +207,7 @@
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
 														Để bắt đầu giao dịch, trước tiên bạn nên tải xuống và cài đặt <a
 															href="https://accounts.gemifx.com/file/finexiamarkets5setup.exe"
-															rel="noopener" style="color: #f61e1e;" target="_blank">Meta Trader4</a></p>
+															rel="noopener" style="color: #f61e1e;" target="_blank">Meta Trader 5</a></p>
 													<p
 														style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
 														Xin lưu ý rằng bạn nên đặt mật khẩu cá nhân cho tài khoản giao dịch của mình ngay lập tức sau khi đăng nhập vào thiết bị đầu cuối.</p>
