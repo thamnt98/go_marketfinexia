@@ -193,7 +193,7 @@
                                                       <b>Mật khẩu: {{ $password }}</b></p>
                                                     <p
                                                        style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
-                                                      <b>Tên máy chủ: CawadaInvestment-Live</b></p>
+                                                      <b>Tên máy chủ: FinexiaMarkets-Live</b></p>
                                                     <p
                                                        style="text-align: left; line-height: 2; word-break: break-word; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; mso-line-height-alt: 24px; margin: 0;">
                                                       <b>Tiền tệ tài khoản: USD</b></p>
