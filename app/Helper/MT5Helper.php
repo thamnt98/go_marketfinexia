@@ -14,11 +14,11 @@ class MT5Helper
 
     private function connectMT5()
     {
-        $endpoint = self::$mt5Url . 'LOGIN_SESSION?Email=startingmt5broker@gmail.com&Password=rasa8r&Source=1';
-        $client = new Client();
-        $response = $client->request('GET', $endpoint);
-        $result = json_decode($response->getBody());
-        $this->session =  $result->Session;
+        // $endpoint = self::$mt5Url . 'LOGIN_SESSION?Email=startingmt5broker@gmail.com&Password=rasa8r&Source=1';
+        // $client = new Client();
+        // $response = $client->request('GET', $endpoint);
+        // $result = json_decode($response->getBody());
+        // $this->session =  $result->Session;
         // $endpoint = self::$mt5Url . 'INITIAL_ADD_MANAGER';
         // $client = new Client([
         //     'headers' => [
