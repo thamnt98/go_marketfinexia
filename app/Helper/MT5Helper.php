@@ -42,7 +42,7 @@ class MT5Helper
         $body = json_encode($data);
         $response = $client->request('POST', $endpoint, ['body' => $body]);
         $result = json_decode($response->getBody(), true);
-        $this->managerIndex =  $result->Result;
+        $this->managerIndex =  $result['Result'];
     }
 
     public function getGroups()
