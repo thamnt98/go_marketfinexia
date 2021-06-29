@@ -63,8 +63,8 @@ class OpenIBAccountController extends Controller
         ];
         try {
             $result = $this->mT5Helper->openAccount($params);
-            if ($result['ERR_MSG'] != null) {
-                return redirect()->back()->with('error', "Something went wrong. Please try again");
+            if ($result['ERR_MSG'] != null || $result['Account'] == '0') {
+                return redirect()->back()->with('error', "Can\'t open MT5 Account. Please try again later");
             }
             $data['login'] = $result['Account'];
             $data['user_id'] = $user->id;
