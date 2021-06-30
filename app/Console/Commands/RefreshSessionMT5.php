@@ -52,7 +52,7 @@ class RefreshSessionMT5 extends Command
                 'debug' => true
             ]
         ]);
-        $data = [
+        $param = [
             "ManagerID" => 1480,
             "ManagerIndex" => 0,
             "MT4_MT5" => 1,
@@ -64,7 +64,7 @@ class RefreshSessionMT5 extends Command
             "oDemo" => 1,
             "Session" => $data['session']
         ];
-        $body = json_encode($data);
+        $body = json_encode($param);
         $response = $client->request('POST', $endpoint, ['body' => $body]);
         $result = json_decode($response->getBody(), true);
         $data['manager_index'] = $result['Result'];
