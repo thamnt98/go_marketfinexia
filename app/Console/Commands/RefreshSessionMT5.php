@@ -44,7 +44,7 @@ class RefreshSessionMT5 extends Command
         $client = new Client();
         $response = $client->request('GET', $endpoint);
         $result = json_decode($response->getBody());
-        $data['session'] = $result->session;
+        $data['session'] = $result['Session'];
         $endpoint = $mt5Url . 'INITIAL_ADD_MANAGER';
         $client = new Client([
             'headers' => [
