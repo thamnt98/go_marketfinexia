@@ -44,6 +44,7 @@ class MT5Helper
     public function getAccountInfo($login)
     {
         $mt5 = self::getMT5Connect();
+        $login = '281422880';
         $endpoint = self::$mt5Url . 'GET_USER_INFO?Session=' . $mt5->session . '&ManagerIndex=' . $mt5->manager_index . '&Account=' . $login;
         $client = new Client();
         $response = $client->request('GET', $endpoint);
@@ -56,8 +57,10 @@ class MT5Helper
         $mt5 = self::getMT5Connect();
         $endpoint = self::$mt5Url . 'CHANGE_MASTER_PASSWORD?Session=' . $mt5->session .  '&ManagerIndex=' . $mt5->manager_index .'&Account=' . $data['login'] . '&Password=' . $data['password'];
         $client = new Client();
+//        dd($endpoint);
         $response = $client->request('GET', $endpoint);
         $result = json_decode($response->getBody());
+        dd($result);
         return $result;
     }
 }

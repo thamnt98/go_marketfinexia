@@ -29,7 +29,7 @@ class HomeController extends Controller
         $balances = [];
         foreach ($logins as $login) {
             $result = $this->mT5Helper->getAccountInfo($login);
-            $balances[$login]['balance'] = $result->oAccount->Balance;
+            $balances[$login]['balance'] = $result->oInfo->Balance;
             $balances[$login]['group'] = $result->oInfo->Group;
         }
         $fromDate = date('Y-m-d', strtotime(date('Y-m-d') . "-30 days"));

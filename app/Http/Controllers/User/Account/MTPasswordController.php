@@ -28,7 +28,7 @@ class MTPasswordController extends Controller
             try {
                 foreach ($logins as $login) {
                     $result = $this->mT5Helper->getAccountInfo($login);
-                    $data[$login]['balance'] = $result->oAccount->Balance;
+                    $data[$login]['balance'] = $result->oInfo->Balance;
                     $data[$login]['group'] = $result->oInfo->Group;
                 }
             } catch (\Exception $e) {

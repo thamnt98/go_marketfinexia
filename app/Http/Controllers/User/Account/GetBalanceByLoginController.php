@@ -21,7 +21,7 @@ class GetBalanceByLoginController extends Controller
     public function main($login)
     {
         $result = $this->mT5Helper->getAccountInfo($login);
-        $balance = $result->oAccount->Balance;
+        $balance = $result->oInfo->Balance;
         $equity = $result->oAccount->Equity;
         return [$balance, $equity];
     }
