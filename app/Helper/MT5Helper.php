@@ -44,7 +44,6 @@ class MT5Helper
     public function getAccountInfo($login)
     {
         $mt5 = self::getMT5Connect();
-        $login = '281422880';
         $endpoint = self::$mt5Url . 'GET_USER_INFO?Session=' . $mt5->session . '&ManagerIndex=' . $mt5->manager_index . '&Account=' . $login;
         $client = new Client();
         $response = $client->request('GET', $endpoint);
