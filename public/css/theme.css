@@ -2573,6 +2573,18 @@ html.sidebar-right-opened .page-header .sidebar-right-toggle i:before {
 
 /* Page Header - Mobile */
 @media only screen and (max-width: 767px) {
+    .isotope-item.document{
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .media-gallery .mg-files .thumbnail .thumb-preview img{
+        width: 130px !important;
+    }
+    div#tether{
+        top: -483px;
+    }
+
 	.page-header {
 		padding-right: 80px;
 	}
