@@ -58,9 +58,9 @@ class RefreshSessionMT5 extends Command
             "MT4_MT5" => 1,
             "CreatedBy" => 1,
             "oStatus" => 1,
-            "ServerConfig" => "174.142.252.29:443",
+            "ServerConfig" => "213.136.83.175:443",
             "ServerCode" => "Live",
-            "Password" => "G9istgg_",
+            "Password" => "G9istgg_ ",
             "oDemo" => 1,
             "Session" => $data['session']
         ];
