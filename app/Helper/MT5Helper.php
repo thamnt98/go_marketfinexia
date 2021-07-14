@@ -59,7 +59,6 @@ class MT5Helper
 //        dd($endpoint);
         $response = $client->request('GET', $endpoint);
         $result = json_decode($response->getBody());
-        dd($result);
         return $result;
     }
 }

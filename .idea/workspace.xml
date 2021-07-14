@@ -175,7 +175,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/otpApplication" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../adminGemifx" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -197,6 +197,10 @@
       <workItem from="1610249555845" duration="600000" />
       <workItem from="1610291060170" duration="116000" />
       <workItem from="1610460706790" duration="11109000" />
+      <workItem from="1625495776273" duration="1442000" />
+      <workItem from="1625502618167" duration="2048000" />
+      <workItem from="1625583124893" duration="12000" />
+      <workItem from="1626182878675" duration="442000" />
     </task>
     <servers />
   </component>
