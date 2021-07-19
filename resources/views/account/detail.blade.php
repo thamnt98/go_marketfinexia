@@ -224,7 +224,7 @@
 </div>
 <div class="footer" style="margin-top:30px; width: 100%;">
     <p style="font-size:11px">Risk Warning Note: Forex and CFDs are leveraged products, incur a high level of risk and may not be suitable for all investors. You should not risk more than you are prepared to lose. Before deciding to trade, please ensure you understand the risks involved and take into account your level of experience. Seek independent advice if necessary.
-        © 2020 Copyright GemiFx Inc. 2010-2020 All rights reserved. Various trademarks held by their respective owners. One Financial Center, Suite 1000, Boston, MA, 02111, United States
+        © 2020 Copyright MarketFinexia Inc. 2010-2020 All rights reserved. Various trademarks held by their respective owners. One Financial Center, Suite 1000, Boston, MA, 02111, United States
         <input type="hidden" class="level1-toggle" value="account"/></p>
 </div>
 </section>

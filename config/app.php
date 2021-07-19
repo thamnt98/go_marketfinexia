@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Forex Broker |  FX Trading Software / GEMI'),
+    'name' => env('APP_NAME', 'Forex Broker |  FX Trading Software / MarketFinexia'),
 
     /*
     |--------------------------------------------------------------------------

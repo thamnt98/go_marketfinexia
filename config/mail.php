@@ -85,7 +85,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'gemifx@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Forex Brokers | FX Trading Software / GEMI'),
+        'name' => env('MAIL_FROM_NAME', 'Forex Brokers | FX Trading Software / MarketFinexia'),
     ],
 
     /*

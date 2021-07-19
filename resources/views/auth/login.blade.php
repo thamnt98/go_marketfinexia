@@ -7,8 +7,8 @@
         <div class="row justify-content-center card">
             <div class="card-body">
                 <div class="logo" style="text-align: center !important;">
-                    <a href="https://gemifx.com/">
-                        <img src="{{ asset('image/logo.png')}}" class="img-fluid" style="width:120px; margin:40px">
+                    <a href="https://marketfinexia.com/">
+                        <img src="{{ asset('image/logo.png')}}" class="img-fluid" style="width:240px; margin:40px">
                     </a>
                 </div>
                 <h2 class="text-header text-center">Log into your account</h2>

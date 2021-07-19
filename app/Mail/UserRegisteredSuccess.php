@@ -40,7 +40,7 @@ class UserRegisteredSuccess extends Mailable
     public function build()
     {
         return $this->view('mail.registersuccess')
-        ->subject('Chào mừng bạn đến với Gemi Broker!')
+        ->subject('Chào mừng bạn đến với MarketFinexia Broker!')
         ->with([
             'firstName' => $this->user['first_name'],
             'lastName' => $this->user['last_name'],

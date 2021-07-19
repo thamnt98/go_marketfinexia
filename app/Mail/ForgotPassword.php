@@ -38,7 +38,7 @@ class ForgotPassword extends Mailable
     public function build()
     {
         return $this->view('mail.resetpassword')
-        ->subject('Cài đặt lại  mật khẩu sử dụng Gemifx')
+        ->subject('Cài đặt lại  mật khẩu sử dụng  MarketFinexia')
         ->with([
             'url' => url('/password/reset') . '?token=' . $this->token .
                 '&email=' . urlencode($this->email)

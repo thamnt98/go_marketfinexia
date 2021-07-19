@@ -20,7 +20,7 @@
                     </div>
                 @endif
                 <div class="logo" style="text-align: center !important;">
-                    <a href="https://gemifx.com/">
+                    <a href="https://marketfinexia.com/">
                         <img src="{{ asset('image/logo.png')}}" class="img-fluid" style="width:120px; margin:40px">
                     </a>
                 </div>
@@ -104,7 +104,7 @@
                         <div class="col-md-10 form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} required>
                             <label class="form-check-label" for="remember">
-                                I have read and consent to my data being used in accordance with the <a href="https://gemifx.com/index.php/privacy-statement/" target="_blank" style="text-decoration: none;" > Privacy Policy.</a>
+                                I have read and consent to my data being used in accordance with the <a href="https://marketfinexia.com/privacy-statement/" target="_blank" style="text-decoration: none;" > Privacy Policy.</a>
                             </label>
                         </div>
                         <div class="col-md-1"></div>
@@ -114,7 +114,7 @@
                         <div class="col-md-10 form-check">
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} required>
                             <label class="form-check-label" for="remember">
-                                I would also like to receive free Daily Market Analysis from GemiFX
+                                I would also like to receive free Daily Market Analysis from MarketFinexia
                             </label>
                         </div>
                         <div class="col-md-1"></div>

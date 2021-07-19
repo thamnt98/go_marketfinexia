@@ -13,7 +13,7 @@
                     </div>
                 @endif
                 <div class="logo" style="text-align: center !important;">
-                    <a href="https://gemifx.com/">
+                    <a href="https://marketfinexia.com/">
                         <img src="{{ asset('image/logo.png')}}" class="img-fluid" style="width:120px; margin:40px">
                     </a>
                 </div>

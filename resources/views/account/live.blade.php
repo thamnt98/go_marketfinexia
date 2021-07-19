@@ -88,7 +88,7 @@
                                 <label>
                                     <input type="checkbox" value="" required class="checkbox">
                                     <b>I agree to the </b><a href="#"><b><a
-                                                href="https://gemifx.com/en/term-of-services-for-trade/">Terms &
+                                                href="https://marketfinexia.com/en/term-of-services-for-trade/">Terms &
                                                 Conditions</a></b>
                                 </label>
                             </div>

@@ -13,16 +13,16 @@
 </head>
 <body>
     <div class="container">
-        <p>Cảm ơn bạn đã sử dụng dịch vụ của Gemifx</p>
+        <p>Cảm ơn bạn đã sử dụng dịch vụ của MarketFinexia</p>
         <p>Xin vui lòng nhấp chuột vào bên dưới để cài đặt lại mật khẩu:</p>
         <a href="{{ $url }}">{{ $url }}</a>
         <br>
         <p>Trân trọng,</p>
-        <p>Đội ngũ GemiFx</p>
+        <p>Đội ngũ MarketFinexia</p>
         <br>
         <b>Điện thoại: 1-800-123-4567 </b>
         <br>
-        <b>Email: support@gemifx.com</b>
+        <b>Email:  support@marketfinexia.com</b>
     </div>
 </body>
 </html>
