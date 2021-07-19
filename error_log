@@ -1,0 +1,3 @@
+[19-Jul-2021 12:59:59 America/New_York] PHP Warning:  require(/home/markjnee/go.marketfinexia.com/vendor/autoload.php): failed to open stream: No such file or directory in /home/markjnee/go.marketfinexia.com/artisan on line 18
+[19-Jul-2021 12:59:59 America/New_York] PHP Warning:  require(/home/markjnee/go.marketfinexia.com/vendor/autoload.php): failed to open stream: No such file or directory in /home/markjnee/go.marketfinexia.com/artisan on line 18
+[19-Jul-2021 12:59:59 America/New_York] PHP Fatal error:  require(): Failed opening required '/home/markjnee/go.marketfinexia.com/vendor/autoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/markjnee/go.marketfinexia.com/artisan on line 18
